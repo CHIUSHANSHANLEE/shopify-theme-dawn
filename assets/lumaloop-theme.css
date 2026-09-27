@@ -338,30 +338,60 @@ p, span, li, a {
 /* ==========================================================================
    Product Page - Apple Pro Canvas & Typography
    ========================================================================== */
-/* The product info column breathes naturally on the dark canvas */
 .product__info-container {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
-  padding: 0 !important;
+  padding: 0 0 0 2.8rem !important;
+}
+
+@media screen and (max-width: 989px) {
+  .product__info-container {
+    padding: 0 !important;
+    margin-top: 2.4rem;
+  }
+}
+
+.product__text.caption-with-letter-spacing {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #86868b !important;
+  margin-bottom: 0.6rem !important;
+  display: block;
 }
 
 .product__title h1 {
-  font-size: clamp(3rem, 4vw, 4.4rem) !important;
+  font-size: clamp(2.6rem, 3.2vw, 3.8rem) !important;
   font-weight: 700 !important;
-  letter-spacing: -0.03em !important;
-  line-height: 1.12 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.15 !important;
   color: #f5f5f7 !important;
-  margin-bottom: 0.8rem !important;
+  margin: 0 0 1rem 0 !important;
+}
+
+.price {
+  font-size: 2.2rem !important;
+  font-weight: 600 !important;
+  color: #f5f5f7 !important;
+  letter-spacing: -0.01em !important;
+  margin: 0 0 1.8rem 0 !important;
 }
 
 .product__description {
   color: #86868b !important;
-  font-size: 1.6rem !important;
+  font-size: 1.55rem !important;
+  line-height: 1.65 !important;
+  margin-bottom: 2.4rem !important;
+}
+
+.product__description p {
+  color: #86868b !important;
   line-height: 1.65 !important;
 }
 
-/* Clean Product Gallery Pedestal */
+/* White Studio Product Gallery Stage */
 .product__media-wrapper {
   position: relative;
 }
@@ -372,15 +402,52 @@ p, span, li, a {
 }
 
 .product__media-item {
-  background: #0a0a0c !important;
-  border-radius: var(--lumaloop-radius-xl) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: #ffffff !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
   overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   transition: border-color 0.25s ease;
 }
 
 .product__media-item:hover {
-  border-color: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.product__media-item img {
+  object-fit: contain !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Thumbnail slider styling */
+.thumbnail-list {
+  gap: 1rem !important;
+  margin-top: 1.4rem !important;
+}
+
+.thumbnail-list__item {
+  background: #ffffff !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  transition: border-color 0.2s ease;
+}
+
+.thumbnail-list__item button {
+  background: transparent !important;
+}
+
+.thumbnail-list__item img {
+  object-fit: contain !important;
+}
+
+.thumbnail[aria-current="true"] {
+  border-color: #ffffff !important;
+  box-shadow: 0 0 0 2px #ffffff !important;
 }
 
 /* Apple Pro Buy Button */
@@ -424,6 +491,17 @@ p, span, li, a {
 }
 
 /* Variant Selector Pills */
+.product-form__input {
+  margin-bottom: 2rem !important;
+}
+
+.product-form__input .form__label {
+  font-size: 1.35rem !important;
+  font-weight: 600 !important;
+  color: #f5f5f7 !important;
+  margin-bottom: 0.8rem !important;
+}
+
 .product-form__input input[type='radio'] + label {
   background: #1c1c1e !important;
   border: 1px solid rgba(255, 255, 255, 0.14) !important;
@@ -431,7 +509,7 @@ p, span, li, a {
   border-radius: var(--lumaloop-radius-pill) !important;
   font-size: 1.35rem !important;
   font-weight: 500 !important;
-  padding: 0.9rem 1.8rem !important;
+  padding: 0.8rem 1.8rem !important;
   transition: var(--lumaloop-transition);
 }
 
@@ -446,9 +524,9 @@ p, span, li, a {
 .lumaloop-trust-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.4rem;
-  margin: 2.8rem 0;
-  padding: 1.8rem;
+  gap: 1.2rem;
+  margin: 2.4rem 0;
+  padding: 1.6rem 2rem;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--lumaloop-radius-md);
@@ -458,14 +536,14 @@ p, span, li, a {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 400;
   color: #86868b;
 }
 
 .lumaloop-trust-item svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   color: #f5f5f7;
   flex-shrink: 0;
 }
@@ -490,6 +568,9 @@ p, span, li, a {
   font-size: 1.5rem !important;
   line-height: 1.65 !important;
   padding-bottom: 2rem !important;
+}
+.accordion .accordion__content strong {
+  color: #f5f5f7 !important;
 }
 
 /* ==========================================================================

@@ -6,19 +6,12 @@
         "vendor": {
           "type": "text",
           "settings": {
-            "text": "{{ product.vendor | default: 'LUMALOOP LABS' }}",
+            "text": "{{ product.vendor | default: 'LUMALOOP' }}",
             "text_style": "uppercase"
           }
         },
         "title": {
           "type": "title"
-        },
-        "caption": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.metafields.descriptors.subtitle.value }}",
-            "text_style": "subtitle"
-          }
         },
         "price": {
           "type": "price"
@@ -45,36 +38,36 @@
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Magnetic Lock & Vacuum Specifications",
-            "icon": "check_mark",
-            "content": "<p><strong>• Magnetic Array:</strong> 18x High-Permeability N52 Neodymium Magnets (14.5N pull force)<br><strong>• Vacuum Seal:</strong> 360° Pneumatic dual-chamber mechanical lock (holds up to 5kg)<br><strong>• Metallurgy:</strong> 6000-series CNC anodized aircraft aluminum<br><strong>• Adhesion:</strong> Residue-free 3M VHB micro-bonding layer included for textured dashboards.</p>",
+            "heading": "Fast Shipping & Express Delivery",
+            "icon": "truck",
+            "content": "<p><strong>• Dispatch Window:</strong> All orders are dispatched within 24 hours via tracked express logistics.<br><strong>• Transit Times:</strong> 2–4 business days domestic, 4–7 business days international.<br><strong>• Tracking:</strong> Live tracking number sent directly to your email upon fulfillment.</p>",
             "page": ""
           }
         },
         "collapsible-row-1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Fast Shipping & 30-Day Risk-Free Trial",
-            "icon": "truck",
-            "content": "<p><strong>• Global Courier:</strong> Orders dispatched within 24 hours via tracked express logistics.<br><strong>• Delivery Timeline:</strong> 2–4 business days domestic, 4–7 business days international.<br><strong>• 30-Day Guarantee:</strong> Test it in your car, shower, or desk. If you're not thrilled, return it for a 100% refund with prepaid shipping.</p>",
+            "heading": "2-Year Comprehensive Lab Warranty",
+            "icon": "shield",
+            "content": "<p>Every LumaLoop unit includes a 24-month comprehensive hardware replacement guarantee. If you experience any manufacturing defect, structural degradation, or mechanical failure, our team issues an immediate advance replacement.</p>",
             "page": ""
           }
         },
         "collapsible-row-2": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Universal Device Compatibility Matrix",
-            "icon": "check_mark",
-            "content": "<p><strong>• Apple:</strong> iPhone 12 through 17 Pro Max (all native MagSafe devices & MagSafe cases)<br><strong>• Samsung:</strong> Galaxy Z TriFold, Z Fold 7/6/5, Galaxy S26/S25/S24 Ultra (with included magnetic ring or MagSafe case)<br><strong>• Tablets:</strong> iPad Mini, iPad Air, Galaxy Tab (supported by 2-pack and vacuum mounts).</p>",
+            "heading": "30-Day Risk-Free Trial & Returns",
+            "icon": "return",
+            "content": "<p>Experience LumaLoop in your daily routine for 30 days. If you are not completely satisfied with the craftsmanship and performance, return it for a 100% full refund with zero restocking fees. Prepaid return labels provided.</p>",
             "page": ""
           }
         },
         "collapsible-row-3": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "2-Year Comprehensive Lab Warranty",
-            "icon": "shield",
-            "content": "<p>Every LumaLoop unit includes a 24-month comprehensive hardware replacement guarantee. If you experience any vacuum pressure loss, magnet degradation, or mechanical failure, our engineering team issues an immediate replacement.</p>",
+            "heading": "Material Integrity & Calibration",
+            "icon": "check_mark",
+            "content": "<p>Precision crafted from aerospace-grade 6000 CNC anodized aluminum, reinforced optical polymers, and rare-earth magnetic arrays. Tested for thermal stability, drop impact absorption, and zero electrical interference.</p>",
             "page": ""
           }
         },
@@ -88,7 +81,6 @@
       "block_order": [
         "vendor",
         "title",
-        "caption",
         "price",
         "variant_picker",
         "quantity_selector",
@@ -102,42 +94,22 @@
       ],
       "settings": {
         "enable_sticky_info": true,
-        "gallery_layout": "stacked",
-        "media_size": "large",
+        "gallery_layout": "thumbnail_slider",
+        "media_size": "medium",
         "constrain_to_viewport": true,
         "mobile_thumbnails": "show",
-        "hide_variants": false,
+        "hide_variants": true,
         "enable_video_looping": true,
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 56
       }
     },
-    "lumaloop_3d_viewer": {
-      "type": "lumaloop-3d-viewer",
+    "lumaloop_features": {
+      "type": "lumaloop-product-features",
       "settings": {
-        "subtitle": "INTERACTIVE HARDWARE LAB",
-        "title": "Inspect in 3D Precision",
-        "description": "Rotate 360°, inspect internal magnetic architecture, and test structural tolerances before purchase.",
-        "padding_top": 72,
-        "padding_bottom": 72
-      }
-    },
-    "lumaloop_bento": {
-      "type": "lumaloop-product-bento",
-      "settings": {
-        "subtitle": "HARDWARE ARCHITECTURE",
+        "subtitle": "HARDWARE STANDARDS",
         "title": "Engineered for Relentless Performance",
-        "description": "Every curve, magnet, and vacuum chamber has been calculated to eliminate failure points and elevate your interaction with daily technology.",
-        "padding_top": 72,
-        "padding_bottom": 72
-      }
-    },
-    "lumaloop_specs": {
-      "type": "lumaloop-tech-specs",
-      "settings": {
-        "subtitle": "HARDWARE ARCHITECTURE // SPECS",
-        "title": "Meticulously Engineered Down to the Micron",
-        "description": "Explore the internal architecture, material properties, and thermal dissipation systems that power LumaLoop hardware.",
+        "description": "Every curve, material, and electrical circuit is calibrated to eliminate failure points and elevate your daily technology interaction.",
         "padding_top": 72,
         "padding_bottom": 72
       }
@@ -150,8 +122,8 @@
           "settings": {
             "author_name": "Marcus Vance",
             "author_role": "Hardware Architect, SF",
-            "review_text": "The foldable 360° vacuum suction mount on my car windshield is rock solid. Holds my iPhone 16 Pro Max over steep potholes without a millimetre of slip.",
-            "product_tag": "Vacuum Car Mount"
+            "review_text": "The build quality is immediately noticeable. Solid tactile feel, precise tolerances, and rock-solid magnetic holding power.",
+            "product_tag": "Verified Buyer"
           }
         },
         "rev_2": {
@@ -159,8 +131,8 @@
           "settings": {
             "author_name": "Elena Rostova",
             "author_role": "Industrial Designer, Tokyo",
-            "review_text": "The 3-in-1 MagSafe station completely cleaned up my desk workspace. Simultaneous charging with zero coil whine and cold anodized touch.",
-            "product_tag": "3-in-1 Charging Station"
+            "review_text": "Minimalist design done right. Clean lines, zero unnecessary branding, and premium materials that match Apple hardware seamlessly.",
+            "product_tag": "Verified Buyer"
           }
         },
         "rev_3": {
@@ -168,8 +140,8 @@
           "settings": {
             "author_name": "Kaito Tanaka",
             "author_role": "Tech Minimalist, Berlin",
-            "review_text": "Finally, a protective case that doesn't ruin the hinge geometry of the Galaxy Z Fold. The TriFold Shield fits with zero wobble and looks futuristic.",
-            "product_tag": "TriFold Shield Case"
+            "review_text": "Exceeded my expectations. Fast dispatch, arrived securely packaged, and functions flawlessly. Will definitely buy more from LumaLoop.",
+            "product_tag": "Verified Buyer"
           }
         }
       },
@@ -179,7 +151,7 @@
         "rev_3"
       ],
       "settings": {
-        "subtitle": "VERIFIED TELEMETRY // TESTIMONIALS",
+        "subtitle": "CUSTOMER REVIEWS",
         "title": "Validated By The Future-Minded",
         "description": "Hear from designers, engineers, and tech minimalists worldwide who elevated their daily carry.",
         "padding_top": 72,
@@ -189,7 +161,7 @@
     "related-products": {
       "type": "related-products",
       "settings": {
-        "heading": "Complete Your Magnetic Ecosystem",
+        "heading": "Complete Your Setup",
         "heading_size": "h2",
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
@@ -198,16 +170,14 @@
         "show_vendor": false,
         "show_rating": true,
         "columns_mobile": "2",
-        "padding_top": 48,
-        "padding_bottom": 48
+        "padding_top": 56,
+        "padding_bottom": 64
       }
     }
   },
   "order": [
     "main",
-    "lumaloop_3d_viewer",
-    "lumaloop_bento",
-    "lumaloop_specs",
+    "lumaloop_features",
     "lumaloop_reviews",
     "related-products"
   ]

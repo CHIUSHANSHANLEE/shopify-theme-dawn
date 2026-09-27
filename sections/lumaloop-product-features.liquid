@@ -1,0 +1,191 @@
+{% comment %}
+  LumaLoop Universal Product Hardware Features
+  Apple Pro style keynote feature matrix applicable to all electronic accessories
+{% endcomment %}
+
+{{ 'lumaloop-theme.css' | asset_url | stylesheet_tag }}
+
+<div class="lumaloop-features-section page-width lumaloop-reveal" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  
+  <!-- Header -->
+  <div style="text-align: center; max-width: 760px; margin: 0 auto 5.5rem auto;">
+    <span class="lumaloop-tech-pill" style="margin-bottom: 1.4rem;">
+      <span class="lumaloop-pulsing-dot"></span>
+      {{ section.settings.subtitle | default: "HARDWARE STANDARDS" }}
+    </span>
+    <h2 style="font-size: clamp(3rem, 4.5vw, 4.8rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.03em; color: #f5f5f7; margin: 0 0 1.6rem 0;">
+      {{ section.settings.title | default: "Engineered for Relentless Performance" }}
+    </h2>
+    <p style="font-size: 1.65rem; color: #86868b; line-height: 1.6; margin: 0;">
+      {{ section.settings.description | default: "Every curve, material, and electrical circuit is calibrated to eliminate failure points and elevate your daily technology interaction." }}
+    </p>
+  </div>
+
+  <!-- 3 Keynote Feature Cards -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.4rem;">
+    
+    <!-- Feature 1: Materials -->
+    <div class="lumaloop-glass-card" style="padding: clamp(3rem, 4vw, 4.2rem); background: #121215; display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <div style="width: 48px; height: 48px; border-radius: var(--lumaloop-radius-md); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 2.2rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f5f5f7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+        </div>
+        <span style="font-size: 1.2rem; color: #86868b; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600; display: block; margin-bottom: 0.8rem;">
+          METALLURGY & FINISH
+        </span>
+        <h3 style="font-size: 2.2rem; font-weight: 700; color: #f5f5f7; letter-spacing: -0.02em; margin: 0 0 1.2rem 0;">
+          {{ section.settings.feat_1_title | default: "Aerospace 6000 Alloy" }}
+        </h3>
+        <p style="font-size: 1.55rem; color: #86868b; line-height: 1.65; margin: 0;">
+          {{ section.settings.feat_1_desc | default: "Precision CNC-machined from 6000-series anodized aluminum and optical-grade polycarbonate, delivering structural rigidity without unnecessary bulk." }}
+        </p>
+      </div>
+      <div style="margin-top: 3rem; padding-top: 1.8rem; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.35rem; color: #f5f5f7; font-weight: 500;">
+        Zero cosmetic seams • Anodized finish
+      </div>
+    </div>
+
+    <!-- Feature 2: Magnetic & Power Calibration -->
+    <div class="lumaloop-glass-card" style="padding: clamp(3rem, 4vw, 4.2rem); background: #121215; display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <div style="width: 48px; height: 48px; border-radius: var(--lumaloop-radius-md); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 2.2rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f5f5f7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="12" r="4"></circle>
+            <line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line>
+            <line x1="14.83" y1="14.83" x2="19.07" y2="19.07"></line>
+          </svg>
+        </div>
+        <span style="font-size: 1.2rem; color: #86868b; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600; display: block; margin-bottom: 0.8rem;">
+          ECOSYSTEM HARMONY
+        </span>
+        <h3 style="font-size: 2.2rem; font-weight: 700; color: #f5f5f7; letter-spacing: -0.02em; margin: 0 0 1.2rem 0;">
+          {{ section.settings.feat_2_title | default: "MagSafe & Qi2 Tuned" }}
+        </h3>
+        <p style="font-size: 1.55rem; color: #86868b; line-height: 1.65; margin: 0;">
+          {{ section.settings.feat_2_desc | default: "Magnetic alignment arrays and induction channels are calibrated down to the millimeter for instantaneous snap-locking and maximum charging transfer rates." }}
+        </p>
+      </div>
+      <div style="margin-top: 3rem; padding-top: 1.8rem; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.35rem; color: #f5f5f7; font-weight: 500;">
+        Optimized magnetic pull • Zero interference
+      </div>
+    </div>
+
+    <!-- Feature 3: Rigorous Testing -->
+    <div class="lumaloop-glass-card" style="padding: clamp(3rem, 4vw, 4.2rem); background: #121215; display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <div style="width: 48px; height: 48px; border-radius: var(--lumaloop-radius-md); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 2.2rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f5f5f7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <span style="font-size: 1.2rem; color: #86868b; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600; display: block; margin-bottom: 0.8rem;">
+          DURABILITY PROTOCOL
+        </span>
+        <h3 style="font-size: 2.2rem; font-weight: 700; color: #f5f5f7; letter-spacing: -0.02em; margin: 0 0 1.2rem 0;">
+          {{ section.settings.feat_3_title | default: "10,000-Cycle Certified" }}
+        </h3>
+        <p style="font-size: 1.55rem; color: #86868b; line-height: 1.65; margin: 0;">
+          {{ section.settings.feat_3_desc | default: "Each production batch undergoes intensive drop testing, road vibration simulation, and thermal cycle stress profiling before leaving our lab." }}
+        </p>
+      </div>
+      <div style="margin-top: 3rem; padding-top: 1.8rem; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.35rem; color: #f5f5f7; font-weight: 500;">
+        Vibration resistant • Thermal profiled
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "LumaLoop Product Features",
+  "tag": "section",
+  "class": "section-lumaloop-features",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "HARDWARE STANDARDS"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Engineered for Relentless Performance"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Every curve, material, and electrical circuit is calibrated to eliminate failure points and elevate your daily technology interaction."
+    },
+    {
+      "type": "text",
+      "id": "feat_1_title",
+      "label": "Feature 1 Title",
+      "default": "Aerospace 6000 Alloy"
+    },
+    {
+      "type": "textarea",
+      "id": "feat_1_desc",
+      "label": "Feature 1 Description",
+      "default": "Precision CNC-machined from 6000-series anodized aluminum and optical-grade polycarbonate, delivering structural rigidity without unnecessary bulk."
+    },
+    {
+      "type": "text",
+      "id": "feat_2_title",
+      "label": "Feature 2 Title",
+      "default": "MagSafe & Qi2 Tuned"
+    },
+    {
+      "type": "textarea",
+      "id": "feat_2_desc",
+      "label": "Feature 2 Description",
+      "default": "Magnetic alignment arrays and induction channels are calibrated down to the millimeter for instantaneous snap-locking and maximum charging transfer rates."
+    },
+    {
+      "type": "text",
+      "id": "feat_3_title",
+      "label": "Feature 3 Title",
+      "default": "10,000-Cycle Certified"
+    },
+    {
+      "type": "textarea",
+      "id": "feat_3_desc",
+      "label": "Feature 3 Description",
+      "default": "Each production batch undergoes intensive drop testing, road vibration simulation, and thermal cycle stress profiling before leaving our lab."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "LumaLoop Product Features"
+    }
+  ]
+}
+{% endschema %}
