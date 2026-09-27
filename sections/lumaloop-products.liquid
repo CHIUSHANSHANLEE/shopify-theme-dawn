@@ -1,23 +1,23 @@
 {% comment %}
   LumaLoop Best Sellers / Product Grid Section
-  Features rounded cyber cards, quick-add, glowing badges, and precision hover states
+  Apple Pro luxury product grid with clean pill buttons and elegant cards
 {% endcomment %}
 
 {{ 'lumaloop-theme.css' | asset_url | stylesheet_tag }}
 
 <div class="lumaloop-products-section page-width lumaloop-reveal" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
-  <div style="display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 4rem;">
-    <span class="lumaloop-tech-pill" style="margin-bottom: 1.2rem;">
+  <div style="display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 4.5rem;">
+    <span class="lumaloop-tech-pill" style="margin-bottom: 1.4rem;">
       <span class="lumaloop-pulsing-dot"></span>
-      {{ section.settings.subtitle | default: "BEST SELLERS // HIGH DEMAND" }}
+      {{ section.settings.subtitle | default: "FEATURED HARDWARE" }}
     </span>
     <div style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%; flex-wrap: wrap; gap: 1.6rem;">
-      <h2 style="font-size: clamp(2.8rem, 4vw, 4.4rem); font-weight: 800; margin: 0; letter-spacing: -0.03em; color: #FFFFFF;">
+      <h2 style="font-size: clamp(2.8rem, 4vw, 4.4rem); font-weight: 700; margin: 0; letter-spacing: -0.03em; color: #f5f5f7;">
         {{ section.settings.title | default: "Engineered Excellence" }}
       </h2>
-      <a href="{{ section.settings.collection.url | default: routes.all_products_collection_url }}" class="link link--text" style="color: var(--lumaloop-accent); font-weight: 600; font-size: 1.45rem; text-decoration: none; display: flex; align-items: center; gap: 0.6rem;">
-        <span>Explore All Products</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <a href="{{ section.settings.collection.url | default: routes.all_products_collection_url }}" class="link link--text" style="color: #f5f5f7; font-weight: 500; font-size: 1.45rem; text-decoration: none; display: flex; align-items: center; gap: 0.6rem; transition: var(--lumaloop-transition);">
+        <span>Explore All</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="12" x2="19" y2="12"></line>
           <polyline points="12 5 19 12 12 19"></polyline>
         </svg>
@@ -25,11 +25,11 @@
     </div>
   </div>
 
-  <div class="lumaloop-product-grid" style="display: grid; grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr); gap: 2.4rem;">
+  <div class="lumaloop-product-grid" style="display: grid; grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr); gap: 2.2rem;">
     {%- assign collection = section.settings.collection -%}
     {%- if collection != blank and collection.products_count > 0 -%}
       {%- for product in collection.products limit: section.settings.products_to_show -%}
-        <div class="lumaloop-product-card card-wrapper" style="position: relative; display: flex; flex-direction: column;">
+        <div class="lumaloop-product-card card-wrapper" style="position: relative; display: flex; flex-direction: column; background: #121215;">
           
           <!-- Badge logic -->
           <div style="position: absolute; top: 1.4rem; left: 1.4rem; z-index: 3; display: flex; gap: 0.6rem;">
@@ -38,16 +38,14 @@
             {%- elsif product.compare_at_price > product.price -%}
               <span class="badge">SALE</span>
             {%- elsif forloop.index == 1 -%}
-              <span class="badge" style="background: rgba(0, 240, 255, 0.15); color: #00F0FF; border-color: #00F0FF;">BEST SELLER</span>
+              <span class="badge">BEST SELLER</span>
             {%- elsif forloop.index == 2 -%}
-              <span class="badge" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border-color: #a855f7;">LIMITED</span>
-            {%- else -%}
               <span class="badge">NEW</span>
             {%- endif -%}
           </div>
 
           <!-- Product Media Image -->
-          <a href="{{ product.url }}" class="card__media" style="position: relative; display: block; width: 100%; aspect-ratio: 1/1; overflow: hidden; text-decoration: none;">
+          <a href="{{ product.url }}" class="card__media" style="position: relative; display: block; width: 100%; aspect-ratio: 1/1; overflow: hidden; text-decoration: none; background: #0c0c0e;">
             {%- if product.featured_media -%}
               {{ product.featured_media | image_url: width: 800 | image_tag:
                 class: 'motion-reduce',
@@ -60,23 +58,23 @@
           </a>
 
           <!-- Information -->
-          <div class="card__information" style="padding: 2.2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+          <div class="card__information" style="padding: 2.4rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
             <div>
-              <div style="font-family: var(--lumaloop-font-mono); font-size: 1.15rem; color: #64748b; margin-bottom: 0.6rem; text-transform: uppercase;">
-                {{ product.vendor | default: "LUMALOOP LABS" }}
+              <div style="font-size: 1.2rem; color: #86868b; margin-bottom: 0.6rem; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500;">
+                {{ product.vendor | default: "LUMALOOP" }}
               </div>
               <h3 class="card__heading" style="margin: 0 0 1rem 0; font-size: 1.7rem;">
-                <a href="{{ product.url }}" style="color: #ffffff; text-decoration: none;">
+                <a href="{{ product.url }}" style="color: #f5f5f7; text-decoration: none;">
                   {{ product.title }}
                 </a>
               </h3>
             </div>
 
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1.4rem; padding-top: 1.4rem; border-top: 1px solid rgba(255, 255, 255, 0.06);">
-              <div class="price" style="font-size: 1.6rem; font-weight: 700; color: var(--lumaloop-accent);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1.6rem; padding-top: 1.6rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+              <div class="price" style="font-size: 1.65rem; font-weight: 600; color: #f5f5f7;">
                 {{ product.price | money }}
                 {%- if product.compare_at_price > product.price -%}
-                  <span style="font-size: 1.3rem; color: #64748b; text-decoration: line-through; margin-left: 0.6rem; font-weight: 400;">
+                  <span style="font-size: 1.35rem; color: #86868b; text-decoration: line-through; margin-left: 0.6rem; font-weight: 400;">
                     {{ product.compare_at_price | money }}
                   </span>
                 {%- endif -%}
@@ -85,11 +83,7 @@
               <!-- Quick Add Action -->
               <form method="post" action="{{ routes.cart_add_url }}">
                 <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                <button type="submit" class="button button--secondary" style="padding: 0.8rem 1.4rem; font-size: 1.25rem; border-radius: var(--lumaloop-radius-md);" title="Quick Add">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
+                <button type="submit" class="button button--secondary" style="padding: 0.8rem 1.6rem; font-size: 1.3rem; border-radius: var(--lumaloop-radius-pill);" title="Quick Add">
                   <span>Add</span>
                 </button>
               </form>
@@ -99,63 +93,59 @@
         </div>
       {%- endfor -%}
     {%- else -%}
-      <!-- Premium Cyber Fallback Showcase Cards -->
+      <!-- Apple Pro Minimalist Mock Showcase Cards -->
       {%- for i in (1..4) -%}
         {%- case i -%}
           {%- when 1 -%}
             {%- assign mock_title = "3-in-1 MagSafe Wireless Charging Station" -%}
             {%- assign mock_price = "$89.00" -%}
             {%- assign mock_badge = "BEST SELLER" -%}
-            {%- assign mock_badge_color = "#00F0FF" -%}
           {%- when 2 -%}
             {%- assign mock_title = "Magnetic Car Mount — Foldable Vacuum 360°" -%}
             {%- assign mock_price = "$49.00" -%}
             {%- assign mock_badge = "POPULAR" -%}
-            {%- assign mock_badge_color = "#38bdf8" -%}
           {%- when 3 -%}
             {%- assign mock_title = "TriFold Shield Case — Galaxy Z TriFold" -%}
             {%- assign mock_price = "$69.00" -%}
-            {%- assign mock_badge = "NEW RELEASE" -%}
-            {%- assign mock_badge_color = "#c084fc" -%}
+            {%- assign mock_badge = "NEW" -%}
           {%- when 4 -%}
             {%- assign mock_title = "ClearGuard Pro MagSafe Case — iPhone 17 Pro Max" -%}
             {%- assign mock_price = "$39.00" -%}
             {%- assign mock_badge = "FEATURED" -%}
-            {%- assign mock_badge_color = "#00F0FF" -%}
         {%- endcase -%}
 
-        <div class="lumaloop-product-card card-wrapper" style="position: relative; display: flex; flex-direction: column;">
+        <div class="lumaloop-product-card card-wrapper" style="position: relative; display: flex; flex-direction: column; background: #121215;">
           <div style="position: absolute; top: 1.4rem; left: 1.4rem; z-index: 3;">
-            <span class="badge" style="color: {{ mock_badge_color }}; border-color: {{ mock_badge_color }};">
+            <span class="badge">
               {{ mock_badge }}
             </span>
           </div>
 
-          <div class="card__media" style="position: relative; width: 100%; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at 50% 50%, #1e2430 0%, #0d0f14 100%);">
-            <!-- Sleek Isometric Tech Icon -->
-            <svg width="90" height="90" viewBox="0 0 24 24" fill="none" stroke="{{ mock_badge_color }}" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8; filter: drop-shadow(0 0 12px {{ mock_badge_color }});">
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-              <line x1="8" y1="21" x2="16" y2="21"></line>
-              <line x1="12" y1="17" x2="12" y2="21"></line>
+          <div class="card__media" style="position: relative; width: 100%; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; background: #0c0c0e;">
+            <!-- Clean Apple-style geometric hardware wireframe -->
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#f5f5f7" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.35;">
+              <rect x="5" y="2" width="14" height="20" rx="4"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              <circle cx="12" cy="10" r="3"></circle>
             </svg>
           </div>
 
-          <div class="card__information" style="padding: 2.2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+          <div class="card__information" style="padding: 2.4rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
             <div>
-              <div style="font-family: var(--lumaloop-font-mono); font-size: 1.15rem; color: #64748b; margin-bottom: 0.6rem; text-transform: uppercase;">
-                LUMALOOP LABS // HARDWARE
+              <div style="font-size: 1.2rem; color: #86868b; margin-bottom: 0.6rem; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500;">
+                LUMALOOP
               </div>
-              <h3 class="card__heading" style="margin: 0 0 1rem 0; font-size: 1.7rem; color: #FFFFFF;">
+              <h3 class="card__heading" style="margin: 0 0 1rem 0; font-size: 1.7rem; color: #f5f5f7;">
                 {{ mock_title }}
               </h3>
             </div>
 
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1.4rem; padding-top: 1.4rem; border-top: 1px solid rgba(255, 255, 255, 0.06);">
-              <div class="price" style="font-size: 1.6rem; font-weight: 700; color: var(--lumaloop-accent);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1.6rem; padding-top: 1.6rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+              <div class="price" style="font-size: 1.65rem; font-weight: 600; color: #f5f5f7;">
                 {{ mock_price }}
               </div>
-              <a href="{{ routes.all_products_collection_url }}" class="button button--secondary" style="padding: 0.8rem 1.4rem; font-size: 1.25rem;">
-                <span>View Details</span>
+              <a href="{{ routes.all_products_collection_url }}" class="button button--secondary" style="padding: 0.8rem 1.8rem; font-size: 1.3rem; border-radius: var(--lumaloop-radius-pill);">
+                <span>Details</span>
               </a>
             </div>
           </div>
@@ -189,7 +179,7 @@
       "type": "text",
       "id": "subtitle",
       "label": "Section Subtitle",
-      "default": "BEST SELLERS // HIGH DEMAND"
+      "default": "FEATURED HARDWARE"
     },
     {
       "type": "text",
@@ -200,7 +190,7 @@
     {
       "type": "collection",
       "id": "collection",
-      "label": "Collection"
+      "label": "Select Collection"
     },
     {
       "type": "range",
@@ -209,7 +199,7 @@
       "max": 12,
       "step": 1,
       "default": 4,
-      "label": "Products to show"
+      "label": "Products to Show"
     },
     {
       "type": "range",
@@ -218,7 +208,7 @@
       "max": 5,
       "step": 1,
       "default": 4,
-      "label": "Columns Desktop"
+      "label": "Desktop Columns"
     },
     {
       "type": "range",

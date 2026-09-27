@@ -1,16 +1,15 @@
 {% comment %}
-  LumaLoop Futuristic Hero Section
-  Cyber-minimal full-bleed showcase with 3D ambient lighting & floating tech telemetry
+  LumaLoop Apple Pro Hero Section
+  Clean, full-bleed showcase with refined typography and Apple pill buttons
 {% endcomment %}
 
 {{ 'lumaloop-theme.css' | asset_url | stylesheet_tag }}
 
-<div class="lumaloop-hero-container lumaloop-reveal" style="position: relative; min-height: {{ section.settings.hero_height }}; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #050505;">
-  <!-- Ambient Radiant Mesh & Particle Aura -->
+<div class="lumaloop-hero-container lumaloop-reveal" style="position: relative; min-height: {{ section.settings.hero_height }}; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #000000;">
+  <!-- Ambient Soft Vignette -->
   <div class="lumaloop-hero-mesh" style="position: absolute; inset: 0; pointer-events: none; z-index: 1;">
-    <div style="position: absolute; top: 15%; left: 50%; transform: translateX(-50%); width: 700px; height: 500px; background: radial-gradient(circle, rgba(0, 240, 255, 0.18) 0%, rgba(0, 119, 255, 0.08) 40%, transparent 70%); filter: blur(70px); opacity: 0.85; animation: heroAuraPulse 8s infinite alternate ease-in-out;"></div>
-    <div style="position: absolute; bottom: 5%; right: 10%; width: 450px; height: 350px; background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 60%); filter: blur(60px); opacity: 0.6;"></div>
-    <div style="position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, transparent 20%, #050505 90%);"></div>
+    <div style="position: absolute; top: 10%; left: 50%; transform: translateX(-50%); width: 750px; height: 500px; background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 65%); filter: blur(80px); opacity: 0.8;"></div>
+    <div style="position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, transparent 20%, #000000 90%);"></div>
   </div>
 
   {%- if section.settings.image != blank -%}
@@ -25,12 +24,12 @@
   {%- endif -%}
 
   <!-- Hero Content Core -->
-  <div class="page-width" style="position: relative; z-index: 2; width: 100%; padding-top: 6rem; padding-bottom: 6rem;">
+  <div class="page-width" style="position: relative; z-index: 2; width: 100%; padding-top: 8rem; padding-bottom: 8rem;">
     <div class="lumaloop-hero-content" style="max-width: 860px; margin: 0 auto; text-align: center;">
       
-      <!-- Top Telemetry Pill -->
+      <!-- Top Eyebrow Pill -->
       {%- if section.settings.pill_badge != blank -%}
-        <div style="margin-bottom: 2rem;">
+        <div style="margin-bottom: 2.2rem;">
           <span class="lumaloop-tech-pill">
             <span class="lumaloop-pulsing-dot"></span>
             {{ section.settings.pill_badge }}
@@ -39,13 +38,13 @@
       {%- endif -%}
 
       <!-- Main Headline -->
-      <h1 class="lumaloop-hero-title" style="font-size: clamp(3.6rem, 7vw, 7.6rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.04em; margin: 0 0 2rem 0; color: #FFFFFF;">
+      <h1 class="lumaloop-hero-title" style="font-size: clamp(3.8rem, 7vw, 7.2rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.035em; margin: 0 0 2.2rem 0; color: #f5f5f7;">
         {{ section.settings.heading }}
       </h1>
 
       <!-- Subheadline -->
       {%- if section.settings.subheading != blank -%}
-        <p class="lumaloop-hero-sub" style="font-size: clamp(1.6rem, 2.2vw, 2.2rem); font-weight: 400; line-height: 1.5; color: #94a3b8; max-width: 680px; margin: 0 auto 3.6rem auto; letter-spacing: -0.01em;">
+        <p class="lumaloop-hero-sub" style="font-size: clamp(1.7rem, 2.2vw, 2.2rem); font-weight: 400; line-height: 1.5; color: #86868b; max-width: 680px; margin: 0 auto 4rem auto; letter-spacing: -0.01em;">
           {{ section.settings.subheading }}
         </p>
       {%- endif -%}
@@ -53,9 +52,9 @@
       <!-- Dual Action Controls -->
       <div class="lumaloop-hero-buttons" style="display: flex; align-items: center; justify-content: center; gap: 1.6rem; flex-wrap: wrap;">
         {%- if section.settings.button_label_1 != blank -%}
-          <a href="{{ section.settings.button_link_1 | default: '/collections/all' }}" class="button button--primary" style="padding: 1.5rem 3.4rem; font-size: 1.55rem; font-weight: 700;">
+          <a href="{{ section.settings.button_link_1 | default: '/collections/all' }}" class="button button--primary" style="padding: 1.4rem 3.4rem; font-size: 1.6rem;">
             <span>{{ section.settings.button_label_1 }}</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
@@ -63,24 +62,24 @@
         {%- endif -%}
 
         {%- if section.settings.button_label_2 != blank -%}
-          <a href="{{ section.settings.button_link_2 | default: '#features' }}" class="button button--secondary" style="padding: 1.5rem 3.2rem; font-size: 1.55rem;">
+          <a href="{{ section.settings.button_link_2 | default: '#features' }}" class="button button--secondary" style="padding: 1.4rem 3.2rem; font-size: 1.6rem;">
             <span>{{ section.settings.button_label_2 }}</span>
           </a>
         {%- endif -%}
       </div>
 
-      <!-- Live Telemetry Badges -->
-      <div class="lumaloop-hero-telemetry" style="display: flex; align-items: center; justify-content: center; gap: 2.8rem; margin-top: 5rem; flex-wrap: wrap; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 3rem;">
-        <div style="display: flex; align-items: center; gap: 0.8rem; font-size: 1.3rem; color: #94a3b8; font-family: var(--lumaloop-font-mono);">
-          <span style="color: var(--lumaloop-accent);">01</span>
+      <!-- Understated Telemetry Highlights -->
+      <div class="lumaloop-hero-telemetry" style="display: flex; align-items: center; justify-content: center; gap: 3.2rem; margin-top: 5.5rem; flex-wrap: wrap; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 3rem;">
+        <div style="display: flex; align-items: center; gap: 0.8rem; font-size: 1.3rem; color: #86868b; font-weight: 500;">
+          <span style="color: #f5f5f7;">01</span>
           <span>360° VACUUM LOCK MOUNTS</span>
         </div>
-        <div style="display: flex; align-items: center; gap: 0.8rem; font-size: 1.3rem; color: #94a3b8; font-family: var(--lumaloop-font-mono);">
-          <span style="color: var(--lumaloop-accent);">02</span>
-          <span>3-IN-1 MAGSAFE POWER</span>
+        <div style="display: flex; align-items: center; gap: 0.8rem; font-size: 1.3rem; color: #86868b; font-weight: 500;">
+          <span style="color: #f5f5f7;">02</span>
+          <span>3-IN-1 MAGSAFE CHARGING</span>
         </div>
-        <div style="display: flex; align-items: center; gap: 0.8rem; font-size: 1.3rem; color: #94a3b8; font-family: var(--lumaloop-font-mono);">
-          <span style="color: var(--lumaloop-accent);">03</span>
+        <div style="display: flex; align-items: center; gap: 0.8rem; font-size: 1.3rem; color: #86868b; font-weight: 500;">
+          <span style="color: #f5f5f7;">03</span>
           <span>FOLDABLE SHIELD ARMOR</span>
         </div>
       </div>
@@ -90,11 +89,6 @@
 </div>
 
 <style>
-@keyframes heroAuraPulse {
-  0% { transform: translateX(-50%) scale(0.95); opacity: 0.7; }
-  50% { transform: translateX(-50%) scale(1.1); opacity: 0.95; }
-  100% { transform: translateX(-50%) scale(0.95); opacity: 0.7; }
-}
 @media screen and (max-width: 749px) {
   .lumaloop-hero-buttons {
     flex-direction: column;
@@ -112,7 +106,7 @@
 
 {% schema %}
 {
-  "name": "LumaLoop Futuristic Hero",
+  "name": "LumaLoop Apple Pro Hero",
   "tag": "section",
   "class": "section-lumaloop-hero",
   "settings": [
@@ -146,7 +140,7 @@
       "type": "text",
       "id": "pill_badge",
       "label": "Top Badge Text",
-      "default": "GEN 4.0 HARDWARE // NOW LIVE"
+      "default": "GEN 4.0 HARDWARE"
     },
     {
       "type": "text",
@@ -185,7 +179,7 @@
   ],
   "presets": [
     {
-      "name": "LumaLoop Futuristic Hero"
+      "name": "LumaLoop Apple Pro Hero"
     }
   ]
 }

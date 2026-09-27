@@ -1,34 +1,34 @@
 {% comment %}
-  LumaLoop Cinematic Brand Story Section
-  Storytelling layout bridging everyday electronic accessories and cybernetic future
+  LumaLoop Brand Story Section
+  Apple Pro storytelling layout bridging everyday electronic accessories and timeless engineering
 {% endcomment %}
 
 {{ 'lumaloop-theme.css' | asset_url | stylesheet_tag }}
 
 <div class="lumaloop-story-section page-width lumaloop-reveal" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
-  <div class="lumaloop-glass-card" style="padding: clamp(3rem, 6vw, 6rem); background: radial-gradient(circle at 0% 0%, rgba(0, 240, 255, 0.06) 0%, rgba(14, 16, 21, 0.95) 70%);">
+  <div class="lumaloop-glass-card" style="padding: clamp(3.2rem, 6vw, 6.5rem); background: #121215;">
     
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 4rem; align-items: center;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 4.5rem; align-items: center;">
       
       <!-- Text & Vision Column -->
       <div>
         <span class="lumaloop-tech-pill" style="margin-bottom: 1.6rem;">
           <span class="lumaloop-pulsing-dot"></span>
-          {{ section.settings.subtitle | default: "OUR MANIFESTO // GEN 04" }}
+          {{ section.settings.subtitle | default: "OUR PHILOSOPHY" }}
         </span>
 
-        <h2 style="font-size: clamp(3rem, 4.5vw, 5.2rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.04em; color: #FFFFFF; margin: 0 0 2.4rem 0;">
+        <h2 style="font-size: clamp(3rem, 4.5vw, 5rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.03em; color: #f5f5f7; margin: 0 0 2.4rem 0;">
           {{ section.settings.title | default: "LumaLoop exists to bridge the gap between everyday technology and the future." }}
         </h2>
 
-        <div style="font-size: 1.65rem; color: #94a3b8; line-height: 1.7; margin-bottom: 3rem;">
-          {{ section.settings.story_text | default: "<p>We started with a singular obsession: standard consumer electronics have become mundane, plastic, and uninspired. Technology is an extension of human intention—it should feel precise, tactile, and undeniably futuristic.</p><p>By combining aerospace-grade metallurgy, transparent acoustic architecture, and ultra-high-efficiency circuitry, LumaLoop redefines the physical objects you interact with every single day.</p>" }}
+        <div style="font-size: 1.65rem; color: #86868b; line-height: 1.7; margin-bottom: 3.5rem;">
+          {{ section.settings.story_text | default: "<p>We started with a singular obsession: standard consumer electronics accessories have become mundane, plastic, and uninspired. Technology is an extension of human intention—it should feel precise, tactile, and undeniably refined.</p><p>By combining aerospace-grade metallurgy, transparent acoustic architecture, and ultra-high-efficiency circuitry, LumaLoop redefines the physical objects you interact with every single day.</p>" }}
         </div>
 
         <div style="display: flex; gap: 1.6rem; flex-wrap: wrap;">
-          <a href="{{ section.settings.button_link | default: '/pages/about' }}" class="button button--primary" style="padding: 1.3rem 2.8rem;">
+          <a href="{{ section.settings.button_link | default: '/pages/about' }}" class="button button--primary" style="padding: 1.4rem 3.2rem;">
             <span>{{ section.settings.button_label | default: "Discover Our Philosophy" }}</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
@@ -40,7 +40,7 @@
       <div style="display: flex; flex-direction: column; gap: 2.4rem;">
         
         <!-- Schematic / Tech Image Container -->
-        <div style="position: relative; border-radius: var(--lumaloop-radius-lg); overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); background: #0c0e13; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;">
+        <div style="position: relative; border-radius: var(--lumaloop-radius-lg); overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.08); background: #0a0a0c; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;">
           {%- if section.settings.image != blank -%}
             {{ section.settings.image | image_url: width: 1200 | image_tag: 
               class: 'lumaloop-story-img',
@@ -48,46 +48,45 @@
               loading: 'lazy'
             }}
           {%- else -%}
-            <!-- Abstract Cyber Isometric Wireframe Art -->
-            <div style="position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.12) 0%, transparent 70%);"></div>
-            <svg width="280" height="240" viewBox="0 0 280 240" fill="none">
-              <polygon points="140,20 250,85 250,195 140,230 30,195 30,85" stroke="rgba(0, 240, 255, 0.4)" stroke-width="2" />
-              <polygon points="140,55 220,105 220,175 140,205 60,175 60,105" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5" stroke-dasharray="4 4" />
-              <line x1="140" y1="20" x2="140" y2="230" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1" />
-              <line x1="30" y1="85" x2="250" y2="195" stroke="rgba(0, 240, 255, 0.2)" stroke-width="1" />
-              <line x1="250" y1="85" x2="30" y2="195" stroke="rgba(0, 240, 255, 0.2)" stroke-width="1" />
-              <circle cx="140" cy="125" r="14" fill="#00F0FF" fill-opacity="0.4" filter="drop-shadow(0 0 10px #00F0FF)" />
+            <!-- Clean Apple Pro wireframe schematic -->
+            <svg width="260" height="220" viewBox="0 0 280 240" fill="none">
+              <polygon points="140,20 250,85 250,195 140,230 30,195 30,85" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1.5" />
+              <polygon points="140,55 220,105 220,175 140,205 60,175 60,105" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.2" stroke-dasharray="4 4" />
+              <line x1="140" y1="20" x2="140" y2="230" stroke="rgba(255, 255, 255, 0.18)" stroke-width="1" />
+              <line x1="30" y1="85" x2="250" y2="195" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+              <line x1="250" y1="85" x2="30" y2="195" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+              <circle cx="140" cy="125" r="10" fill="#ffffff" fill-opacity="0.2" />
             </svg>
-            <div style="position: absolute; bottom: 1.4rem; left: 1.6rem; font-family: var(--lumaloop-font-mono); font-size: 1.15rem; color: #64748b;">
-              FIG 4.2 // ARCHITECTURAL SCHEMATIC
+            <div style="position: absolute; bottom: 1.4rem; left: 1.6rem; font-size: 1.2rem; color: #86868b; font-weight: 500;">
+              ARCHITECTURAL GEOMETRY
             </div>
           {%- endif -%}
         </div>
 
         <!-- Telemetry Metrics Counters -->
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; background: rgba(0, 0, 0, 0.4); padding: 1.8rem; border-radius: var(--lumaloop-radius-md); border: 1px solid rgba(255, 255, 255, 0.06);">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: var(--lumaloop-radius-md); border: 1px solid rgba(255, 255, 255, 0.08);">
           <div>
-            <div style="font-size: clamp(2rem, 2.5vw, 3rem); font-weight: 800; color: var(--lumaloop-accent); font-family: var(--lumaloop-font-mono);">
+            <div style="font-size: clamp(2rem, 2.5vw, 3rem); font-weight: 700; color: #f5f5f7; letter-spacing: -0.02em;">
               0.01mm
             </div>
-            <div style="font-size: 1.2rem; color: #94a3b8; text-transform: uppercase; font-weight: 500;">
+            <div style="font-size: 1.25rem; color: #86868b; margin-top: 0.3rem;">
               Tolerance
             </div>
           </div>
           <div>
-            <div style="font-size: clamp(2rem, 2.5vw, 3rem); font-weight: 800; color: #ffffff; font-family: var(--lumaloop-font-mono);">
+            <div style="font-size: clamp(2rem, 2.5vw, 3rem); font-weight: 700; color: #f5f5f7; letter-spacing: -0.02em;">
               100%
             </div>
-            <div style="font-size: 1.2rem; color: #94a3b8; text-transform: uppercase; font-weight: 500;">
-              Recyclable
+            <div style="font-size: 1.25rem; color: #86868b; margin-top: 0.3rem;">
+              Recyclable Alloy
             </div>
           </div>
           <div>
-            <div style="font-size: clamp(2rem, 2.5vw, 3rem); font-weight: 800; color: var(--lumaloop-accent); font-family: var(--lumaloop-font-mono);">
+            <div style="font-size: clamp(2rem, 2.5vw, 3rem); font-weight: 700; color: #f5f5f7; letter-spacing: -0.02em;">
               4.9/5
             </div>
-            <div style="font-size: 1.2rem; color: #94a3b8; text-transform: uppercase; font-weight: 500;">
-              Hardware Index
+            <div style="font-size: 1.25rem; color: #86868b; margin-top: 0.3rem;">
+              User Rating
             </div>
           </div>
         </div>
@@ -109,7 +108,7 @@
       "type": "text",
       "id": "subtitle",
       "label": "Subtitle",
-      "default": "OUR MANIFESTO // GEN 04"
+      "default": "OUR PHILOSOPHY"
     },
     {
       "type": "text",
@@ -121,12 +120,12 @@
       "type": "richtext",
       "id": "story_text",
       "label": "Story Content",
-      "default": "<p>We started with a singular obsession: standard consumer electronics have become mundane, plastic, and uninspired. Technology is an extension of human intention—it should feel precise, tactile, and undeniably futuristic.</p><p>By combining aerospace-grade metallurgy, transparent acoustic architecture, and ultra-high-efficiency circuitry, LumaLoop redefines the physical objects you interact with every single day.</p>"
+      "default": "<p>We started with a singular obsession: standard consumer electronics accessories have become mundane, plastic, and uninspired. Technology is an extension of human intention—it should feel precise, tactile, and undeniably refined.</p><p>By combining aerospace-grade metallurgy, transparent acoustic architecture, and ultra-high-efficiency circuitry, LumaLoop redefines the physical objects you interact with every single day.</p>"
     },
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Schematic / Product Image"
+      "label": "Brand Image"
     },
     {
       "type": "text",

@@ -1,62 +1,62 @@
 {% comment %}
   LumaLoop Product Technology Details & Specifications Section
-  Apple-style hardware deep-dive with technical specs matrix, box contents, and FAQ
+  Apple Pro hardware deep-dive with technical specs matrix, box contents, and FAQ
 {% endcomment %}
 
 {{ 'lumaloop-theme.css' | asset_url | stylesheet_tag }}
 
 <div class="lumaloop-tech-specs page-width lumaloop-reveal" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
   
-  <div style="text-align: center; max-width: 720px; margin: 0 auto 5rem auto;">
-    <span class="lumaloop-tech-pill" style="margin-bottom: 1.2rem;">
+  <div style="text-align: center; max-width: 720px; margin: 0 auto 5.5rem auto;">
+    <span class="lumaloop-tech-pill" style="margin-bottom: 1.4rem;">
       <span class="lumaloop-pulsing-dot"></span>
-      {{ section.settings.subtitle | default: "HARDWARE DEEP DIVE // SPECIFICATIONS" }}
+      {{ section.settings.subtitle | default: "SPECIFICATIONS & ARCHITECTURE" }}
     </span>
-    <h2 style="font-size: clamp(2.8rem, 4vw, 4.4rem); font-weight: 800; margin: 0 0 1.2rem 0; letter-spacing: -0.03em; color: #FFFFFF;">
+    <h2 style="font-size: clamp(2.8rem, 4vw, 4.4rem); font-weight: 700; margin: 0 0 1.2rem 0; letter-spacing: -0.03em; color: #f5f5f7;">
       {{ section.settings.title | default: "Meticulously Engineered Down to the Micron" }}
     </h2>
-    <p style="font-size: 1.6rem; color: #94a3b8; line-height: 1.6; margin: 0;">
+    <p style="font-size: 1.65rem; color: #86868b; line-height: 1.6; margin: 0;">
       {{ section.settings.description | default: "Explore the internal architecture, material properties, and thermal dissipation systems that power LumaLoop hardware." }}
     </p>
   </div>
 
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-bottom: 4rem;">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.4rem; margin-bottom: 3.5rem;">
     
     <!-- Column 1: Tech Specs Matrix -->
-    <div class="lumaloop-glass-card" style="padding: 3.5rem;">
+    <div class="lumaloop-glass-card" style="padding: 3.5rem; background: #121215;">
       <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2.4rem;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5f5f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
         </svg>
-        <h3 style="font-size: 2rem; font-weight: 700; color: #ffffff; margin: 0;">
+        <h3 style="font-size: 2rem; font-weight: 700; color: #f5f5f7; margin: 0; letter-spacing: -0.02em;">
           Technical Specifications
         </h3>
       </div>
 
-      <div style="display: flex; flex-direction: column; gap: 1.4rem;">
-        <div style="display: flex; justify-content: space-between; padding-bottom: 1.2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
-          <span style="color: #94a3b8;">Chassis Material</span>
-          <span style="color: #ffffff; font-weight: 600; font-family: var(--lumaloop-font-mono);">Anodized CNC Alloy & Optical Polymer</span>
+      <div style="display: flex; flex-direction: column; gap: 1.6rem;">
+        <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+          <span style="color: #86868b;">Chassis Material</span>
+          <span style="color: #f5f5f7; font-weight: 500;">Anodized CNC Alloy & Optical Polymer</span>
         </div>
-        <div style="display: flex; justify-content: space-between; padding-bottom: 1.2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
-          <span style="color: #94a3b8;">Suction Mechanism</span>
-          <span style="color: #00F0FF; font-weight: 600; font-family: var(--lumaloop-font-mono);">360° Pneumatic Vacuum Lock (5kg Load)</span>
+        <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+          <span style="color: #86868b;">Suction Mechanism</span>
+          <span style="color: #f5f5f7; font-weight: 500;">360° Pneumatic Vacuum Lock (5kg Load)</span>
         </div>
-        <div style="display: flex; justify-content: space-between; padding-bottom: 1.2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
-          <span style="color: #94a3b8;">Magnetic Force</span>
-          <span style="color: #ffffff; font-weight: 600; font-family: var(--lumaloop-font-mono);">14.5N N52 Neodymium Array</span>
+        <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+          <span style="color: #86868b;">Magnetic Force</span>
+          <span style="color: #f5f5f7; font-weight: 500;">14.5N N52 Neodymium Array</span>
         </div>
-        <div style="display: flex; justify-content: space-between; padding-bottom: 1.2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
-          <span style="color: #94a3b8;">Power Efficiency</span>
-          <span style="color: #00F0FF; font-weight: 600; font-family: var(--lumaloop-font-mono);">3-in-1 MagSafe & Qi2 Dual Protocol</span>
+        <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+          <span style="color: #86868b;">Power Protocol</span>
+          <span style="color: #f5f5f7; font-weight: 500;">3-in-1 MagSafe & Qi2 Compatible</span>
         </div>
-        <div style="display: flex; justify-content: space-between; padding-bottom: 1.2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
-          <span style="color: #94a3b8;">Device Compatibility</span>
-          <span style="color: #ffffff; font-weight: 600; font-family: var(--lumaloop-font-mono);">iPhone 16/17, Galaxy Z TriFold/Fold 7, S26</span>
+        <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+          <span style="color: #86868b;">Device Compatibility</span>
+          <span style="color: #f5f5f7; font-weight: 500;">iPhone 16/17, Galaxy Z TriFold/Fold 7, S26</span>
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 1.45rem;">
-          <span style="color: #94a3b8;">Warranty & Protection</span>
-          <span style="color: #00F0FF; font-weight: 600; font-family: var(--lumaloop-font-mono);">2-Year Comprehensive Lab Warranty</span>
+          <span style="color: #86868b;">Warranty Coverage</span>
+          <span style="color: #f5f5f7; font-weight: 500;">2-Year Comprehensive Lab Warranty</span>
         </div>
       </div>
     </div>
@@ -65,52 +65,52 @@
     <div style="display: flex; flex-direction: column; gap: 2rem;">
       
       <!-- What's included card -->
-      <div class="lumaloop-glass-card" style="padding: 3rem;">
-        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.8rem;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <div class="lumaloop-glass-card" style="padding: 3.2rem; background: #121215;">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5f5f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
             <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
             <line x1="12" y1="22.08" x2="12" y2="12"></line>
           </svg>
-          <h3 style="font-size: 1.9rem; font-weight: 700; color: #ffffff; margin: 0;">
+          <h3 style="font-size: 2rem; font-weight: 700; color: #f5f5f7; margin: 0; letter-spacing: -0.02em;">
             What's in the Box
           </h3>
         </div>
 
-        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; font-size: 1.45rem; color: #cbd5e1;">
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.2rem; font-size: 1.5rem; color: #86868b;">
           <li style="display: flex; align-items: center; gap: 1rem;">
-            <span style="color: var(--lumaloop-accent);">✓</span>
+            <span style="color: #f5f5f7;">✓</span>
             <span>1x LumaLoop Precision Hardware Unit</span>
           </li>
           <li style="display: flex; align-items: center; gap: 1rem;">
-            <span style="color: var(--lumaloop-accent);">✓</span>
+            <span style="color: #f5f5f7;">✓</span>
             <span>1x 1.5m Reinforced Braided USB-C 240W Cable</span>
           </li>
           <li style="display: flex; align-items: center; gap: 1rem;">
-            <span style="color: var(--lumaloop-accent);">✓</span>
+            <span style="color: #f5f5f7;">✓</span>
             <span>1x Magnetic Alignment Ring Adapter</span>
           </li>
           <li style="display: flex; align-items: center; gap: 1rem;">
-            <span style="color: var(--lumaloop-accent);">✓</span>
+            <span style="color: #f5f5f7;">✓</span>
             <span>1x Quick Start Guide & Authenticity Certificate</span>
           </li>
         </ul>
       </div>
 
       <!-- Guarantee Card -->
-      <div class="lumaloop-glass-card" style="padding: 2.6rem; background: radial-gradient(circle at 100% 100%, rgba(0,240,255,0.08) 0%, rgba(16,20,28,0.85) 80%);">
-        <div style="display: flex; align-items: center; gap: 1.4rem;">
-          <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(0, 240, 255, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(0, 240, 255, 0.4);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <div class="lumaloop-glass-card" style="padding: 2.8rem; background: #121215;">
+        <div style="display: flex; align-items: center; gap: 1.6rem;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(255, 255, 255, 0.06); display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(255, 255, 255, 0.12);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5f5f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
             </svg>
           </div>
           <div>
-            <h4 style="font-size: 1.65rem; font-weight: 700; color: #ffffff; margin: 0 0 0.4rem 0;">
-              30-Day Risk-Free Trial & Zero Questions Return
+            <h4 style="font-size: 1.65rem; font-weight: 700; color: #f5f5f7; margin: 0 0 0.4rem 0; letter-spacing: -0.01em;">
+              30-Day Risk-Free Trial & Returns
             </h4>
-            <p style="font-size: 1.35rem; color: #94a3b8; margin: 0; line-height: 1.5;">
-              If it doesn't seamlessly elevate your setup, return it within 30 days for an instant, full refund. Pre-paid shipping label included.
+            <p style="font-size: 1.4rem; color: #86868b; margin: 0; line-height: 1.5;">
+              If it doesn't seamlessly elevate your setup, return it within 30 days for a full refund. Pre-paid shipping label included.
             </p>
           </div>
         </div>
@@ -121,39 +121,39 @@
   </div>
 
   <!-- Hardware FAQ Accordion -->
-  <div class="lumaloop-glass-card" style="padding: 3.5rem; max-width: 900px; margin: 0 auto;">
-    <h3 style="font-size: 2.2rem; font-weight: 700; color: #ffffff; margin: 0 0 2rem 0; text-align: center;">
+  <div class="lumaloop-glass-card" style="padding: 3.5rem; max-width: 900px; margin: 0 auto; background: #121215;">
+    <h3 style="font-size: 2.2rem; font-weight: 700; color: #f5f5f7; margin: 0 0 2.2rem 0; text-align: center; letter-spacing: -0.02em;">
       Frequently Asked Questions
     </h3>
 
-    <div style="display: flex; flex-direction: column; gap: 1rem;">
+    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
       <details class="accordion" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
-        <summary style="font-size: 1.6rem; font-weight: 600; cursor: pointer; color: #ffffff; padding: 1.4rem 0; display: flex; justify-content: space-between; align-items: center;">
+        <summary style="font-size: 1.6rem; font-weight: 500; cursor: pointer; color: #f5f5f7; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center;">
           <span>Does this support high-speed charging with phone cases?</span>
-          <span style="color: var(--lumaloop-accent); font-family: var(--lumaloop-font-mono);">+</span>
+          <span style="color: #86868b; font-size: 1.8rem;">+</span>
         </summary>
-        <div style="font-size: 1.45rem; color: #94a3b8; line-height: 1.6; padding-bottom: 1.6rem;">
+        <div style="font-size: 1.5rem; color: #86868b; line-height: 1.6; padding-bottom: 1.8rem;">
           Yes. The magnetic array is engineered with high-permeability N52 neodymium magnets capable of charging through cases up to 3.5mm thick, including all MagSafe and Qi2 compatible cases.
         </div>
       </details>
 
       <details class="accordion" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
-        <summary style="font-size: 1.6rem; font-weight: 600; cursor: pointer; color: #ffffff; padding: 1.4rem 0; display: flex; justify-content: space-between; align-items: center;">
+        <summary style="font-size: 1.6rem; font-weight: 500; cursor: pointer; color: #f5f5f7; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center;">
           <span>What international voltage standards are supported?</span>
-          <span style="color: var(--lumaloop-accent); font-family: var(--lumaloop-font-mono);">+</span>
+          <span style="color: #86868b; font-size: 1.8rem;">+</span>
         </summary>
-        <div style="font-size: 1.45rem; color: #94a3b8; line-height: 1.6; padding-bottom: 1.6rem;">
+        <div style="font-size: 1.5rem; color: #86868b; line-height: 1.6; padding-bottom: 1.8rem;">
           All LumaLoop power accessories support 100V–240V auto-sensing input at 50/60Hz, making them safe and ready for travel anywhere in the world.
         </div>
       </details>
 
       <details class="accordion">
-        <summary style="font-size: 1.6rem; font-weight: 600; cursor: pointer; color: #ffffff; padding: 1.4rem 0; display: flex; justify-content: space-between; align-items: center;">
+        <summary style="font-size: 1.6rem; font-weight: 500; cursor: pointer; color: #f5f5f7; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center;">
           <span>How does the 2-Year Warranty work?</span>
-          <span style="color: var(--lumaloop-accent); font-family: var(--lumaloop-font-mono);">+</span>
+          <span style="color: #86868b; font-size: 1.8rem;">+</span>
         </summary>
-        <div style="font-size: 1.45rem; color: #94a3b8; line-height: 1.6; padding-bottom: 1.6rem;">
-          Every unit comes with an encrypted serial number registered to your purchase. If you encounter any manufacturing defect or performance degradation within 24 months, our hardware lab ships an immediate advance replacement.
+        <div style="font-size: 1.5rem; color: #86868b; line-height: 1.6; padding-bottom: 1.8rem;">
+          Every unit comes with an encrypted serial number registered to your purchase. If you encounter any manufacturing defect or performance degradation within 24 months, our hardware team ships an immediate replacement.
         </div>
       </details>
     </div>
@@ -171,7 +171,7 @@
       "type": "text",
       "id": "subtitle",
       "label": "Subtitle",
-      "default": "HARDWARE DEEP DIVE // SPECIFICATIONS"
+      "default": "SPECIFICATIONS & ARCHITECTURE"
     },
     {
       "type": "text",

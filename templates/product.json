@@ -115,19 +115,9 @@
     "lumaloop_bento": {
       "type": "lumaloop-product-bento",
       "settings": {
-        "subtitle": "HARDWARE ARCHITECTURE // DEEP DIVE",
-        "title": "Engineered For Relentless Performance",
+        "subtitle": "HARDWARE ARCHITECTURE",
+        "title": "Engineered for Relentless Performance",
         "description": "Every curve, magnet, and vacuum chamber has been calculated to eliminate failure points and elevate your interaction with daily technology.",
-        "padding_top": 72,
-        "padding_bottom": 72
-      }
-    },
-    "lumaloop_comparison": {
-      "type": "lumaloop-product-comparison",
-      "settings": {
-        "subtitle": "ENGINEERING COMPARISON // ZERO COMPROMISE",
-        "title": "Why Settle For Generic When You Can Have Precision?",
-        "description": "The market is flooded with cheap plastic mounts that drop phones and overheating chargers. Here is how LumaLoop compares.",
         "padding_top": 72,
         "padding_bottom": 72
       }
@@ -206,7 +196,6 @@
   "order": [
     "main",
     "lumaloop_bento",
-    "lumaloop_comparison",
     "lumaloop_specs",
     "lumaloop_reviews",
     "related-products"

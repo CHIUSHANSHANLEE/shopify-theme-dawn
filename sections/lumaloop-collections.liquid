@@ -1,23 +1,23 @@
 {% comment %}
   LumaLoop Featured Collections
-  Glassmorphic cyber category cards with hover glow and directional exploration
+  Apple Pro minimalist category cards with refined typography
 {% endcomment %}
 
 {{ 'lumaloop-theme.css' | asset_url | stylesheet_tag }}
 
 <div class="lumaloop-collections-section page-width lumaloop-reveal" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
-  <div style="display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 4rem;">
-    <span class="lumaloop-tech-pill" style="margin-bottom: 1.2rem;">
+  <div style="display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 4.5rem;">
+    <span class="lumaloop-tech-pill" style="margin-bottom: 1.4rem;">
       <span class="lumaloop-pulsing-dot"></span>
-      {{ section.settings.subtitle | default: "CATEGORIES // ARCHITECTURE" }}
+      {{ section.settings.subtitle | default: "HARDWARE ECOSYSTEM" }}
     </span>
     <div style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%; flex-wrap: wrap; gap: 1.6rem;">
-      <h2 style="font-size: clamp(2.8rem, 4vw, 4.4rem); font-weight: 800; margin: 0; letter-spacing: -0.03em; color: #FFFFFF;">
+      <h2 style="font-size: clamp(2.8rem, 4vw, 4.4rem); font-weight: 700; margin: 0; letter-spacing: -0.03em; color: #f5f5f7;">
         {{ section.settings.title | default: "Engineered For Every Vector" }}
       </h2>
-      <a href="{{ routes.collections_url }}" class="link link--text" style="color: var(--lumaloop-accent); font-weight: 600; font-size: 1.45rem; text-decoration: none; display: flex; align-items: center; gap: 0.6rem;">
+      <a href="{{ routes.collections_url }}" class="link link--text" style="color: #f5f5f7; font-weight: 500; font-size: 1.45rem; text-decoration: none; display: flex; align-items: center; gap: 0.6rem; transition: var(--lumaloop-transition);">
         <span>View All Categories</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="12" x2="19" y2="12"></line>
           <polyline points="12 5 19 12 12 19"></polyline>
         </svg>
@@ -41,13 +41,10 @@
         {%- endcase -%}
       {%- endif -%}
 
-      <a href="{{ collection_url }}" class="lumaloop-collection-card lumaloop-glass-card" {{ block.shopify_attributes }} style="text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; min-height: 320px; position: relative; overflow: hidden; padding: 2.8rem;">
-        
-        <!-- Card Background Gradient & Graphic -->
-        <div style="position: absolute; inset: 0; background: radial-gradient(circle at 100% 0%, rgba(0, 240, 255, 0.08) 0%, transparent 60%); z-index: 0;"></div>
+      <a href="{{ collection_url }}" class="lumaloop-collection-card lumaloop-glass-card" {{ block.shopify_attributes }} style="text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; min-height: 320px; position: relative; overflow: hidden; padding: 3rem; background: #121215;">
         
         {%- if block.settings.custom_image != blank -%}
-          <div style="position: absolute; inset: 0; z-index: 0; opacity: 0.35; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="lumaloop-card-img-wrap">
+          <div style="position: absolute; inset: 0; z-index: 0; opacity: 0.35; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);" class="lumaloop-card-img-wrap">
             {{ block.settings.custom_image | image_url: width: 800 | image_tag: 
               class: 'lumaloop-col-img',
               style: 'width: 100%; height: 100%; object-fit: cover;',
@@ -55,7 +52,7 @@
             }}
           </div>
         {%- elsif collection.featured_image != blank -%}
-          <div style="position: absolute; inset: 0; z-index: 0; opacity: 0.35; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="lumaloop-card-img-wrap">
+          <div style="position: absolute; inset: 0; z-index: 0; opacity: 0.35; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);" class="lumaloop-card-img-wrap">
             {{ collection.featured_image | image_url: width: 800 | image_tag: 
               class: 'lumaloop-col-img',
               style: 'width: 100%; height: 100%; object-fit: cover;',
@@ -63,37 +60,37 @@
             }}
           </div>
         {%- else -%}
-          <!-- Cyber schematic placeholder art -->
-          <div style="position: absolute; right: -20px; bottom: -20px; opacity: 0.15; z-index: 0;" class="lumaloop-schematic">
+          <!-- Clean geometric schematic placeholder art -->
+          <div style="position: absolute; right: -20px; bottom: -20px; opacity: 0.08; z-index: 0;" class="lumaloop-schematic">
             <svg width="220" height="220" viewBox="0 0 200 200" fill="none">
-              <circle cx="100" cy="100" r="80" stroke="#00F0FF" stroke-width="2" stroke-dasharray="4 4" />
-              <rect x="50" y="50" width="100" height="100" rx="16" stroke="#00F0FF" stroke-width="1.5" />
-              <circle cx="100" cy="100" r="24" fill="#00F0FF" fill-opacity="0.3" />
+              <circle cx="100" cy="100" r="80" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="4 4" />
+              <rect x="50" y="50" width="100" height="100" rx="20" stroke="#ffffff" stroke-width="1.5" />
+              <circle cx="100" cy="100" r="24" fill="#ffffff" fill-opacity="0.1" />
             </svg>
           </div>
         {%- endif -%}
 
-        <!-- Card Top: Category index & tag -->
+        <!-- Card Top: Category index & indicator -->
         <div style="position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: center;">
-          <span style="font-family: var(--lumaloop-font-mono); font-size: 1.2rem; color: #64748b; font-weight: 700;">
-            0{{ forloop.index }} // SYS
+          <span style="font-size: 1.25rem; color: #86868b; font-weight: 600; letter-spacing: 0.04em;">
+            0{{ forloop.index }}
           </span>
-          <span style="width: 8px; height: 8px; border-radius: 50%; background: rgba(0,240,255,0.4); box-shadow: 0 0 8px rgba(0,240,255,0.8);"></span>
+          <span style="width: 6px; height: 6px; border-radius: 50%; background: #2997ff;"></span>
         </div>
 
         <!-- Card Bottom Content -->
         <div style="position: relative; z-index: 1; margin-top: 5rem;">
-          <h3 style="font-size: 2.2rem; font-weight: 700; color: #FFFFFF; margin: 0 0 0.8rem 0; letter-spacing: -0.02em;">
+          <h3 style="font-size: 2.2rem; font-weight: 700; color: #f5f5f7; margin: 0 0 0.8rem 0; letter-spacing: -0.02em;">
             {{ collection_title }}
           </h3>
           {%- if block.settings.description != blank -%}
-            <p style="font-size: 1.35rem; color: #94a3b8; margin: 0 0 1.6rem 0; line-height: 1.5;">
+            <p style="font-size: 1.45rem; color: #86868b; margin: 0 0 1.8rem 0; line-height: 1.5;">
               {{ block.settings.description }}
             </p>
           {%- endif -%}
-          <div class="lumaloop-card-cta" style="display: flex; align-items: center; gap: 0.8rem; color: var(--lumaloop-accent); font-size: 1.35rem; font-weight: 600;">
-            <span>Explore Collection</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease;">
+          <div class="lumaloop-card-cta" style="display: flex; align-items: center; gap: 0.8rem; color: #f5f5f7; font-size: 1.4rem; font-weight: 500;">
+            <span>Explore</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.25s ease;">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
@@ -107,10 +104,10 @@
 
 <style>
 .lumaloop-collection-card:hover .lumaloop-card-img-wrap {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 .lumaloop-collection-card:hover .lumaloop-card-cta svg {
-  transform: translateX(5px);
+  transform: translateX(4px);
 }
 </style>
 
@@ -124,7 +121,7 @@
       "type": "text",
       "id": "subtitle",
       "label": "Section Subtitle",
-      "default": "SYSTEM ARCHITECTURE // HARDWARE"
+      "default": "HARDWARE ECOSYSTEM"
     },
     {
       "type": "text",
@@ -166,62 +163,24 @@
         {
           "type": "text",
           "id": "custom_title",
-          "label": "Custom Title"
+          "label": "Custom Card Title"
         },
         {
           "type": "textarea",
           "id": "description",
-          "label": "Brief Description",
-          "default": "High-performance tech accessories for modern setups."
+          "label": "Brief Description"
         },
         {
           "type": "image_picker",
           "id": "custom_image",
-          "label": "Custom Card Image"
+          "label": "Custom Background Image"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "LumaLoop Collections",
-      "blocks": [
-        {
-          "type": "collection",
-          "settings": {
-            "custom_title": "Magnetic Mount Ecosystem",
-            "description": "360° vacuum suction car mounts, shower mounts & magnetic wall docks."
-          }
-        },
-        {
-          "type": "collection",
-          "settings": {
-            "custom_title": "Wireless Power & Charging",
-            "description": "3-in-1 MagSafe stations & universal high-speed 3-in-2 cables."
-          }
-        },
-        {
-          "type": "collection",
-          "settings": {
-            "custom_title": "Foldable Shield Cases",
-            "description": "Engineered armor for Samsung Galaxy Z TriFold & Z Fold 7."
-          }
-        },
-        {
-          "type": "collection",
-          "settings": {
-            "custom_title": "Flagship Device Armor",
-            "description": "ClearGuard Pro & MagShield cases for iPhone 16/17 & S26 Ultra."
-          }
-        },
-        {
-          "type": "collection",
-          "settings": {
-            "custom_title": "Multi-Surface Mount Packs",
-            "description": "Complete 2-pack and 3-pack vacuum setups for home, car, and office."
-          }
-        }
-      ]
+      "name": "LumaLoop Collections"
     }
   ]
 }
