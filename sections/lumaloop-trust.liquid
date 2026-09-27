@@ -21,57 +21,55 @@
 
   <div class="lumaloop-trust-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem;">
     
-    <!-- Card 1: Premium Quality -->
-    <div class="lumaloop-glass-card" style="display: flex; flex-direction: column; justify-content: flex-start;">
-      <div style="width: 52px; height: 52px; border-radius: var(--lumaloop-radius-md); background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.3); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; box-shadow: 0 0 18px rgba(0, 240, 255, 0.2);">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-        </svg>
-      </div>
-      <h3 style="font-size: 1.9rem; font-weight: 700; color: #ffffff; margin: 0 0 0.8rem 0;">
-        {{ section.settings.card_1_title | default: "Aerospace-Grade Materials" }}
-      </h3>
-      <p style="font-size: 1.45rem; color: #94a3b8; line-height: 1.6; margin: 0;">
-        {{ section.settings.card_1_text | default: "Precision CNC machined anodized aluminum, liquid silicone rubber, and reinforced ceramic coatings designed to withstand daily wear." }}
-      </p>
-    </div>
-
-    <!-- Card 2: Future Design -->
+    <!-- Card 1: Magnetic Vacuum Lock -->
     <div class="lumaloop-glass-card" style="display: flex; flex-direction: column; justify-content: flex-start;">
       <div style="width: 52px; height: 52px; border-radius: var(--lumaloop-radius-md); background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.3); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; box-shadow: 0 0 18px rgba(0, 240, 255, 0.2);">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"></circle>
-          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-          <path d="M2 12h20"></path>
+          <circle cx="12" cy="12" r="4"></circle>
+          <line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line>
+          <line x1="14.83" y1="14.83" x2="19.07" y2="19.07"></line>
         </svg>
       </div>
       <h3 style="font-size: 1.9rem; font-weight: 700; color: #ffffff; margin: 0 0 0.8rem 0;">
-        {{ section.settings.card_2_title | default: "Cyber-Minimal Design" }}
+        {{ section.settings.card_1_title | default: "N52 Magnetic & Vacuum Lock" }}
       </h3>
       <p style="font-size: 1.45rem; color: #94a3b8; line-height: 1.6; margin: 0;">
-        {{ section.settings.card_2_text | default: "Form follows technological ambition. Invisible seams, magnetic alignment systems, and clean architectural lines." }}
+        {{ section.settings.card_1_text | default: "Dual-action pneumatic vacuum suction and ultra-dense N52 neodymium arrays engineered for zero slip on car dashboards, shower walls, and mirrors." }}
       </p>
     </div>
 
-    <!-- Card 3: Fast Shipping -->
+    <!-- Card 2: Foldable & Flagship Armor -->
     <div class="lumaloop-glass-card" style="display: flex; flex-direction: column; justify-content: flex-start;">
       <div style="width: 52px; height: 52px; border-radius: var(--lumaloop-radius-md); background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.3); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; box-shadow: 0 0 18px rgba(0, 240, 255, 0.2);">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="1" y="3" width="15" height="13"></rect>
-          <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
-          <circle cx="5.5" cy="18.5" r="2.5"></circle>
-          <circle cx="18.5" cy="18.5" r="2.5"></circle>
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
         </svg>
       </div>
       <h3 style="font-size: 1.9rem; font-weight: 700; color: #ffffff; margin: 0 0 0.8rem 0;">
-        {{ section.settings.card_3_title | default: "Hyper-Speed Logistics" }}
+        {{ section.settings.card_2_title | default: "Foldable & Flagship Armor" }}
       </h3>
       <p style="font-size: 1.45rem; color: #94a3b8; line-height: 1.6; margin: 0;">
-        {{ section.settings.card_3_text | default: "Automated fulfillment with carbon-neutral priority courier dispatch. Live telemetry tracking direct to your doorstep." }}
+        {{ section.settings.card_2_text | default: "Engineered shock-absorbing hinges and optical-grade ClearGuard polymer tailored specifically for Galaxy Z TriFold, Fold 7, and iPhone 16/17 Pro Max." }}
       </p>
     </div>
 
-    <!-- Card 4: Secure Checkout -->
+    <!-- Card 3: Multi-Device Wireless Power -->
+    <div class="lumaloop-glass-card" style="display: flex; flex-direction: column; justify-content: flex-start;">
+      <div style="width: 52px; height: 52px; border-radius: var(--lumaloop-radius-md); background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.3); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; box-shadow: 0 0 18px rgba(0, 240, 255, 0.2);">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+      </div>
+      <h3 style="font-size: 1.9rem; font-weight: 700; color: #ffffff; margin: 0 0 0.8rem 0;">
+        {{ section.settings.card_3_title | default: "3-in-1 Fast Power Delivery" }}
+      </h3>
+      <p style="font-size: 1.45rem; color: #94a3b8; line-height: 1.6; margin: 0;">
+        {{ section.settings.card_3_text | default: "Simultaneous induction charging for phone, Apple Watch, and USB-C devices with intelligent thermal protection and zero coil whine." }}
+      </p>
+    </div>
+
+    <!-- Card 4: Universal Multi-Surface Mounting -->
     <div class="lumaloop-glass-card" style="display: flex; flex-direction: column; justify-content: flex-start;">
       <div style="width: 52px; height: 52px; border-radius: var(--lumaloop-radius-md); background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.3); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; box-shadow: 0 0 18px rgba(0, 240, 255, 0.2);">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -80,10 +78,10 @@
         </svg>
       </div>
       <h3 style="font-size: 1.9rem; font-weight: 700; color: #ffffff; margin: 0 0 0.8rem 0;">
-        {{ section.settings.card_4_title | default: "Quantum Shield Security" }}
+        {{ section.settings.card_4_title | default: "Any-Surface Adhesion & Trial" }}
       </h3>
       <p style="font-size: 1.45rem; color: #94a3b8; line-height: 1.6; margin: 0;">
-        {{ section.settings.card_4_text | default: "End-to-end 256-bit encrypted checkout with full support for Apple Pay, Google Pay, and contactless digital authorization." }}
+        {{ section.settings.card_4_text | default: "Residue-free 3M micro-adhesion and vacuum locks tested on glass, tiles, granite, and cars. Backed by a 30-day risk-free money-back guarantee." }}
       </p>
     </div>
 
@@ -118,49 +116,49 @@
       "type": "text",
       "id": "card_1_title",
       "label": "Card 1 Title",
-      "default": "Aerospace-Grade Materials"
+      "default": "N52 Magnetic & Vacuum Lock"
     },
     {
       "type": "textarea",
       "id": "card_1_text",
       "label": "Card 1 Description",
-      "default": "Precision CNC machined anodized aluminum, liquid silicone rubber, and reinforced ceramic coatings designed to withstand daily wear."
+      "default": "Dual-action pneumatic vacuum suction and ultra-dense N52 neodymium arrays engineered for zero slip on car dashboards, shower walls, and mirrors."
     },
     {
       "type": "text",
       "id": "card_2_title",
       "label": "Card 2 Title",
-      "default": "Cyber-Minimal Design"
+      "default": "Foldable & Flagship Armor"
     },
     {
       "type": "textarea",
       "id": "card_2_text",
       "label": "Card 2 Description",
-      "default": "Form follows technological ambition. Invisible seams, magnetic alignment systems, and clean architectural lines."
+      "default": "Engineered shock-absorbing hinges and optical-grade ClearGuard polymer tailored specifically for Galaxy Z TriFold, Fold 7, and iPhone 16/17 Pro Max."
     },
     {
       "type": "text",
       "id": "card_3_title",
       "label": "Card 3 Title",
-      "default": "Hyper-Speed Logistics"
+      "default": "3-in-1 Fast Power Delivery"
     },
     {
       "type": "textarea",
       "id": "card_3_text",
       "label": "Card 3 Description",
-      "default": "Automated fulfillment with carbon-neutral priority courier dispatch. Live telemetry tracking direct to your doorstep."
+      "default": "Simultaneous induction charging for phone, Apple Watch, and USB-C devices with intelligent thermal protection and zero coil whine."
     },
     {
       "type": "text",
       "id": "card_4_title",
       "label": "Card 4 Title",
-      "default": "Quantum Shield Security"
+      "default": "Any-Surface Adhesion & Trial"
     },
     {
       "type": "textarea",
       "id": "card_4_text",
       "label": "Card 4 Description",
-      "default": "End-to-end 256-bit encrypted checkout with full support for Apple Pay, Google Pay, and contactless digital authorization."
+      "default": "Residue-free 3M micro-adhesion and vacuum locks tested on glass, tiles, granite, and cars. Backed by a 30-day risk-free money-back guarantee."
     },
     {
       "type": "range",

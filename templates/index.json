@@ -6,59 +6,59 @@
         "hero_height": "90vh",
         "image_opacity": 40,
         "pill_badge": "GEN 4.0 HARDWARE // NOW LIVE",
-        "heading": "Future Ready Technology",
-        "subheading": "Premium electronic accessories engineered for modern lifestyles. Precision machined, high-efficiency, cyber-minimal.",
-        "button_label_1": "Shop Collection",
+        "heading": "Magnetic Precision. Flagship Armor.",
+        "subheading": "Precision-engineered MagSafe vacuum mounts, 3-in-1 wireless charging stations, and ultra-durable cyber armor for iPhone and Galaxy foldables.",
+        "button_label_1": "Explore Magnetic Mounts",
         "button_link_1": "shopify://collections/all",
-        "button_label_2": "Explore Technology",
-        "button_link_2": "#lumaloop-specs"
+        "button_label_2": "Shop Device Armor",
+        "button_link_2": "shopify://collections/all"
       }
     },
     "lumaloop_collections": {
       "type": "lumaloop-collections",
       "blocks": {
-        "col_smart": {
+        "col_mounts": {
           "type": "collection",
           "settings": {
-            "custom_title": "Smart Essentials",
-            "description": "Daily carry electronic essentials refined to perfection."
+            "custom_title": "Magnetic Mount Ecosystem",
+            "description": "360° vacuum suction car mounts, shower mounts & magnetic wall docks."
           }
         },
         "col_power": {
           "type": "collection",
           "settings": {
-            "custom_title": "Power Solutions",
-            "description": "HyperCharge™ magnetic power banks & high-speed hubs."
+            "custom_title": "Wireless Power & Charging",
+            "description": "3-in-1 MagSafe stations & universal high-speed 3-in-2 cables."
           }
         },
-        "col_audio": {
+        "col_foldable": {
           "type": "collection",
           "settings": {
-            "custom_title": "Audio Technology",
-            "description": "Ultra-low latency lossless audio transducers & docks."
+            "custom_title": "Foldable Shield Cases",
+            "description": "Engineered shock-absorbing armor for Galaxy Z TriFold & Z Fold 7."
           }
         },
-        "col_travel": {
+        "col_flagship": {
           "type": "collection",
           "settings": {
-            "custom_title": "Travel Tech",
-            "description": "Rugged CNC aluminum travel gear with global voltage."
+            "custom_title": "Flagship Device Armor",
+            "description": "ClearGuard Pro & MagShield cases for iPhone 16/17 & S26 Ultra."
           }
         },
-        "col_desk": {
+        "col_multisurface": {
           "type": "collection",
           "settings": {
-            "custom_title": "Desk Setup",
-            "description": "Cyber-minimal magnetic mounts, docks, and cable routers."
+            "custom_title": "Multi-Surface Mount Packs",
+            "description": "Complete 2-pack and 3-pack vacuum setups for home, car, and office."
           }
         }
       },
       "block_order": [
-        "col_smart",
+        "col_mounts",
         "col_power",
-        "col_audio",
-        "col_travel",
-        "col_desk"
+        "col_foldable",
+        "col_flagship",
+        "col_multisurface"
       ],
       "settings": {
         "subtitle": "SYSTEM ARCHITECTURE // HARDWARE",
@@ -84,15 +84,15 @@
       "settings": {
         "subtitle": "CORE SPECIFICATIONS // TRUST MATRIX",
         "title": "Engineered Without Compromise",
-        "description": "Every component is calibrated for zero tolerance, exceptional durability, and next-generation electrical efficiency.",
-        "card_1_title": "Aerospace-Grade Materials",
-        "card_1_text": "Precision CNC machined anodized aluminum, liquid silicone rubber, and reinforced ceramic coatings designed to withstand daily wear.",
-        "card_2_title": "Cyber-Minimal Design",
-        "card_2_text": "Form follows technological ambition. Invisible seams, magnetic alignment systems, and clean architectural lines.",
-        "card_3_title": "Hyper-Speed Logistics",
-        "card_3_text": "Automated fulfillment with carbon-neutral priority courier dispatch. Live telemetry tracking direct to your doorstep.",
-        "card_4_title": "Quantum Shield Security",
-        "card_4_text": "End-to-end 256-bit encrypted checkout with full support for Apple Pay, Google Pay, and contactless digital authorization.",
+        "description": "Every component is calibrated for zero tolerance, high-adhesion vacuum security, and next-generation electrical efficiency.",
+        "card_1_title": "N52 Magnetic & Vacuum Lock",
+        "card_1_text": "Dual-action pneumatic vacuum suction and ultra-dense N52 neodymium arrays engineered for zero slip on car dashboards, shower walls, and mirrors.",
+        "card_2_title": "Foldable & Flagship Armor",
+        "card_2_text": "Engineered shock-absorbing hinges and optical-grade ClearGuard polymer tailored specifically for Galaxy Z TriFold, Fold 7, and iPhone 16/17 Pro Max.",
+        "card_3_title": "3-in-1 Fast Power Delivery",
+        "card_3_text": "Simultaneous induction charging for phone, Apple Watch, and USB-C devices with intelligent thermal protection and zero coil whine.",
+        "card_4_title": "Any-Surface Adhesion & Trial",
+        "card_4_text": "Residue-free 3M micro-adhesion and vacuum locks tested on glass, tiles, granite, and cars. Backed by a 30-day risk-free money-back guarantee.",
         "padding_top": 72,
         "padding_bottom": 72
       }
@@ -102,7 +102,7 @@
       "settings": {
         "subtitle": "OUR MANIFESTO // GEN 04",
         "title": "LumaLoop exists to bridge the gap between everyday technology and the future.",
-        "story_text": "<p>We started with a singular obsession: standard consumer electronics have become mundane, plastic, and uninspired. Technology is an extension of human intention—it should feel precise, tactile, and undeniably futuristic.</p><p>By combining aerospace-grade metallurgy, transparent acoustic architecture, and ultra-high-efficiency circuitry, LumaLoop redefines the physical objects you interact with every single day.</p>",
+        "story_text": "<p>We started with a singular obsession: standard consumer phone mounts fail under vibration, cables clutter workspaces, and fragile flagship devices are left vulnerable to drops. Flagship hardware deserves companion engineering that matches its ambition.</p><p>By combining pneumatic vacuum physics, high-flux neodymium magnetic arrays, and impact-resistant hinge metallurgy, LumaLoop redefines the physical objects you interact with every single day.</p>",
         "button_label": "Discover Our Philosophy",
         "button_link": "shopify://pages/about",
         "padding_top": 72,
@@ -117,8 +117,8 @@
           "settings": {
             "author_name": "Marcus Vance",
             "author_role": "Hardware Architect, SF",
-            "review_text": "The tactile feel of the MagPower CyberHub is leagues ahead of standard accessories. The precision tolerances and cold aluminum finish feel distinctly Apple-tier.",
-            "product_tag": "MagPower CyberHub"
+            "review_text": "The foldable 360° vacuum suction mount on my car windshield is rock solid. Holds my iPhone 16 Pro Max over steep potholes without a millimetre of slip.",
+            "product_tag": "Vacuum Car Mount"
           }
         },
         "rev_2": {
@@ -126,17 +126,17 @@
           "settings": {
             "author_name": "Elena Rostova",
             "author_role": "Industrial Designer, Tokyo",
-            "review_text": "Nothing compares to the transparent acoustic pods. The sub-bass response and instant magnetic snap in the case make it my daily essential.",
-            "product_tag": "QuantumZero Pods"
+            "review_text": "The 3-in-1 MagSafe station completely cleaned up my desk workspace. Simultaneous charging with zero coil whine and cold anodized touch.",
+            "product_tag": "3-in-1 Charging Station"
           }
         },
         "rev_3": {
           "type": "review",
           "settings": {
             "author_name": "Kaito Tanaka",
-            "author_role": "Creative Director, Berlin",
-            "review_text": "LumaLoop has finally brought high-design cyber-minimalism into desk accessories. Charging speed is phenomenal and zero thermal throttling.",
-            "product_tag": "100W GaN Station"
+            "author_role": "Tech Minimalist, Berlin",
+            "review_text": "Finally, a protective case that doesn't ruin the hinge geometry of the Galaxy Z Fold. The TriFold Shield fits with zero wobble and looks futuristic.",
+            "product_tag": "TriFold Shield Case"
           }
         }
       },

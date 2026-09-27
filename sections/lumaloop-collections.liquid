@@ -32,12 +32,12 @@
       {%- assign collection_title = block.settings.custom_title | default: collection.title -%}
       {%- if collection_title == blank -%}
         {%- case forloop.index -%}
-          {%- when 1 -%}{%- assign collection_title = "Smart Essentials" -%}
-          {%- when 2 -%}{%- assign collection_title = "Power Solutions" -%}
-          {%- when 3 -%}{%- assign collection_title = "Audio Technology" -%}
-          {%- when 4 -%}{%- assign collection_title = "Travel Tech" -%}
-          {%- when 5 -%}{%- assign collection_title = "Desk Setup" -%}
-          {%- else -%}{%- assign collection_title = "Accessories" -%}
+          {%- when 1 -%}{%- assign collection_title = "Magnetic Mount Ecosystem" -%}
+          {%- when 2 -%}{%- assign collection_title = "Wireless Power & Charging" -%}
+          {%- when 3 -%}{%- assign collection_title = "Foldable Shield Cases" -%}
+          {%- when 4 -%}{%- assign collection_title = "Flagship Device Armor" -%}
+          {%- when 5 -%}{%- assign collection_title = "Multi-Surface Mount Packs" -%}
+          {%- else -%}{%- assign collection_title = "Hardware" -%}
         {%- endcase -%}
       {%- endif -%}
 
@@ -189,36 +189,36 @@
         {
           "type": "collection",
           "settings": {
-            "custom_title": "Smart Essentials",
-            "description": "Daily carry electronic essentials refined to perfection."
+            "custom_title": "Magnetic Mount Ecosystem",
+            "description": "360° vacuum suction car mounts, shower mounts & magnetic wall docks."
           }
         },
         {
           "type": "collection",
           "settings": {
-            "custom_title": "Power Solutions",
-            "description": "HyperCharge™ magnetic power banks & high-speed hubs."
+            "custom_title": "Wireless Power & Charging",
+            "description": "3-in-1 MagSafe stations & universal high-speed 3-in-2 cables."
           }
         },
         {
           "type": "collection",
           "settings": {
-            "custom_title": "Audio Technology",
-            "description": "Ultra-low latency lossless audio transducers & docks."
+            "custom_title": "Foldable Shield Cases",
+            "description": "Engineered armor for Samsung Galaxy Z TriFold & Z Fold 7."
           }
         },
         {
           "type": "collection",
           "settings": {
-            "custom_title": "Travel Tech",
-            "description": "Rugged CNC aluminum travel gear with global voltage."
+            "custom_title": "Flagship Device Armor",
+            "description": "ClearGuard Pro & MagShield cases for iPhone 16/17 & S26 Ultra."
           }
         },
         {
           "type": "collection",
           "settings": {
-            "custom_title": "Desk Setup",
-            "description": "Cyber-minimal magnetic mounts, docks, and cable routers."
+            "custom_title": "Multi-Surface Mount Packs",
+            "description": "Complete 2-pack and 3-pack vacuum setups for home, car, and office."
           }
         }
       ]
