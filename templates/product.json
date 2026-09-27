@@ -6,7 +6,7 @@
         "vendor": {
           "type": "text",
           "settings": {
-            "text": "{{ product.vendor }}",
+            "text": "{{ product.vendor | default: 'LUMALOOP LABS' }}",
             "text_style": "uppercase"
           }
         },
@@ -45,36 +45,36 @@
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Materials",
-            "icon": "leather",
-            "content": "",
+            "heading": "Magnetic Lock & Vacuum Specifications",
+            "icon": "check_mark",
+            "content": "<p><strong>• Magnetic Array:</strong> 18x High-Permeability N52 Neodymium Magnets (14.5N pull force)<br><strong>• Vacuum Seal:</strong> 360° Pneumatic dual-chamber mechanical lock (holds up to 5kg)<br><strong>• Metallurgy:</strong> 6000-series CNC anodized aircraft aluminum<br><strong>• Adhesion:</strong> Residue-free 3M VHB micro-bonding layer included for textured dashboards.</p>",
             "page": ""
           }
         },
         "collapsible-row-1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Shipping & Returns",
+            "heading": "Fast Shipping & 30-Day Risk-Free Trial",
             "icon": "truck",
-            "content": "",
+            "content": "<p><strong>• Global Courier:</strong> Orders dispatched within 24 hours via tracked express logistics.<br><strong>• Delivery Timeline:</strong> 2–4 business days domestic, 4–7 business days international.<br><strong>• 30-Day Guarantee:</strong> Test it in your car, shower, or desk. If you're not thrilled, return it for a 100% refund with prepaid shipping.</p>",
             "page": ""
           }
         },
         "collapsible-row-2": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Dimensions",
-            "icon": "ruler",
-            "content": "",
+            "heading": "Universal Device Compatibility Matrix",
+            "icon": "check_mark",
+            "content": "<p><strong>• Apple:</strong> iPhone 12 through 17 Pro Max (all native MagSafe devices & MagSafe cases)<br><strong>• Samsung:</strong> Galaxy Z TriFold, Z Fold 7/6/5, Galaxy S26/S25/S24 Ultra (with included magnetic ring or MagSafe case)<br><strong>• Tablets:</strong> iPad Mini, iPad Air, Galaxy Tab (supported by 2-pack and vacuum mounts).</p>",
             "page": ""
           }
         },
         "collapsible-row-3": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Care Instructions",
-            "icon": "heart",
-            "content": "",
+            "heading": "2-Year Comprehensive Lab Warranty",
+            "icon": "shield",
+            "content": "<p>Every LumaLoop unit includes a 24-month comprehensive hardware replacement guarantee. If you experience any vacuum pressure loss, magnet degradation, or mechanical failure, our engineering team issues an immediate replacement.</p>",
             "page": ""
           }
         },
@@ -105,105 +105,31 @@
         "gallery_layout": "stacked",
         "media_size": "large",
         "constrain_to_viewport": true,
-        "mobile_thumbnails": "hide",
-        "hide_variants": true,
-        "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 12
+        "mobile_thumbnails": "show",
+        "hide_variants": false,
+        "enable_video_looping": true,
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
-    "image-with-text": {
-      "type": "image-with-text",
-      "blocks": {
-        "image-with-text-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
-          }
-        },
-        "image-with-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "image-with-text-0",
-        "image-with-text-1"
-      ],
+    "lumaloop_bento": {
+      "type": "lumaloop-product-bento",
       "settings": {
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "scheme-2",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "subtitle": "HARDWARE ARCHITECTURE // DEEP DIVE",
+        "title": "Engineered For Relentless Performance",
+        "description": "Every curve, magnet, and vacuum chamber has been calculated to eliminate failure points and elevate your interaction with daily technology.",
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column-0": {
-          "type": "column",
-          "settings": {
-            "title": "Free Shipping",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column-1": {
-          "type": "column",
-          "settings": {
-            "title": "Hassle-Free Exchanges",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column-0",
-        "column-1"
-      ],
+    "lumaloop_comparison": {
+      "type": "lumaloop-product-comparison",
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 2,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 28
+        "subtitle": "ENGINEERING COMPARISON // ZERO COMPROMISE",
+        "title": "Why Settle For Generic When You Can Have Precision?",
+        "description": "The market is flooded with cheap plastic mounts that drop phones and overheating chargers. Here is how LumaLoop compares.",
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     },
     "lumaloop_specs": {
@@ -212,16 +138,77 @@
         "subtitle": "HARDWARE ARCHITECTURE // SPECS",
         "title": "Meticulously Engineered Down to the Micron",
         "description": "Explore the internal architecture, material properties, and thermal dissipation systems that power LumaLoop hardware.",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "lumaloop_reviews": {
+      "type": "lumaloop-reviews",
+      "blocks": {
+        "rev_1": {
+          "type": "review",
+          "settings": {
+            "author_name": "Marcus Vance",
+            "author_role": "Hardware Architect, SF",
+            "review_text": "The foldable 360° vacuum suction mount on my car windshield is rock solid. Holds my iPhone 16 Pro Max over steep potholes without a millimetre of slip.",
+            "product_tag": "Vacuum Car Mount"
+          }
+        },
+        "rev_2": {
+          "type": "review",
+          "settings": {
+            "author_name": "Elena Rostova",
+            "author_role": "Industrial Designer, Tokyo",
+            "review_text": "The 3-in-1 MagSafe station completely cleaned up my desk workspace. Simultaneous charging with zero coil whine and cold anodized touch.",
+            "product_tag": "3-in-1 Charging Station"
+          }
+        },
+        "rev_3": {
+          "type": "review",
+          "settings": {
+            "author_name": "Kaito Tanaka",
+            "author_role": "Tech Minimalist, Berlin",
+            "review_text": "Finally, a protective case that doesn't ruin the hinge geometry of the Galaxy Z Fold. The TriFold Shield fits with zero wobble and looks futuristic.",
+            "product_tag": "TriFold Shield Case"
+          }
+        }
+      },
+      "block_order": [
+        "rev_1",
+        "rev_2",
+        "rev_3"
+      ],
+      "settings": {
+        "subtitle": "VERIFIED TELEMETRY // TESTIMONIALS",
+        "title": "Validated By The Future-Minded",
+        "description": "Hear from designers, engineers, and tech minimalists worldwide who elevated their daily carry.",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "Complete Your Magnetic Ecosystem",
+        "heading_size": "h2",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "columns_mobile": "2",
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     }
   },
   "order": [
     "main",
+    "lumaloop_bento",
+    "lumaloop_comparison",
     "lumaloop_specs",
-    "image-with-text",
-    "multicolumn",
+    "lumaloop_reviews",
     "related-products"
   ]
 }

@@ -98,6 +98,10 @@
                 </p>
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
+                  <div class="lumaloop-stock-pill" style="display: inline-flex; align-items: center; gap: 0.8rem; background: rgba(0, 240, 255, 0.08); border: 1px solid rgba(0, 240, 255, 0.3); border-radius: var(--lumaloop-radius-pill); padding: 0.35rem 1.1rem; font-family: var(--lumaloop-font-mono); font-size: 1.15rem; color: #00F0FF; margin-bottom: 1.4rem; font-weight: 600; letter-spacing: 0.04em;">
+                    <span class="lumaloop-pulsing-dot"></span>
+                    <span>LIVE INVENTORY // DISPATCHING WITHIN 24 HOURS</span>
+                  </div>
                   <h1>{{ product.title | escape }}</h1>
                   <a href="{{ product.url }}" class="product__title">
                     <h2 class="h1">

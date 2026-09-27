@@ -383,6 +383,103 @@ p, span, li, a {
   line-height: 1.65 !important;
 }
 
+/* Product Media Presentation Stage */
+.product__media-wrapper {
+  position: relative;
+}
+.product__media-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.16) 0%, rgba(0, 100, 255, 0.04) 50%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+.product__media-gallery {
+  position: relative;
+  z-index: 1;
+}
+.product__media-item {
+  background: radial-gradient(circle at 50% 50%, #151821 0%, #0a0c10 100%) !important;
+  border-radius: var(--lumaloop-radius-xl) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 240, 255, 0.08) !important;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+.product__media-item:hover {
+  border-color: rgba(0, 240, 255, 0.35) !important;
+}
+
+/* Product Info Container Elevation */
+.product__info-container {
+  background: rgba(14, 17, 24, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--lumaloop-radius-xl);
+  padding: 3.2rem;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.9);
+}
+
+/* Electric Add-to-Cart Button Pulse */
+.product-form__buttons .button {
+  background: linear-gradient(135deg, #00f0ff 0%, #00b4d8 100%) !important;
+  color: #050505 !important;
+  font-weight: 800 !important;
+  font-size: 1.55rem !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  padding: 1.6rem 2.8rem !important;
+  border-radius: var(--lumaloop-radius-md) !important;
+  border: 1px solid #00f0ff !important;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.35) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-form__buttons .button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: rotate(30deg) translateY(-100%);
+  animation: lumaloopShimmer 4s infinite ease-in-out;
+}
+
+@keyframes lumaloopShimmer {
+  0% { transform: rotate(30deg) translateY(-100%); }
+  20% { transform: rotate(30deg) translateY(100%); }
+  100% { transform: rotate(30deg) translateY(100%); }
+}
+
+.product-form__buttons .button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 35px rgba(0, 240, 255, 0.6) !important;
+}
+
+/* Dynamic Checkout Button in Frosted Cyber Glass */
+.shopify-payment-button__button--unbranded {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: #ffffff !important;
+  border-radius: var(--lumaloop-radius-md) !important;
+  font-weight: 700 !important;
+  backdrop-filter: blur(12px) !important;
+}
+.shopify-payment-button__button--unbranded:hover {
+  border-color: var(--lumaloop-accent) !important;
+  color: var(--lumaloop-accent) !important;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.25) !important;
+}
+
 /* Variant Pills */
 .product-form__input input[type='radio'] + label {
   background: #11141a !important;
