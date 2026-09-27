@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    LumaLoop - Apple Pro Luxury Minimalist Theme Stylesheet
    Pure space black, titanium grays, crisp white typography & refined pills
    ========================================================================== */
@@ -37,10 +37,48 @@
   --lumaloop-font-mono: 'SFMono-Regular', Consolas, Menlo, monospace;
 }
 
+/* ==========================================================================
+   FORCE DARK CANVAS — Override Dawn Inline Color Scheme Variables
+   These override the <style> block Dawn outputs in <head> for all schemes
+   ========================================================================== */
+
+/* Override Dawn's color scheme CSS variables for ALL schemes */
+:root,
+.color-scheme-1,
+.color-scheme-2,
+.color-scheme-3,
+.color-scheme-4,
+.color-scheme-5,
+.color-scheme-6,
+.color-scheme-t1,
+.color-scheme-t2,
+.color-scheme-t3,
+.color-scheme-t4,
+.color-background-1,
+.color-background-2 {
+  --color-background: 0, 0, 0 !important;
+  --gradient-background: #000000 !important;
+  --color-foreground: 245, 245, 247 !important;
+  --color-base-background-1: 0, 0, 0 !important;
+  --color-base-background-2: 10, 10, 12 !important;
+  --color-base-text: 245, 245, 247 !important;
+}
+
+/* Dawn uses class .color-{{ scheme.id }} — cover all variants */
+[class*="color-"] {
+  --color-background: 0, 0, 0 !important;
+  --gradient-background: #000000 !important;
+  --color-foreground: 245, 245, 247 !important;
+}
+
 /* Base Overrides & Dark Apple Canvas */
-body {
-  background-color: var(--lumaloop-bg) !important;
-  color: var(--lumaloop-text) !important;
+html,
+body,
+body.color-scheme-1,
+body.color-scheme-2,
+body.color-scheme-3 {
+  background-color: #000000 !important;
+  color: #f5f5f7 !important;
   font-family: var(--lumaloop-font-tech);
   letter-spacing: -0.012em;
   -webkit-font-smoothing: antialiased;
@@ -48,7 +86,35 @@ body {
   overflow-x: hidden;
 }
 
-/* Clean, Subtle Apple Vignette (No blueprint grid) */
+/* Force every section/main/header background to dark */
+main,
+.main-content,
+.shopify-section,
+.shopify-section > *,
+section.section {
+  background-color: #000000 !important;
+  color: #f5f5f7 !important;
+}
+
+/* Force all gradient containers to dark */
+.gradient {
+  background: #000000 !important;
+  background-image: none !important;
+}
+
+/* Every .color-* class Dawn generates must be dark */
+.color-scheme-1,
+.color-scheme-2,
+.color-scheme-3,
+.color-scheme-4,
+.color-scheme-5 {
+  background-color: #000000 !important;
+  color: #f5f5f7 !important;
+}
+
+
+
+/* Clean, Subtle Apple Vignette */
 body::before {
   content: '';
   position: fixed;
@@ -62,17 +128,117 @@ body::before {
   opacity: 0.8;
 }
 
-/* Global Typography & Headings */
+/* ==========================================================================
+   GLOBAL TEXT & BACKGROUND — Ensure readability on every page
+   ========================================================================== */
+
+/* All headings: always bright white */
 h1, h2, h3, h4, h5, h6,
-.h0, .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: var(--lumaloop-text) !important;
+.h0, .h1, .h2, .h3, .h4, .h5, .h6,
+.title,
+.heading {
+  color: #f5f5f7 !important;
   font-family: var(--lumaloop-font-tech) !important;
   letter-spacing: -0.028em !important;
   font-weight: 700 !important;
 }
 
-p, span, li, a {
-  color: inherit;
+/* Body text: readable titanium */
+p, li, label, span, legend, caption,
+.caption, .rte, .rte p {
+  color: #f5f5f7;
+}
+
+/* Links: white by default, blue on hover */
+a {
+  color: #f5f5f7;
+}
+a:hover {
+  color: #2997ff;
+}
+
+/* Muted/secondary text */
+.caption-with-letter-spacing,
+.product__vendor,
+.product__text,
+.breadcrumbs,
+.breadcrumb__link {
+  color: #86868b !important;
+}
+
+/* Form labels */
+label,
+.form__label,
+.field__label {
+  color: #86868b !important;
+}
+
+/* All Dawn inputs: dark surfaces */
+input,
+textarea,
+select,
+.field__input,
+.select__select,
+.quantity__input {
+  background-color: #1c1c1e !important;
+  color: #f5f5f7 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #6e6e73 !important;
+}
+
+/* Page wrappers */
+.page-width,
+.page-width--narrow,
+.page-width--wide {
+  background-color: transparent !important;
+}
+
+/* Footer */
+.footer,
+.footer__content,
+.footer-block,
+.footer-block__details-content {
+  background-color: #000000 !important;
+  color: #86868b !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.footer a,
+.footer .footer__list-item a {
+  color: #86868b !important;
+}
+.footer a:hover {
+  color: #f5f5f7 !important;
+}
+
+.footer__content-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Cookie bar / consent banner */
+.cookie-bar,
+[data-cookie-bar],
+#shopify-pc-banner {
+  background: rgba(10, 10, 12, 0.95) !important;
+  color: #86868b !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Price text */
+.price__container,
+.price-item {
+  color: #f5f5f7 !important;
+}
+
+/* Collection/product page text */
+.collection__title,
+.collection-filters-form .form__label,
+.facets__heading {
+  color: #f5f5f7 !important;
 }
 
 /* Refined Minimalist Scrollbar */
