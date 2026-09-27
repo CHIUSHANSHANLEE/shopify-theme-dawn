@@ -112,6 +112,16 @@
         "padding_bottom": 40
       }
     },
+    "lumaloop_3d_viewer": {
+      "type": "lumaloop-3d-viewer",
+      "settings": {
+        "subtitle": "INTERACTIVE HARDWARE LAB",
+        "title": "Inspect in 3D Precision",
+        "description": "Rotate 360°, inspect internal magnetic architecture, and test structural tolerances before purchase.",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
     "lumaloop_bento": {
       "type": "lumaloop-product-bento",
       "settings": {
@@ -195,6 +205,7 @@
   },
   "order": [
     "main",
+    "lumaloop_3d_viewer",
     "lumaloop_bento",
     "lumaloop_specs",
     "lumaloop_reviews",
