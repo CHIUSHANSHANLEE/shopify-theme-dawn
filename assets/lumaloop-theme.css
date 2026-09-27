@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    LumaLoop - Apple Pro Luxury Minimalist Theme Stylesheet
    Pure space black, titanium grays, crisp white typography & refined pills
    ========================================================================== */
@@ -336,91 +336,376 @@ p, span, li, a {
 }
 
 /* ==========================================================================
-   Product Page - Apple Pro Canvas & Typography
+   LumaLoop Product Page — Apple Pro Two-Column Layout
    ========================================================================== */
-.product__info-container {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 0 0 2.8rem !important;
+
+/* Main two-column grid */
+.ll-product-page {
+  display: grid;
+  grid-template-columns: 55% 1fr;
+  gap: 6rem;
+  align-items: start;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 @media screen and (max-width: 989px) {
-  .product__info-container {
-    padding: 0 !important;
-    margin-top: 2.4rem;
+  .ll-product-page {
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+    padding-top: 3.2rem;
+    padding-bottom: 3.2rem;
   }
 }
 
-.product__text.caption-with-letter-spacing {
-  font-size: 1.25rem !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.08em !important;
-  text-transform: uppercase !important;
+/* ---- Gallery Column ---- */
+.ll-gallery-col {
+  position: sticky;
+  top: 9rem;
+}
+
+.ll-gallery-frame {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* White studio pedestal for product images */
+.ll-gallery-frame .product__media-item,
+.ll-gallery-frame .slider__slide {
+  background: #f9f9f9 !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+  border: 1px solid #e5e5e5 !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+.ll-gallery-frame .product__media-item img {
+  object-fit: contain !important;
+  width: 100% !important;
+  padding: 2.4rem !important;
+  box-sizing: border-box !important;
+}
+
+/* Thumbnail rail */
+.ll-gallery-frame .thumbnail-list {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 0.8rem !important;
+  margin-top: 1.2rem !important;
+  flex-wrap: wrap;
+}
+
+.ll-gallery-frame .thumbnail-list__item {
+  width: 72px !important;
+  height: 72px !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  background: #f9f9f9 !important;
+  border: 1.5px solid #e5e5e5 !important;
+  transition: border-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.ll-gallery-frame .thumbnail-list__item:hover,
+.ll-gallery-frame .thumbnail[aria-current="true"] {
+  border-color: #000 !important;
+  box-shadow: none !important;
+}
+
+.ll-gallery-frame .thumbnail-list__item img {
+  object-fit: contain !important;
+  padding: 6px !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ---- Info Column ---- */
+.ll-info-col {
+  min-width: 0;
+}
+
+.ll-info-sticky {
+  position: sticky;
+  top: 9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Vendor eyebrow */
+.ll-vendor {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: #86868b !important;
-  margin-bottom: 0.6rem !important;
-  display: block;
+  margin: 0 0 1rem 0;
 }
 
-.product__title h1 {
-  font-size: clamp(2.6rem, 3.2vw, 3.8rem) !important;
+/* Product title */
+.ll-title {
+  font-size: clamp(2.4rem, 3.5vw, 3.8rem) !important;
   font-weight: 700 !important;
-  letter-spacing: -0.025em !important;
-  line-height: 1.15 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.12 !important;
   color: #f5f5f7 !important;
-  margin: 0 0 1rem 0 !important;
+  margin: 0 0 1.4rem 0 !important;
 }
 
-.price {
+/* Price block */
+.ll-price-block {
+  margin-bottom: 1.6rem;
+}
+
+.ll-price-block .price__regular .price-item,
+.ll-price-block .price-item--regular {
   font-size: 2.2rem !important;
   font-weight: 600 !important;
   color: #f5f5f7 !important;
-  letter-spacing: -0.01em !important;
-  margin: 0 0 1.8rem 0 !important;
+  letter-spacing: -0.02em !important;
 }
 
-.product__description {
+.ll-price-block .price--on-sale .price-item--regular {
   color: #86868b !important;
+  text-decoration: line-through;
   font-size: 1.55rem !important;
-  line-height: 1.65 !important;
-  margin-bottom: 2.4rem !important;
 }
 
-.product__description p {
+.ll-price-block .price-item--sale {
+  color: #f5f5f7 !important;
+  font-size: 2.2rem !important;
+  font-weight: 600 !important;
+}
+
+/* Divider line */
+.ll-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 0.4rem 0 2.4rem 0;
+}
+
+/* ---- Variant Picker Block ---- */
+.ll-variants-block {
+  margin-bottom: 2rem;
+}
+
+.ll-variants-block .form__label,
+.ll-variants-block .product-form__input .form__label {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
   color: #86868b !important;
-  line-height: 1.65 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  margin-bottom: 1rem !important;
+  display: block;
 }
 
-/* White Studio Product Gallery Stage */
-.product__media-wrapper {
-  position: relative;
+/* Button-style variant pills */
+.ll-variants-block input[type='radio'] + label,
+.ll-variants-block .swatch__input + .swatch__label {
+  background: #1c1c1e !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+  color: #f5f5f7 !important;
+  border-radius: 980px !important;
+  font-size: 1.35rem !important;
+  font-weight: 500 !important;
+  padding: 0.7rem 1.6rem !important;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
-.product__media-gallery {
-  position: relative;
-  z-index: 1;
-}
-
-.product__media-item {
+.ll-variants-block input[type='radio']:checked + label,
+.ll-variants-block .swatch__input:checked + .swatch__label {
   background: #ffffff !important;
-  border-radius: 18px !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  transition: border-color 0.25s ease;
+  border-color: #ffffff !important;
+  color: #000000 !important;
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.15) !important;
 }
 
-.product__media-item:hover {
-  border-color: rgba(255, 255, 255, 0.25) !important;
+.ll-variants-block .swatch-input__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
 }
 
-.product__media-item img {
-  object-fit: contain !important;
+/* ---- Quantity block ---- */
+.ll-qty-block {
+  margin-bottom: 1.6rem !important;
+}
+
+.ll-qty-block .quantity {
+  background: #1c1c1e !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 980px !important;
+  color: #f5f5f7 !important;
+  width: fit-content;
+}
+
+.ll-qty-block .quantity__button {
+  color: #86868b !important;
+}
+
+.ll-qty-block .quantity__button:hover {
+  color: #ffffff !important;
+}
+
+.ll-qty-block .quantity__input {
+  color: #f5f5f7 !important;
+  background: transparent !important;
+  font-weight: 600;
+  min-width: 40px;
+}
+
+/* ---- Buy Buttons ---- */
+.ll-buy-block {
+  margin-bottom: 0;
+}
+
+.ll-buy-block .product-form__buttons .button--primary,
+.ll-buy-block .product-form__buttons .button:not(.button--secondary) {
   width: 100% !important;
-  height: auto !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: none !important;
+  border-radius: 980px !important;
+  font-size: 1.65rem !important;
+  font-weight: 600 !important;
+  padding: 1.5rem 2.4rem !important;
+  letter-spacing: -0.01em !important;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.ll-buy-block .product-form__buttons .button--primary:hover,
+.ll-buy-block .product-form__buttons .button:not(.button--secondary):hover {
+  background: #e5e5ea !important;
+  transform: scale(1.015);
+}
+
+.ll-buy-block .shopify-payment-button__button {
+  border-radius: 980px !important;
+}
+
+.ll-buy-block .shopify-payment-button__button--unbranded {
+  background: #1c1c1e !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  border-radius: 980px !important;
+  font-weight: 600 !important;
+}
+
+/* ---- Trust Row ---- */
+.ll-trust-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem 1.6rem;
+  margin: 1.8rem 0 2.4rem 0;
+  padding: 1.4rem 1.8rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+}
+
+.ll-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #86868b;
+}
+
+.ll-trust-item svg {
+  flex-shrink: 0;
+}
+
+/* ---- Product Description ---- */
+.ll-description {
+  color: #86868b !important;
+  font-size: 1.5rem !important;
+  line-height: 1.7 !important;
+  margin-bottom: 2rem !important;
+}
+
+.ll-description p {
+  color: #86868b !important;
+  line-height: 1.7 !important;
+}
+
+.ll-description a {
+  color: #f5f5f7 !important;
+}
+
+/* ---- Accordions ---- */
+.ll-accordion {
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-bottom: none !important;
+  margin-bottom: 0 !important;
+}
+
+.ll-accordion:last-of-type {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.ll-accordion summary {
+  padding: 1.6rem 0 !important;
+  font-weight: 500 !important;
+  font-size: 1.55rem !important;
+  color: #f5f5f7 !important;
+  letter-spacing: -0.01em !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ll-accordion summary:hover {
+  color: #ffffff !important;
+}
+
+.ll-accordion .summary__title {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.ll-accordion .accordion__title {
+  color: #f5f5f7 !important;
+  font-weight: 500 !important;
+  font-size: 1.55rem !important;
+  letter-spacing: -0.01em !important;
+  margin: 0 !important;
+}
+
+.ll-accordion .accordion__content {
+  color: #86868b !important;
+  font-size: 1.45rem !important;
+  line-height: 1.7 !important;
+  padding-bottom: 1.8rem !important;
+}
+
+.ll-accordion .accordion__content strong {
+  color: #f5f5f7 !important;
+}
+
+@media screen and (max-width: 749px) {
+  .ll-product-page {
+    padding-top: 2rem;
+  }
+
+  .ll-gallery-col {
+    position: static;
+  }
+
+  .ll-info-sticky {
+    position: static;
+  }
+
+  .ll-trust-row {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* Thumbnail slider styling */
