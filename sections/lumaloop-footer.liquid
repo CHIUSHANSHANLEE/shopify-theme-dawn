@@ -15,7 +15,9 @@
       <!-- Brand & Mission Column -->
       <div style="display: flex; flex-direction: column; gap: 1.8rem;">
         <div>
-          {% render 'lumaloop-logo' %}
+          <a href="{{ routes.root_url }}" style="text-decoration: none; display: inline-flex;">
+            {% render 'lumaloop-logo' %}
+          </a>
         </div>
         <p style="font-size: 1.45rem; color: #86868b; line-height: 1.65; max-width: 380px; margin: 0;">
           {{ section.settings.brand_description | default: "Engineered at the intersection of minimalist design and high-performance metallurgy. Designed for creators, engineers, and digital minimalists." }}
