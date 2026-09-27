@@ -1,0 +1,235 @@
+{% comment %}
+  LumaLoop Futuristic Contact Section
+  Cybernetic support matrix with glassmorphic contact form and direct engineer routing
+{% endcomment %}
+
+{{ 'lumaloop-theme.css' | asset_url | stylesheet_tag }}
+
+<div class="lumaloop-contact-section page-width lumaloop-reveal" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  
+  <!-- Hero Heading -->
+  <div style="text-align: center; max-width: 680px; margin: 0 auto 5rem auto;">
+    <span class="lumaloop-tech-pill" style="margin-bottom: 1.2rem;">
+      <span class="lumaloop-pulsing-dot"></span>
+      {{ section.settings.subtitle | default: "DIRECT COMMS // SUPPORT MATRIX" }}
+    </span>
+    <h1 style="font-size: clamp(3.2rem, 5vw, 5.6rem); font-weight: 800; margin: 0 0 1.6rem 0; letter-spacing: -0.04em; color: #FFFFFF;">
+      {{ section.settings.title | default: "Contact LumaLoop" }}
+    </h1>
+    <p style="font-size: 1.65rem; color: #94a3b8; line-height: 1.6; margin: 0;">
+      {{ section.settings.description | default: "Direct channel to our hardware lab and customer experience engineers. All inquiries are encrypted and prioritized." }}
+    </p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3.5rem; align-items: start;">
+    
+    <!-- Support Info Cards & Direct Channels -->
+    <div style="display: flex; flex-direction: column; gap: 2rem;">
+      
+      <!-- Status Card -->
+      <div class="lumaloop-glass-card" style="padding: 2.6rem;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.6rem;">
+          <span style="font-family: var(--lumaloop-font-mono); font-size: 1.2rem; color: #64748b;">
+            STATUS: ACTIVE
+          </span>
+          <span class="lumaloop-tech-pill">
+            <span class="lumaloop-pulsing-dot"></span>
+            SYS ONLINE
+          </span>
+        </div>
+        <h3 style="font-size: 1.8rem; font-weight: 700; color: #ffffff; margin: 0 0 0.8rem 0;">
+          Direct Engineer Support
+        </h3>
+        <p style="font-size: 1.45rem; color: #94a3b8; line-height: 1.6; margin: 0;">
+          Have a question about technical specifications, compatibility with your setup, or an existing order? Our team responds within 2 hours.
+        </p>
+      </div>
+
+      <!-- Quick Communication Matrix -->
+      <div class="lumaloop-glass-card" style="padding: 2.6rem; display: flex; flex-direction: column; gap: 1.8rem;">
+        
+        <div style="display: flex; align-items: flex-start; gap: 1.4rem;">
+          <div style="width: 42px; height: 42px; border-radius: var(--lumaloop-radius-md); background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <div>
+            <div style="font-size: 1.2rem; color: #64748b; font-family: var(--lumaloop-font-mono); text-transform: uppercase;">Direct Email</div>
+            <a href="mailto:support@lumaloop.tech" style="font-size: 1.55rem; color: #ffffff; font-weight: 600; text-decoration: none;">
+              support@lumaloop.tech
+            </a>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; gap: 1.4rem;">
+          <div style="width: 42px; height: 42px; border-radius: var(--lumaloop-radius-md); background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </div>
+          <div>
+            <div style="font-size: 1.2rem; color: #64748b; font-family: var(--lumaloop-font-mono); text-transform: uppercase;">Documentation & FAQ</div>
+            <a href="/pages/faq" style="font-size: 1.55rem; color: var(--lumaloop-accent); font-weight: 600; text-decoration: none;">
+              Explore Hardware Knowledgebase →
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Contact Form Card -->
+    <div class="lumaloop-glass-card" style="padding: 3.5rem;">
+      <h3 style="font-size: 2.2rem; font-weight: 700; color: #ffffff; margin: 0 0 2.2rem 0; letter-spacing: -0.02em;">
+        Initialize Transmission
+      </h3>
+
+      {% form 'contact', id: 'LumaLoopContactForm' %}
+        {%- if form.posted_successfully? -%}
+          <div style="background: rgba(0, 240, 255, 0.12); border: 1px solid #00F0FF; border-radius: var(--lumaloop-radius-md); padding: 1.8rem; color: #00F0FF; font-family: var(--lumaloop-font-mono); font-size: 1.4rem; margin-bottom: 2rem;">
+            ✓ TRANSMISSION RECEIVED // OUR HARDWARE TEAM HAS BEEN NOTIFIED
+          </div>
+        {%- elsif form.errors -%}
+          <div style="background: rgba(239, 68, 68, 0.12); border: 1px solid #ef4444; border-radius: var(--lumaloop-radius-md); padding: 1.6rem; color: #f87171; font-size: 1.35rem; margin-bottom: 2rem;">
+            {{ form.errors | default_errors }}
+          </div>
+        {%- endif -%}
+
+        <div style="display: flex; flex-direction: column; gap: 1.6rem;">
+          
+          <div>
+            <label for="ContactFormName" style="display: block; font-size: 1.3rem; color: #94a3b8; margin-bottom: 0.6rem; font-weight: 500;">
+              Your Name *
+            </label>
+            <input
+              type="text"
+              id="ContactFormName"
+              name="contact[name]"
+              value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+              placeholder="e.g. Alex Mercer"
+              required
+              class="field__input"
+              style="width: 100%; height: 50px; padding: 0 1.6rem; font-size: 1.45rem;"
+            >
+          </div>
+
+          <div>
+            <label for="ContactFormEmail" style="display: block; font-size: 1.3rem; color: #94a3b8; margin-bottom: 0.6rem; font-weight: 500;">
+              Email Address *
+            </label>
+            <input
+              type="email"
+              id="ContactFormEmail"
+              name="contact[email]"
+              autocorrect="off"
+              autocapitalize="off"
+              value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+              placeholder="name@domain.com"
+              required
+              class="field__input"
+              style="width: 100%; height: 50px; padding: 0 1.6rem; font-size: 1.45rem;"
+            >
+          </div>
+
+          <div>
+            <label for="ContactFormOrder" style="display: block; font-size: 1.3rem; color: #94a3b8; margin-bottom: 0.6rem; font-weight: 500;">
+              Order Number (Optional)
+            </label>
+            <input
+              type="text"
+              id="ContactFormOrder"
+              name="contact[order_number]"
+              placeholder="e.g. #LL-89241"
+              class="field__input"
+              style="width: 100%; height: 50px; padding: 0 1.6rem; font-size: 1.45rem;"
+            >
+          </div>
+
+          <div>
+            <label for="ContactFormMessage" style="display: block; font-size: 1.3rem; color: #94a3b8; margin-bottom: 0.6rem; font-weight: 500;">
+              Message / Specification Details *
+            </label>
+            <textarea
+              rows="5"
+              id="ContactFormMessage"
+              name="contact[body]"
+              placeholder="Explain your inquiry, device setup, or technical question..."
+              required
+              class="field__input"
+              style="width: 100%; padding: 1.4rem 1.6rem; font-size: 1.45rem; line-height: 1.5; resize: vertical;"
+            >{%- if form.body -%}{{ form.body }}{%- endif -%}</textarea>
+          </div>
+
+          <button type="submit" class="button button--primary" style="height: 52px; font-size: 1.5rem; font-weight: 700; margin-top: 0.8rem;">
+            <span>Transmit Message</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+
+        </div>
+      {% endform %}
+    </div>
+
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "LumaLoop Contact Page",
+  "tag": "section",
+  "class": "section-lumaloop-contact",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "DIRECT COMMS // SUPPORT MATRIX"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Contact LumaLoop"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Direct channel to our hardware lab and customer experience engineers. All inquiries are encrypted and prioritized."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "LumaLoop Contact Page"
+    }
+  ]
+}
+{% endschema %}

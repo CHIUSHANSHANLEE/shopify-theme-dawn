@@ -1,0 +1,250 @@
+{% comment %}
+  LumaLoop Best Sellers / Product Grid Section
+  Features rounded cyber cards, quick-add, glowing badges, and precision hover states
+{% endcomment %}
+
+{{ 'lumaloop-theme.css' | asset_url | stylesheet_tag }}
+
+<div class="lumaloop-products-section page-width lumaloop-reveal" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div style="display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 4rem;">
+    <span class="lumaloop-tech-pill" style="margin-bottom: 1.2rem;">
+      <span class="lumaloop-pulsing-dot"></span>
+      {{ section.settings.subtitle | default: "BEST SELLERS // HIGH DEMAND" }}
+    </span>
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%; flex-wrap: wrap; gap: 1.6rem;">
+      <h2 style="font-size: clamp(2.8rem, 4vw, 4.4rem); font-weight: 800; margin: 0; letter-spacing: -0.03em; color: #FFFFFF;">
+        {{ section.settings.title | default: "Engineered Excellence" }}
+      </h2>
+      <a href="{{ section.settings.collection.url | default: routes.all_products_collection_url }}" class="link link--text" style="color: var(--lumaloop-accent); font-weight: 600; font-size: 1.45rem; text-decoration: none; display: flex; align-items: center; gap: 0.6rem;">
+        <span>Explore All Products</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="lumaloop-product-grid" style="display: grid; grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr); gap: 2.4rem;">
+    {%- assign collection = section.settings.collection -%}
+    {%- if collection != blank and collection.products_count > 0 -%}
+      {%- for product in collection.products limit: section.settings.products_to_show -%}
+        <div class="lumaloop-product-card card-wrapper" style="position: relative; display: flex; flex-direction: column;">
+          
+          <!-- Badge logic -->
+          <div style="position: absolute; top: 1.4rem; left: 1.4rem; z-index: 3; display: flex; gap: 0.6rem;">
+            {%- if product.available == false -%}
+              <span class="badge badge--sold-out">SOLD OUT</span>
+            {%- elsif product.compare_at_price > product.price -%}
+              <span class="badge">SALE</span>
+            {%- elsif forloop.index == 1 -%}
+              <span class="badge" style="background: rgba(0, 240, 255, 0.15); color: #00F0FF; border-color: #00F0FF;">BEST SELLER</span>
+            {%- elsif forloop.index == 2 -%}
+              <span class="badge" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border-color: #a855f7;">LIMITED</span>
+            {%- else -%}
+              <span class="badge">NEW</span>
+            {%- endif -%}
+          </div>
+
+          <!-- Product Media Image -->
+          <a href="{{ product.url }}" class="card__media" style="position: relative; display: block; width: 100%; aspect-ratio: 1/1; overflow: hidden; text-decoration: none;">
+            {%- if product.featured_media -%}
+              {{ product.featured_media | image_url: width: 800 | image_tag:
+                class: 'motion-reduce',
+                style: 'width: 100%; height: 100%; object-fit: cover;',
+                loading: 'lazy'
+              }}
+            {%- else -%}
+              {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </a>
+
+          <!-- Information -->
+          <div class="card__information" style="padding: 2.2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+            <div>
+              <div style="font-family: var(--lumaloop-font-mono); font-size: 1.15rem; color: #64748b; margin-bottom: 0.6rem; text-transform: uppercase;">
+                {{ product.vendor | default: "LUMALOOP LABS" }}
+              </div>
+              <h3 class="card__heading" style="margin: 0 0 1rem 0; font-size: 1.7rem;">
+                <a href="{{ product.url }}" style="color: #ffffff; text-decoration: none;">
+                  {{ product.title }}
+                </a>
+              </h3>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1.4rem; padding-top: 1.4rem; border-top: 1px solid rgba(255, 255, 255, 0.06);">
+              <div class="price" style="font-size: 1.6rem; font-weight: 700; color: var(--lumaloop-accent);">
+                {{ product.price | money }}
+                {%- if product.compare_at_price > product.price -%}
+                  <span style="font-size: 1.3rem; color: #64748b; text-decoration: line-through; margin-left: 0.6rem; font-weight: 400;">
+                    {{ product.compare_at_price | money }}
+                  </span>
+                {%- endif -%}
+              </div>
+
+              <!-- Quick Add Action -->
+              <form method="post" action="{{ routes.cart_add_url }}">
+                <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                <button type="submit" class="button button--secondary" style="padding: 0.8rem 1.4rem; font-size: 1.25rem; border-radius: var(--lumaloop-radius-md);" title="Quick Add">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                  <span>Add</span>
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      {%- endfor -%}
+    {%- else -%}
+      <!-- Premium Cyber Fallback Showcase Cards -->
+      {%- for i in (1..4) -%}
+        {%- case i -%}
+          {%- when 1 -%}
+            {%- assign mock_title = "LumaLoop MagPower CyberHub" -%}
+            {%- assign mock_price = "$129.00" -%}
+            {%- assign mock_badge = "BEST SELLER" -%}
+            {%- assign mock_badge_color = "#00F0FF" -%}
+          {%- when 2 -%}
+            {%- assign mock_title = "QuantumZero ANC Wireless Pods" -%}
+            {%- assign mock_price = "$189.00" -%}
+            {%- assign mock_badge = "LIMITED" -%}
+            {%- assign mock_badge_color = "#c084fc" -%}
+          {%- when 3 -%}
+            {%- assign mock_title = "Aerospace CNC 100W GaN Station" -%}
+            {%- assign mock_price = "$99.00" -%}
+            {%- assign mock_badge = "NEW" -%}
+            {%- assign mock_badge_color = "#38bdf8" -%}
+          {%- when 4 -%}
+            {%- assign mock_title = "Titanium Armor Magnetic Cable Loop" -%}
+            {%- assign mock_price = "$39.00" -%}
+            {%- assign mock_badge = "POPULAR" -%}
+            {%- assign mock_badge_color = "#00F0FF" -%}
+        {%- endcase -%}
+
+        <div class="lumaloop-product-card card-wrapper" style="position: relative; display: flex; flex-direction: column;">
+          <div style="position: absolute; top: 1.4rem; left: 1.4rem; z-index: 3;">
+            <span class="badge" style="color: {{ mock_badge_color }}; border-color: {{ mock_badge_color }};">
+              {{ mock_badge }}
+            </span>
+          </div>
+
+          <div class="card__media" style="position: relative; width: 100%; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at 50% 50%, #1e2430 0%, #0d0f14 100%);">
+            <!-- Sleek Isometric Tech Icon -->
+            <svg width="90" height="90" viewBox="0 0 24 24" fill="none" stroke="{{ mock_badge_color }}" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8; filter: drop-shadow(0 0 12px {{ mock_badge_color }});">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+
+          <div class="card__information" style="padding: 2.2rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+            <div>
+              <div style="font-family: var(--lumaloop-font-mono); font-size: 1.15rem; color: #64748b; margin-bottom: 0.6rem; text-transform: uppercase;">
+                LUMALOOP LABS // HARDWARE
+              </div>
+              <h3 class="card__heading" style="margin: 0 0 1rem 0; font-size: 1.7rem; color: #FFFFFF;">
+                {{ mock_title }}
+              </h3>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1.4rem; padding-top: 1.4rem; border-top: 1px solid rgba(255, 255, 255, 0.06);">
+              <div class="price" style="font-size: 1.6rem; font-weight: 700; color: var(--lumaloop-accent);">
+                {{ mock_price }}
+              </div>
+              <a href="{{ routes.all_products_collection_url }}" class="button button--secondary" style="padding: 0.8rem 1.4rem; font-size: 1.25rem;">
+                <span>View Details</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    {%- endif -%}
+  </div>
+</div>
+
+<style>
+@media screen and (max-width: 989px) {
+  .lumaloop-product-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.6rem !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .lumaloop-product-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "LumaLoop Product Showcase",
+  "tag": "section",
+  "class": "section-lumaloop-products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Section Subtitle",
+      "default": "BEST SELLERS // HIGH DEMAND"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Engineered Excellence"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4,
+      "label": "Products to show"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "Columns Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "LumaLoop Product Showcase"
+    }
+  ]
+}
+{% endschema %}

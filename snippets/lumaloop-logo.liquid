@@ -1,0 +1,40 @@
+{% comment %}
+  Renders the LumaLoop Futuristic Brand Logo & Emblem
+{% endcomment %}
+
+<a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset lumaloop-brand-emblem" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none;">
+  {%- if settings.logo != blank -%}
+    {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+    {{ settings.logo | image_url: width: 300 | image_tag:
+      class: 'header__heading-logo motion-reduce',
+      widths: '50, 100, 150, 200, 250, 300',
+      height: settings.logo.height,
+      width: settings.logo.width,
+      alt: logo_alt
+    }}
+  {%- else -%}
+    <!-- Futuristic LumaLoop Cyber Emblem -->
+    <div class="lumaloop-emblem-graphic" style="position: relative; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+      <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="lumaLoopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00F0FF" />
+            <stop offset="100%" stop-color="#0077FF" />
+          </linearGradient>
+          <filter id="lumaGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="2" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+        <!-- Outer Precision Orbit -->
+        <circle cx="18" cy="18" r="15" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" stroke-dasharray="2 3" />
+        <!-- Cyber Kinetic Loop -->
+        <path d="M11 18C11 14.134 14.134 11 18 11C21.866 11 25 14.134 25 18C25 21.866 21.866 25 18 25" stroke="url(#lumaLoopGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#lumaGlow)" />
+        <circle cx="18" cy="18" r="3.5" fill="#00F0FF" />
+      </svg>
+    </div>
+    <span class="lumaloop-brand-name" style="font-family: var(--lumaloop-font-tech); font-weight: 800; font-size: 2rem; letter-spacing: -0.04em; color: #FFFFFF; text-transform: uppercase;">
+      Luma<span style="color: #00F0FF; text-shadow: 0 0 12px rgba(0,240,255,0.6);">Loop</span>
+    </span>
+  {%- endif -%}
+</a>

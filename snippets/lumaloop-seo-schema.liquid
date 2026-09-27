@@ -1,0 +1,35 @@
+{% comment %}
+  LumaLoop SEO Schema & Structured Data (JSON-LD)
+  Provides Organization, WebSite, and Store Schema for Search Engines
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "LumaLoop",
+  "url": {{ request.origin | append: routes.root_url | json }},
+  "description": "Premium electronic accessories and next-generation lifestyle technology engineered with cyber-minimal aesthetics.",
+  "logo": {{ settings.logo | image_url: width: 600 | prepend: "https:" | json }},
+  "sameAs": [
+    {{ settings.social_twitter_link | json }},
+    {{ settings.social_facebook_link | json }},
+    {{ settings.social_instagram_link | json }},
+    {{ settings.social_youtube_link | json }}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "LumaLoop",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ request.origin }}{{ routes.search_url }}?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "url": {{ request.origin | append: routes.root_url | json }}
+}
+</script>

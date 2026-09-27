@@ -1,0 +1,169 @@
+{% comment %}
+  LumaLoop Cinematic Brand Story Section
+  Storytelling layout bridging everyday electronic accessories and cybernetic future
+{% endcomment %}
+
+{{ 'lumaloop-theme.css' | asset_url | stylesheet_tag }}
+
+<div class="lumaloop-story-section page-width lumaloop-reveal" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="lumaloop-glass-card" style="padding: clamp(3rem, 6vw, 6rem); background: radial-gradient(circle at 0% 0%, rgba(0, 240, 255, 0.06) 0%, rgba(14, 16, 21, 0.95) 70%);">
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 4rem; align-items: center;">
+      
+      <!-- Text & Vision Column -->
+      <div>
+        <span class="lumaloop-tech-pill" style="margin-bottom: 1.6rem;">
+          <span class="lumaloop-pulsing-dot"></span>
+          {{ section.settings.subtitle | default: "OUR MANIFESTO // GEN 04" }}
+        </span>
+
+        <h2 style="font-size: clamp(3rem, 4.5vw, 5.2rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.04em; color: #FFFFFF; margin: 0 0 2.4rem 0;">
+          {{ section.settings.title | default: "LumaLoop exists to bridge the gap between everyday technology and the future." }}
+        </h2>
+
+        <div style="font-size: 1.65rem; color: #94a3b8; line-height: 1.7; margin-bottom: 3rem;">
+          {{ section.settings.story_text | default: "<p>We started with a singular obsession: standard consumer electronics have become mundane, plastic, and uninspired. Technology is an extension of human intention—it should feel precise, tactile, and undeniably futuristic.</p><p>By combining aerospace-grade metallurgy, transparent acoustic architecture, and ultra-high-efficiency circuitry, LumaLoop redefines the physical objects you interact with every single day.</p>" }}
+        </div>
+
+        <div style="display: flex; gap: 1.6rem; flex-wrap: wrap;">
+          <a href="{{ section.settings.button_link | default: '/pages/about' }}" class="button button--primary" style="padding: 1.3rem 2.8rem;">
+            <span>{{ section.settings.button_label | default: "Discover Our Philosophy" }}</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Tech Visual & Metrics Column -->
+      <div style="display: flex; flex-direction: column; gap: 2.4rem;">
+        
+        <!-- Schematic / Tech Image Container -->
+        <div style="position: relative; border-radius: var(--lumaloop-radius-lg); overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); background: #0c0e13; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;">
+          {%- if section.settings.image != blank -%}
+            {{ section.settings.image | image_url: width: 1200 | image_tag: 
+              class: 'lumaloop-story-img',
+              style: 'width: 100%; height: 100%; object-fit: cover;',
+              loading: 'lazy'
+            }}
+          {%- else -%}
+            <!-- Abstract Cyber Isometric Wireframe Art -->
+            <div style="position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.12) 0%, transparent 70%);"></div>
+            <svg width="280" height="240" viewBox="0 0 280 240" fill="none">
+              <polygon points="140,20 250,85 250,195 140,230 30,195 30,85" stroke="rgba(0, 240, 255, 0.4)" stroke-width="2" />
+              <polygon points="140,55 220,105 220,175 140,205 60,175 60,105" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5" stroke-dasharray="4 4" />
+              <line x1="140" y1="20" x2="140" y2="230" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1" />
+              <line x1="30" y1="85" x2="250" y2="195" stroke="rgba(0, 240, 255, 0.2)" stroke-width="1" />
+              <line x1="250" y1="85" x2="30" y2="195" stroke="rgba(0, 240, 255, 0.2)" stroke-width="1" />
+              <circle cx="140" cy="125" r="14" fill="#00F0FF" fill-opacity="0.4" filter="drop-shadow(0 0 10px #00F0FF)" />
+            </svg>
+            <div style="position: absolute; bottom: 1.4rem; left: 1.6rem; font-family: var(--lumaloop-font-mono); font-size: 1.15rem; color: #64748b;">
+              FIG 4.2 // ARCHITECTURAL SCHEMATIC
+            </div>
+          {%- endif -%}
+        </div>
+
+        <!-- Telemetry Metrics Counters -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; background: rgba(0, 0, 0, 0.4); padding: 1.8rem; border-radius: var(--lumaloop-radius-md); border: 1px solid rgba(255, 255, 255, 0.06);">
+          <div>
+            <div style="font-size: clamp(2rem, 2.5vw, 3rem); font-weight: 800; color: var(--lumaloop-accent); font-family: var(--lumaloop-font-mono);">
+              0.01mm
+            </div>
+            <div style="font-size: 1.2rem; color: #94a3b8; text-transform: uppercase; font-weight: 500;">
+              Tolerance
+            </div>
+          </div>
+          <div>
+            <div style="font-size: clamp(2rem, 2.5vw, 3rem); font-weight: 800; color: #ffffff; font-family: var(--lumaloop-font-mono);">
+              100%
+            </div>
+            <div style="font-size: 1.2rem; color: #94a3b8; text-transform: uppercase; font-weight: 500;">
+              Recyclable
+            </div>
+          </div>
+          <div>
+            <div style="font-size: clamp(2rem, 2.5vw, 3rem); font-weight: 800; color: var(--lumaloop-accent); font-family: var(--lumaloop-font-mono);">
+              4.9/5
+            </div>
+            <div style="font-size: 1.2rem; color: #94a3b8; text-transform: uppercase; font-weight: 500;">
+              Hardware Index
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "LumaLoop Brand Story",
+  "tag": "section",
+  "class": "section-lumaloop-story",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "OUR MANIFESTO // GEN 04"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "LumaLoop exists to bridge the gap between everyday technology and the future."
+    },
+    {
+      "type": "richtext",
+      "id": "story_text",
+      "label": "Story Content",
+      "default": "<p>We started with a singular obsession: standard consumer electronics have become mundane, plastic, and uninspired. Technology is an extension of human intention—it should feel precise, tactile, and undeniably futuristic.</p><p>By combining aerospace-grade metallurgy, transparent acoustic architecture, and ultra-high-efficiency circuitry, LumaLoop redefines the physical objects you interact with every single day.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Schematic / Product Image"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Discover Our Philosophy"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "LumaLoop Brand Story"
+    }
+  ]
+}
+{% endschema %}

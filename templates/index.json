@@ -1,210 +1,176 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "lumaloop_hero": {
+      "type": "lumaloop-hero",
+      "settings": {
+        "hero_height": "90vh",
+        "image_opacity": 40,
+        "pill_badge": "GEN 4.0 HARDWARE // NOW LIVE",
+        "heading": "Future Ready Technology",
+        "subheading": "Premium electronic accessories engineered for modern lifestyles. Precision machined, high-efficiency, cyber-minimal.",
+        "button_label_1": "Shop Collection",
+        "button_link_1": "shopify://collections/all",
+        "button_label_2": "Explore Technology",
+        "button_link_2": "#lumaloop-specs"
+      }
+    },
+    "lumaloop_collections": {
+      "type": "lumaloop-collections",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "col_smart": {
+          "type": "collection",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
+            "custom_title": "Smart Essentials",
+            "description": "Daily carry electronic essentials refined to perfection."
           }
         },
-        "text": {
-          "type": "text",
+        "col_power": {
+          "type": "collection",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "custom_title": "Power Solutions",
+            "description": "HyperCharge™ magnetic power banks & high-speed hubs."
           }
         },
-        "button": {
-          "type": "buttons",
+        "col_audio": {
+          "type": "collection",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "custom_title": "Audio Technology",
+            "description": "Ultra-low latency lossless audio transducers & docks."
+          }
+        },
+        "col_travel": {
+          "type": "collection",
+          "settings": {
+            "custom_title": "Travel Tech",
+            "description": "Rugged CNC aluminum travel gear with global voltage."
+          }
+        },
+        "col_desk": {
+          "type": "collection",
+          "settings": {
+            "custom_title": "Desk Setup",
+            "description": "Cyber-minimal magnetic mounts, docks, and cable routers."
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "col_smart",
+        "col_power",
+        "col_audio",
+        "col_travel",
+        "col_desk"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "subtitle": "SYSTEM ARCHITECTURE // HARDWARE",
+        "title": "Engineered For Every Vector",
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
+    "lumaloop_products": {
+      "type": "lumaloop-products",
       "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
+        "subtitle": "BEST SELLERS // HIGH DEMAND",
+        "title": "Engineered Excellence",
         "collection": "all",
-        "products_to_show": 8,
+        "products_to_show": 4,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 36
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     },
-    "collage": {
-      "type": "collage",
+    "lumaloop_trust": {
+      "type": "lumaloop-trust",
+      "settings": {
+        "subtitle": "CORE SPECIFICATIONS // TRUST MATRIX",
+        "title": "Engineered Without Compromise",
+        "description": "Every component is calibrated for zero tolerance, exceptional durability, and next-generation electrical efficiency.",
+        "card_1_title": "Aerospace-Grade Materials",
+        "card_1_text": "Precision CNC machined anodized aluminum, liquid silicone rubber, and reinforced ceramic coatings designed to withstand daily wear.",
+        "card_2_title": "Cyber-Minimal Design",
+        "card_2_text": "Form follows technological ambition. Invisible seams, magnetic alignment systems, and clean architectural lines.",
+        "card_3_title": "Hyper-Speed Logistics",
+        "card_3_text": "Automated fulfillment with carbon-neutral priority courier dispatch. Live telemetry tracking direct to your doorstep.",
+        "card_4_title": "Quantum Shield Security",
+        "card_4_text": "End-to-end 256-bit encrypted checkout with full support for Apple Pay, Google Pay, and contactless digital authorization.",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "lumaloop_story": {
+      "type": "lumaloop-brand-story",
+      "settings": {
+        "subtitle": "OUR MANIFESTO // GEN 04",
+        "title": "LumaLoop exists to bridge the gap between everyday technology and the future.",
+        "story_text": "<p>We started with a singular obsession: standard consumer electronics have become mundane, plastic, and uninspired. Technology is an extension of human intention—it should feel precise, tactile, and undeniably futuristic.</p><p>By combining aerospace-grade metallurgy, transparent acoustic architecture, and ultra-high-efficiency circuitry, LumaLoop redefines the physical objects you interact with every single day.</p>",
+        "button_label": "Discover Our Philosophy",
+        "button_link": "shopify://pages/about",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "lumaloop_reviews": {
+      "type": "lumaloop-reviews",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "rev_1": {
+          "type": "review",
           "settings": {
-            "collection": ""
+            "author_name": "Marcus Vance",
+            "author_role": "Hardware Architect, SF",
+            "review_text": "The tactile feel of the MagPower CyberHub is leagues ahead of standard accessories. The precision tolerances and cold aluminum finish feel distinctly Apple-tier.",
+            "product_tag": "MagPower CyberHub"
           }
         },
-        "product": {
-          "type": "product",
+        "rev_2": {
+          "type": "review",
           "settings": {
-            "product": "",
-            "second_image": false
+            "author_name": "Elena Rostova",
+            "author_role": "Industrial Designer, Tokyo",
+            "review_text": "Nothing compares to the transparent acoustic pods. The sub-bass response and instant magnetic snap in the case make it my daily essential.",
+            "product_tag": "QuantumZero Pods"
           }
         },
-        "collection-1": {
-          "type": "collection",
+        "rev_3": {
+          "type": "review",
           "settings": {
-            "collection": ""
+            "author_name": "Kaito Tanaka",
+            "author_role": "Creative Director, Berlin",
+            "review_text": "LumaLoop has finally brought high-design cyber-minimalism into desk accessories. Charging speed is phenomenal and zero thermal throttling.",
+            "product_tag": "100W GaN Station"
           }
         }
       },
       "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
+        "rev_1",
+        "rev_2",
+        "rev_3"
       ],
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "subtitle": "VERIFIED TELEMETRY // TESTIMONIALS",
+        "title": "Validated By The Future-Minded",
+        "description": "Hear from designers, engineers, and tech minimalists worldwide who elevated their daily carry.",
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     },
-    "video": {
-      "type": "video",
+    "lumaloop_newsletter": {
+      "type": "lumaloop-newsletter",
       "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "subtitle": "ACCESS TERMINAL // DROP ALERT",
+        "heading": "Join The Future",
+        "subtext": "Get early access to new technology drops, exclusive offers, and product launches before public release.",
+        "padding_top": 72,
+        "padding_bottom": 84
       }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "lumaloop_hero",
+    "lumaloop_collections",
+    "lumaloop_products",
+    "lumaloop_trust",
+    "lumaloop_story",
+    "lumaloop_reviews",
+    "lumaloop_newsletter"
   ]
 }

@@ -1,0 +1,192 @@
+{% comment %}
+  LumaLoop Technology Trust Section
+  Highlights engineering rigor, material science, and customer trust with cyber icons
+{% endcomment %}
+
+{{ 'lumaloop-theme.css' | asset_url | stylesheet_tag }}
+
+<div class="lumaloop-trust-section page-width lumaloop-reveal" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div style="text-align: center; max-width: 680px; margin: 0 auto 4.5rem auto;">
+    <span class="lumaloop-tech-pill" style="margin-bottom: 1.2rem;">
+      <span class="lumaloop-pulsing-dot"></span>
+      {{ section.settings.subtitle | default: "CORE SPECIFICATIONS // TRUST MATRIX" }}
+    </span>
+    <h2 style="font-size: clamp(2.8rem, 4vw, 4.4rem); font-weight: 800; margin: 0 0 1.2rem 0; letter-spacing: -0.03em; color: #FFFFFF;">
+      {{ section.settings.title | default: "Engineered Without Compromise" }}
+    </h2>
+    <p style="font-size: 1.6rem; color: #94a3b8; line-height: 1.5; margin: 0;">
+      {{ section.settings.description | default: "Every component is calibrated for zero tolerance, exceptional durability, and next-generation electrical efficiency." }}
+    </p>
+  </div>
+
+  <div class="lumaloop-trust-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem;">
+    
+    <!-- Card 1: Premium Quality -->
+    <div class="lumaloop-glass-card" style="display: flex; flex-direction: column; justify-content: flex-start;">
+      <div style="width: 52px; height: 52px; border-radius: var(--lumaloop-radius-md); background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.3); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; box-shadow: 0 0 18px rgba(0, 240, 255, 0.2);">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+      </div>
+      <h3 style="font-size: 1.9rem; font-weight: 700; color: #ffffff; margin: 0 0 0.8rem 0;">
+        {{ section.settings.card_1_title | default: "Aerospace-Grade Materials" }}
+      </h3>
+      <p style="font-size: 1.45rem; color: #94a3b8; line-height: 1.6; margin: 0;">
+        {{ section.settings.card_1_text | default: "Precision CNC machined anodized aluminum, liquid silicone rubber, and reinforced ceramic coatings designed to withstand daily wear." }}
+      </p>
+    </div>
+
+    <!-- Card 2: Future Design -->
+    <div class="lumaloop-glass-card" style="display: flex; flex-direction: column; justify-content: flex-start;">
+      <div style="width: 52px; height: 52px; border-radius: var(--lumaloop-radius-md); background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.3); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; box-shadow: 0 0 18px rgba(0, 240, 255, 0.2);">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+          <path d="M2 12h20"></path>
+        </svg>
+      </div>
+      <h3 style="font-size: 1.9rem; font-weight: 700; color: #ffffff; margin: 0 0 0.8rem 0;">
+        {{ section.settings.card_2_title | default: "Cyber-Minimal Design" }}
+      </h3>
+      <p style="font-size: 1.45rem; color: #94a3b8; line-height: 1.6; margin: 0;">
+        {{ section.settings.card_2_text | default: "Form follows technological ambition. Invisible seams, magnetic alignment systems, and clean architectural lines." }}
+      </p>
+    </div>
+
+    <!-- Card 3: Fast Shipping -->
+    <div class="lumaloop-glass-card" style="display: flex; flex-direction: column; justify-content: flex-start;">
+      <div style="width: 52px; height: 52px; border-radius: var(--lumaloop-radius-md); background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.3); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; box-shadow: 0 0 18px rgba(0, 240, 255, 0.2);">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="3" width="15" height="13"></rect>
+          <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+          <circle cx="5.5" cy="18.5" r="2.5"></circle>
+          <circle cx="18.5" cy="18.5" r="2.5"></circle>
+        </svg>
+      </div>
+      <h3 style="font-size: 1.9rem; font-weight: 700; color: #ffffff; margin: 0 0 0.8rem 0;">
+        {{ section.settings.card_3_title | default: "Hyper-Speed Logistics" }}
+      </h3>
+      <p style="font-size: 1.45rem; color: #94a3b8; line-height: 1.6; margin: 0;">
+        {{ section.settings.card_3_text | default: "Automated fulfillment with carbon-neutral priority courier dispatch. Live telemetry tracking direct to your doorstep." }}
+      </p>
+    </div>
+
+    <!-- Card 4: Secure Checkout -->
+    <div class="lumaloop-glass-card" style="display: flex; flex-direction: column; justify-content: flex-start;">
+      <div style="width: 52px; height: 52px; border-radius: var(--lumaloop-radius-md); background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.3); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; box-shadow: 0 0 18px rgba(0, 240, 255, 0.2);">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00F0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+      </div>
+      <h3 style="font-size: 1.9rem; font-weight: 700; color: #ffffff; margin: 0 0 0.8rem 0;">
+        {{ section.settings.card_4_title | default: "Quantum Shield Security" }}
+      </h3>
+      <p style="font-size: 1.45rem; color: #94a3b8; line-height: 1.6; margin: 0;">
+        {{ section.settings.card_4_text | default: "End-to-end 256-bit encrypted checkout with full support for Apple Pay, Google Pay, and contactless digital authorization." }}
+      </p>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "LumaLoop Technology Trust",
+  "tag": "section",
+  "class": "section-lumaloop-trust",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "CORE SPECIFICATIONS // TRUST MATRIX"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Engineered Without Compromise"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Every component is calibrated for zero tolerance, exceptional durability, and next-generation electrical efficiency."
+    },
+    {
+      "type": "text",
+      "id": "card_1_title",
+      "label": "Card 1 Title",
+      "default": "Aerospace-Grade Materials"
+    },
+    {
+      "type": "textarea",
+      "id": "card_1_text",
+      "label": "Card 1 Description",
+      "default": "Precision CNC machined anodized aluminum, liquid silicone rubber, and reinforced ceramic coatings designed to withstand daily wear."
+    },
+    {
+      "type": "text",
+      "id": "card_2_title",
+      "label": "Card 2 Title",
+      "default": "Cyber-Minimal Design"
+    },
+    {
+      "type": "textarea",
+      "id": "card_2_text",
+      "label": "Card 2 Description",
+      "default": "Form follows technological ambition. Invisible seams, magnetic alignment systems, and clean architectural lines."
+    },
+    {
+      "type": "text",
+      "id": "card_3_title",
+      "label": "Card 3 Title",
+      "default": "Hyper-Speed Logistics"
+    },
+    {
+      "type": "textarea",
+      "id": "card_3_text",
+      "label": "Card 3 Description",
+      "default": "Automated fulfillment with carbon-neutral priority courier dispatch. Live telemetry tracking direct to your doorstep."
+    },
+    {
+      "type": "text",
+      "id": "card_4_title",
+      "label": "Card 4 Title",
+      "default": "Quantum Shield Security"
+    },
+    {
+      "type": "textarea",
+      "id": "card_4_text",
+      "label": "Card 4 Description",
+      "default": "End-to-end 256-bit encrypted checkout with full support for Apple Pay, Google Pay, and contactless digital authorization."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "LumaLoop Technology Trust"
+    }
+  ]
+}
+{% endschema %}

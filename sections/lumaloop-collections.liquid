@@ -1,0 +1,228 @@
+{% comment %}
+  LumaLoop Featured Collections
+  Glassmorphic cyber category cards with hover glow and directional exploration
+{% endcomment %}
+
+{{ 'lumaloop-theme.css' | asset_url | stylesheet_tag }}
+
+<div class="lumaloop-collections-section page-width lumaloop-reveal" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div style="display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 4rem;">
+    <span class="lumaloop-tech-pill" style="margin-bottom: 1.2rem;">
+      <span class="lumaloop-pulsing-dot"></span>
+      {{ section.settings.subtitle | default: "CATEGORIES // ARCHITECTURE" }}
+    </span>
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%; flex-wrap: wrap; gap: 1.6rem;">
+      <h2 style="font-size: clamp(2.8rem, 4vw, 4.4rem); font-weight: 800; margin: 0; letter-spacing: -0.03em; color: #FFFFFF;">
+        {{ section.settings.title | default: "Engineered For Every Vector" }}
+      </h2>
+      <a href="{{ routes.collections_url }}" class="link link--text" style="color: var(--lumaloop-accent); font-weight: 600; font-size: 1.45rem; text-decoration: none; display: flex; align-items: center; gap: 0.6rem;">
+        <span>View All Categories</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="lumaloop-collection-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+    {%- for block in section.blocks -%}
+      {%- assign collection = block.settings.collection -%}
+      {%- assign collection_url = collection.url | default: routes.all_products_collection_url -%}
+      {%- assign collection_title = block.settings.custom_title | default: collection.title -%}
+      {%- if collection_title == blank -%}
+        {%- case forloop.index -%}
+          {%- when 1 -%}{%- assign collection_title = "Smart Essentials" -%}
+          {%- when 2 -%}{%- assign collection_title = "Power Solutions" -%}
+          {%- when 3 -%}{%- assign collection_title = "Audio Technology" -%}
+          {%- when 4 -%}{%- assign collection_title = "Travel Tech" -%}
+          {%- when 5 -%}{%- assign collection_title = "Desk Setup" -%}
+          {%- else -%}{%- assign collection_title = "Accessories" -%}
+        {%- endcase -%}
+      {%- endif -%}
+
+      <a href="{{ collection_url }}" class="lumaloop-collection-card lumaloop-glass-card" {{ block.shopify_attributes }} style="text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; min-height: 320px; position: relative; overflow: hidden; padding: 2.8rem;">
+        
+        <!-- Card Background Gradient & Graphic -->
+        <div style="position: absolute; inset: 0; background: radial-gradient(circle at 100% 0%, rgba(0, 240, 255, 0.08) 0%, transparent 60%); z-index: 0;"></div>
+        
+        {%- if block.settings.custom_image != blank -%}
+          <div style="position: absolute; inset: 0; z-index: 0; opacity: 0.35; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="lumaloop-card-img-wrap">
+            {{ block.settings.custom_image | image_url: width: 800 | image_tag: 
+              class: 'lumaloop-col-img',
+              style: 'width: 100%; height: 100%; object-fit: cover;',
+              loading: 'lazy'
+            }}
+          </div>
+        {%- elsif collection.featured_image != blank -%}
+          <div style="position: absolute; inset: 0; z-index: 0; opacity: 0.35; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="lumaloop-card-img-wrap">
+            {{ collection.featured_image | image_url: width: 800 | image_tag: 
+              class: 'lumaloop-col-img',
+              style: 'width: 100%; height: 100%; object-fit: cover;',
+              loading: 'lazy'
+            }}
+          </div>
+        {%- else -%}
+          <!-- Cyber schematic placeholder art -->
+          <div style="position: absolute; right: -20px; bottom: -20px; opacity: 0.15; z-index: 0;" class="lumaloop-schematic">
+            <svg width="220" height="220" viewBox="0 0 200 200" fill="none">
+              <circle cx="100" cy="100" r="80" stroke="#00F0FF" stroke-width="2" stroke-dasharray="4 4" />
+              <rect x="50" y="50" width="100" height="100" rx="16" stroke="#00F0FF" stroke-width="1.5" />
+              <circle cx="100" cy="100" r="24" fill="#00F0FF" fill-opacity="0.3" />
+            </svg>
+          </div>
+        {%- endif -%}
+
+        <!-- Card Top: Category index & tag -->
+        <div style="position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-family: var(--lumaloop-font-mono); font-size: 1.2rem; color: #64748b; font-weight: 700;">
+            0{{ forloop.index }} // SYS
+          </span>
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: rgba(0,240,255,0.4); box-shadow: 0 0 8px rgba(0,240,255,0.8);"></span>
+        </div>
+
+        <!-- Card Bottom Content -->
+        <div style="position: relative; z-index: 1; margin-top: 5rem;">
+          <h3 style="font-size: 2.2rem; font-weight: 700; color: #FFFFFF; margin: 0 0 0.8rem 0; letter-spacing: -0.02em;">
+            {{ collection_title }}
+          </h3>
+          {%- if block.settings.description != blank -%}
+            <p style="font-size: 1.35rem; color: #94a3b8; margin: 0 0 1.6rem 0; line-height: 1.5;">
+              {{ block.settings.description }}
+            </p>
+          {%- endif -%}
+          <div class="lumaloop-card-cta" style="display: flex; align-items: center; gap: 0.8rem; color: var(--lumaloop-accent); font-size: 1.35rem; font-weight: 600;">
+            <span>Explore Collection</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease;">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+
+      </a>
+    {%- endfor -%}
+  </div>
+</div>
+
+<style>
+.lumaloop-collection-card:hover .lumaloop-card-img-wrap {
+  transform: scale(1.08);
+}
+.lumaloop-collection-card:hover .lumaloop-card-cta svg {
+  transform: translateX(5px);
+}
+</style>
+
+{% schema %}
+{
+  "name": "LumaLoop Collections",
+  "tag": "section",
+  "class": "section-lumaloop-collections",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Section Subtitle",
+      "default": "SYSTEM ARCHITECTURE // HARDWARE"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Engineered For Every Vector"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 64
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection Card",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "custom_title",
+          "label": "Custom Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Brief Description",
+          "default": "High-performance tech accessories for modern setups."
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Custom Card Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "LumaLoop Collections",
+      "blocks": [
+        {
+          "type": "collection",
+          "settings": {
+            "custom_title": "Smart Essentials",
+            "description": "Daily carry electronic essentials refined to perfection."
+          }
+        },
+        {
+          "type": "collection",
+          "settings": {
+            "custom_title": "Power Solutions",
+            "description": "HyperCharge™ magnetic power banks & high-speed hubs."
+          }
+        },
+        {
+          "type": "collection",
+          "settings": {
+            "custom_title": "Audio Technology",
+            "description": "Ultra-low latency lossless audio transducers & docks."
+          }
+        },
+        {
+          "type": "collection",
+          "settings": {
+            "custom_title": "Travel Tech",
+            "description": "Rugged CNC aluminum travel gear with global voltage."
+          }
+        },
+        {
+          "type": "collection",
+          "settings": {
+            "custom_title": "Desk Setup",
+            "description": "Cyber-minimal magnetic mounts, docks, and cable routers."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

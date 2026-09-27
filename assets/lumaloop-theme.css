@@ -1,0 +1,629 @@
+/* ==========================================================================
+   LumaLoop - Premium Cyber-Minimal Technology Theme Stylesheet
+   Engineered for high-end electronic accessories
+   ========================================================================== */
+
+:root {
+  --lumaloop-bg: #050505;
+  --lumaloop-bg-darker: #020202;
+  --lumaloop-surface: #0e1015;
+  --lumaloop-surface-card: #14171f;
+  --lumaloop-surface-glass: rgba(16, 20, 28, 0.75);
+  --lumaloop-border: rgba(255, 255, 255, 0.08);
+  --lumaloop-border-hover: rgba(0, 240, 255, 0.4);
+  --lumaloop-text: #ffffff;
+  --lumaloop-text-secondary: #94a3b8;
+  --lumaloop-text-muted: #64748b;
+  --lumaloop-accent: #00f0ff;
+  --lumaloop-accent-hover: #38bdf8;
+  --lumaloop-accent-dark: #0098a6;
+  --lumaloop-accent-glow: rgba(0, 240, 255, 0.35);
+  --lumaloop-shadow-glow: 0 0 25px rgba(0, 240, 255, 0.25);
+  --lumaloop-shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+  --lumaloop-radius-sm: 6px;
+  --lumaloop-radius-md: 10px;
+  --lumaloop-radius-lg: 16px;
+  --lumaloop-radius-xl: 24px;
+  --lumaloop-radius-pill: 9999px;
+  --lumaloop-transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --lumaloop-font-tech: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', Roboto, sans-serif;
+  --lumaloop-font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+/* Base Overrides & Dark Tech Ambience */
+body {
+  background-color: var(--lumaloop-bg) !important;
+  color: var(--lumaloop-text) !important;
+  font-family: var(--lumaloop-font-tech);
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Subtle Cyber Grid Background Texture */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.04) 0%, transparent 60%),
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+  opacity: 0.8;
+}
+
+/* Global Typography & Headings */
+h1, h2, h3, h4, h5, h6,
+.h0, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: var(--lumaloop-text) !important;
+  font-family: var(--lumaloop-font-tech) !important;
+  letter-spacing: -0.03em !important;
+  font-weight: 700 !important;
+}
+
+p, span, li, a {
+  color: inherit;
+}
+
+/* Modern Cyber Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1e27;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--lumaloop-accent-dark);
+}
+
+/* ==========================================================================
+   Buttons & Interactive Cyber Controls
+   ========================================================================== */
+.button,
+.shopify-challenge__button,
+.customer button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: var(--lumaloop-font-tech);
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 0.02em;
+  padding: 1.2rem 2.6rem;
+  border-radius: var(--lumaloop-radius-md);
+  transition: var(--lumaloop-transition);
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Primary Button - Electric Cyan */
+.button:not(.button--secondary):not(.button--tertiary),
+.button--primary {
+  background: linear-gradient(135deg, #00f0ff 0%, #00b4d8 100%) !important;
+  color: #050505 !important;
+  border: 1px solid #00f0ff !important;
+  box-shadow: 0 4px 18px rgba(0, 240, 255, 0.28) !important;
+}
+
+.button:not(.button--secondary):not(.button--tertiary):hover,
+.button--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 240, 255, 0.5) !important;
+  background: linear-gradient(135deg, #38bdf8 0%, #00e5ff 100%) !important;
+}
+
+/* Secondary Button - Frosted Glass & Subtle Glow */
+.button--secondary {
+  background: rgba(255, 255, 255, 0.04) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+.button--secondary:hover {
+  border-color: var(--lumaloop-accent) !important;
+  color: var(--lumaloop-accent) !important;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2) !important;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Header Redesign & Navigation
+   ========================================================================== */
+.section-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.35s ease-in-out;
+}
+
+.header-wrapper {
+  background: rgba(5, 5, 5, 0.85) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.35s ease;
+}
+
+/* Glowing accent underline on header */
+.header-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 240, 255, 0.4) 50%, transparent 100%);
+  opacity: 0.6;
+}
+
+.header-wrapper.scrolled {
+  background: rgba(5, 5, 5, 0.95) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* Menu items */
+.header__menu-item {
+  color: #94a3b8 !important;
+  font-weight: 500;
+  font-size: 1.45rem;
+  letter-spacing: -0.01em;
+  transition: var(--lumaloop-transition);
+  position: relative;
+  padding: 0.8rem 1.6rem !important;
+}
+
+.header__menu-item:hover,
+.header__menu-item[aria-current="page"] {
+  color: #ffffff !important;
+}
+
+.header__menu-item:hover::after,
+.header__menu-item[aria-current="page"]::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 2px;
+  background: var(--lumaloop-accent);
+  box-shadow: 0 0 8px var(--lumaloop-accent);
+  border-radius: 2px;
+}
+
+/* Header icons */
+.header__icon {
+  color: #94a3b8 !important;
+  transition: var(--lumaloop-transition);
+}
+.header__icon:hover {
+  color: var(--lumaloop-accent) !important;
+  transform: scale(1.08);
+}
+
+/* Cart badge pill */
+.cart-count-bubble {
+  background: var(--lumaloop-accent) !important;
+  color: #050505 !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.6) !important;
+}
+
+/* Announcement Bar Tech Look */
+.announcement-bar {
+  background: #000000 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.announcement-bar__message {
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #94a3b8 !important;
+}
+.announcement-bar__message span.accent-highlight {
+  color: var(--lumaloop-accent);
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+}
+
+/* ==========================================================================
+   Product Cards & Grids
+   ========================================================================== */
+.card-wrapper {
+  background: var(--lumaloop-surface-card) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: var(--lumaloop-radius-lg) !important;
+  overflow: hidden;
+  transition: var(--lumaloop-transition);
+  position: relative;
+  box-shadow: var(--lumaloop-shadow-card);
+}
+
+.card-wrapper:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 240, 255, 0.4) !important;
+  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 240, 255, 0.15) !important;
+}
+
+.card-wrapper .card__media {
+  background: radial-gradient(circle at 50% 50%, #1a1e27 0%, #0d0f14 100%) !important;
+  border-radius: calc(var(--lumaloop-radius-lg) - 1px) calc(var(--lumaloop-radius-lg) - 1px) 0 0;
+  overflow: hidden;
+}
+
+.card-wrapper:hover .card__media img {
+  transform: scale(1.05);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card__information {
+  padding: 2rem !important;
+}
+
+.card__heading {
+  font-size: 1.6rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin-bottom: 0.6rem !important;
+}
+
+.price {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: var(--lumaloop-accent) !important;
+}
+
+.price--on-sale .price-item--regular {
+  color: #64748b !important;
+  text-decoration: line-through;
+  font-size: 1.3rem !important;
+}
+
+/* Cyber Product Badges */
+.badge {
+  background: rgba(0, 240, 255, 0.15) !important;
+  color: var(--lumaloop-accent) !important;
+  border: 1px solid rgba(0, 240, 255, 0.4) !important;
+  font-family: var(--lumaloop-font-mono) !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  border-radius: var(--lumaloop-radius-pill) !important;
+  padding: 0.35rem 0.9rem !important;
+  backdrop-filter: blur(8px);
+}
+
+.badge--sold-out {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #f87171 !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+}
+
+/* ==========================================================================
+   Cart Drawer Styling
+   ========================================================================== */
+.drawer {
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+.drawer__inner {
+  background: #090b0f !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.9) !important;
+}
+
+.drawer__heading {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.cart-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+.cart-drawer__footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: #050608 !important;
+}
+
+/* Quantity input pills */
+.quantity {
+  background: #12151c !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: var(--lumaloop-radius-md) !important;
+  color: #ffffff !important;
+}
+.quantity__button {
+  color: #94a3b8 !important;
+}
+.quantity__button:hover {
+  color: var(--lumaloop-accent) !important;
+}
+
+/* ==========================================================================
+   Product Page Tech Enhancements
+   ========================================================================== */
+.product__title h1 {
+  font-size: 3.4rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.15 !important;
+}
+
+@media screen and (min-width: 990px) {
+  .product__title h1 {
+    font-size: 4.4rem !important;
+  }
+}
+
+.product__description {
+  color: #94a3b8 !important;
+  font-size: 1.55rem !important;
+  line-height: 1.65 !important;
+}
+
+/* Variant Pills */
+.product-form__input input[type='radio'] + label {
+  background: #11141a !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  border-radius: var(--lumaloop-radius-md) !important;
+  font-size: 1.35rem !important;
+  font-weight: 500 !important;
+  transition: var(--lumaloop-transition);
+}
+
+.product-form__input input[type='radio']:checked + label {
+  background: rgba(0, 240, 255, 0.1) !important;
+  border-color: var(--lumaloop-accent) !important;
+  color: var(--lumaloop-accent) !important;
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.25) !important;
+}
+
+/* Product trust checklist */
+.lumaloop-trust-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin: 2.4rem 0;
+  padding: 1.6rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--lumaloop-radius-md);
+}
+
+.lumaloop-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+.lumaloop-trust-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--lumaloop-accent);
+  flex-shrink: 0;
+}
+
+/* Accordions */
+.accordion {
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+.accordion summary {
+  padding: 1.6rem 0 !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.accordion summary:hover {
+  color: var(--lumaloop-accent) !important;
+}
+.accordion .accordion__content {
+  color: #94a3b8 !important;
+  padding-bottom: 1.6rem !important;
+}
+
+/* ==========================================================================
+   Sticky Add-to-Cart Bar
+   ========================================================================== */
+.lumaloop-sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(10, 12, 17, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(0, 240, 255, 0.2);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.7);
+  z-index: 99;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 1.2rem 2rem;
+}
+
+.lumaloop-sticky-bar.visible {
+  transform: translateY(0);
+}
+
+.lumaloop-sticky-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.lumaloop-sticky-product {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.lumaloop-sticky-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--lumaloop-radius-sm);
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #1a1e27;
+}
+
+.lumaloop-sticky-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.lumaloop-sticky-title {
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.lumaloop-sticky-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--lumaloop-accent);
+}
+
+.lumaloop-sticky-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* ==========================================================================
+   Futuristic Glassmorphic Cards & Grid Utilities
+   ========================================================================== */
+.lumaloop-glass-card {
+  background: var(--lumaloop-surface-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--lumaloop-border);
+  border-radius: var(--lumaloop-radius-xl);
+  padding: 3rem;
+  box-shadow: var(--lumaloop-shadow-card);
+  transition: var(--lumaloop-transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.lumaloop-glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+}
+
+.lumaloop-glass-card:hover {
+  border-color: var(--lumaloop-border-hover);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 240, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Micro Tech Monospace Badge */
+.lumaloop-tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: var(--lumaloop-radius-pill);
+  padding: 0.4rem 1.2rem;
+  font-family: var(--lumaloop-font-mono);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--lumaloop-accent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.lumaloop-pulsing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--lumaloop-accent);
+  box-shadow: 0 0 8px var(--lumaloop-accent);
+  animation: lumaloopPulse 2s infinite ease-in-out;
+}
+
+@keyframes lumaloopPulse {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1.4); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.6; }
+}
+
+/* Entrance Animations */
+.lumaloop-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lumaloop-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Form inputs */
+.field__input {
+  background: #0d0f14 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  border-radius: var(--lumaloop-radius-md) !important;
+  transition: var(--lumaloop-transition);
+}
+
+.field__input:focus {
+  border-color: var(--lumaloop-accent) !important;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.25) !important;
+  outline: none !important;
+}
+
+.field__label {
+  color: #94a3b8 !important;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 749px) {
+  .lumaloop-sticky-bar {
+    padding: 1rem 1.4rem;
+  }
+  .lumaloop-sticky-title {
+    font-size: 1.3rem;
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .lumaloop-glass-card {
+    padding: 2rem;
+  }
+}

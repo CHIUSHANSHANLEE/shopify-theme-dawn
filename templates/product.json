@@ -205,10 +205,21 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "lumaloop_specs": {
+      "type": "lumaloop-tech-specs",
+      "settings": {
+        "subtitle": "HARDWARE ARCHITECTURE // SPECS",
+        "title": "Meticulously Engineered Down to the Micron",
+        "description": "Explore the internal architecture, material properties, and thermal dissipation systems that power LumaLoop hardware.",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
     }
   },
   "order": [
     "main",
+    "lumaloop_specs",
     "image-with-text",
     "multicolumn",
     "related-products"

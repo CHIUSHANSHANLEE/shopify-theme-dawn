@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "lumaloop_about": {
+      "type": "lumaloop-about",
+      "settings": {
+        "subtitle": "OUR ORIGIN // HARDWARE MANIFESTO",
+        "hero_title": "Engineering The Next Horizon of Personal Electronics",
+        "hero_subtext": "LumaLoop was founded on a singular conviction: the everyday tools connecting you to the digital universe should be breathtaking in execution, radically efficient, and uncompromising in durability.",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": [
+    "lumaloop_about"
+  ]
+}

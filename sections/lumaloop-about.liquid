@@ -1,0 +1,198 @@
+{% comment %}
+  LumaLoop About / Brand Manifesto Section
+  High-end technology company philosophy, mission, and quality promise
+{% endcomment %}
+
+{{ 'lumaloop-theme.css' | asset_url | stylesheet_tag }}
+
+<div class="lumaloop-about-section page-width lumaloop-reveal" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  
+  <!-- Hero Section -->
+  <div style="text-align: center; max-width: 840px; margin: 0 auto 6rem auto;">
+    <span class="lumaloop-tech-pill" style="margin-bottom: 1.4rem;">
+      <span class="lumaloop-pulsing-dot"></span>
+      {{ section.settings.subtitle | default: "OUR ORIGIN // HARDWARE MANIFESTO" }}
+    </span>
+    <h1 style="font-size: clamp(3.4rem, 5.5vw, 6.4rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.04em; color: #FFFFFF; margin: 0 0 2rem 0;">
+      {{ section.settings.hero_title | default: "Engineering The Next Horizon of Personal Electronics" }}
+    </h1>
+    <p style="font-size: clamp(1.6rem, 2vw, 2.1rem); color: #94a3b8; line-height: 1.6; margin: 0;">
+      {{ section.settings.hero_subtext | default: "LumaLoop was founded on a singular conviction: the everyday tools connecting you to the digital universe should be breathtaking in execution, radically efficient, and uncompromising in durability." }}
+    </p>
+  </div>
+
+  <!-- Telemetry Metrics Bar -->
+  <div class="lumaloop-glass-card" style="padding: 3rem 4rem; margin-bottom: 6rem; background: radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.08) 0%, rgba(14, 16, 22, 0.95) 75%);">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; text-align: center;">
+      <div>
+        <div style="font-size: clamp(3rem, 4vw, 4.4rem); font-weight: 800; color: var(--lumaloop-accent); font-family: var(--lumaloop-font-mono);">
+          0.01mm
+        </div>
+        <div style="font-size: 1.35rem; color: #cbd5e1; font-weight: 600; text-transform: uppercase; margin-top: 0.4rem;">
+          CNC Precision Tolerance
+        </div>
+        <p style="font-size: 1.25rem; color: #64748b; margin: 0.6rem 0 0 0;">Zero cosmetic seams or rattle</p>
+      </div>
+
+      <div>
+        <div style="font-size: clamp(3rem, 4vw, 4.4rem); font-weight: 800; color: #ffffff; font-family: var(--lumaloop-font-mono);">
+          100%
+        </div>
+        <div style="font-size: 1.35rem; color: #cbd5e1; font-weight: 600; text-transform: uppercase; margin-top: 0.4rem;">
+          Clean Metallurgy
+        </div>
+        <p style="font-size: 1.25rem; color: #64748b; margin: 0.6rem 0 0 0;">Post-consumer recycled aluminum</p>
+      </div>
+
+      <div>
+        <div style="font-size: clamp(3rem, 4vw, 4.4rem); font-weight: 800; color: var(--lumaloop-accent); font-family: var(--lumaloop-font-mono);">
+          99.4%
+        </div>
+        <div style="font-size: 1.35rem; color: #cbd5e1; font-weight: 600; text-transform: uppercase; margin-top: 0.4rem;">
+          Electrical Transfer
+        </div>
+        <p style="font-size: 1.25rem; color: #64748b; margin: 0.6rem 0 0 0;">Active GaN semiconductor cores</p>
+      </div>
+
+      <div>
+        <div style="font-size: clamp(3rem, 4vw, 4.4rem); font-weight: 800; color: #ffffff; font-family: var(--lumaloop-font-mono);">
+          2-Year
+        </div>
+        <div style="font-size: 1.35rem; color: #cbd5e1; font-weight: 600; text-transform: uppercase; margin-top: 0.4rem;">
+          Advance Replacement
+        </div>
+        <p style="font-size: 1.25rem; color: #64748b; margin: 0.6rem 0 0 0;">Direct hardware lab warranty</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 Pillars Grid: Mission, Why We Exist, Technology Philosophy, Quality Promise -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.8rem; margin-bottom: 6rem;">
+    
+    <!-- Pillar 1: Our Mission -->
+    <div class="lumaloop-glass-card" style="padding: 3.5rem;">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.8rem;">
+        <span style="font-family: var(--lumaloop-font-mono); font-size: 1.4rem; color: var(--lumaloop-accent); font-weight: 700;">
+          01 //
+        </span>
+        <h3 style="font-size: 2.2rem; font-weight: 700; color: #ffffff; margin: 0;">
+          Our Mission
+        </h3>
+      </div>
+      <p style="font-size: 1.55rem; color: #94a3b8; line-height: 1.7; margin: 0;">
+        To eradicate disposable plastic accessories from tech workspaces. We construct enduring physical hardware that respects the user's intelligence and harmonizes with next-generation computing environments.
+      </p>
+    </div>
+
+    <!-- Pillar 2: Why We Exist -->
+    <div class="lumaloop-glass-card" style="padding: 3.5rem;">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.8rem;">
+        <span style="font-family: var(--lumaloop-font-mono); font-size: 1.4rem; color: var(--lumaloop-accent); font-weight: 700;">
+          02 //
+        </span>
+        <h3 style="font-size: 2.2rem; font-weight: 700; color: #ffffff; margin: 0;">
+          Why We Exist
+        </h3>
+      </div>
+      <p style="font-size: 1.55rem; color: #94a3b8; line-height: 1.7; margin: 0;">
+        Big tech creates flagship phones and laptops with billions in R&D, yet surrounds them with flimsy cables and cheap plastic docks. LumaLoop exists to give flagship devices the companion hardware they truly deserve.
+      </p>
+    </div>
+
+    <!-- Pillar 3: Technology Philosophy -->
+    <div class="lumaloop-glass-card" style="padding: 3.5rem;">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.8rem;">
+        <span style="font-family: var(--lumaloop-font-mono); font-size: 1.4rem; color: var(--lumaloop-accent); font-weight: 700;">
+          03 //
+        </span>
+        <h3 style="font-size: 2.2rem; font-weight: 700; color: #ffffff; margin: 0;">
+          Technology Philosophy
+        </h3>
+      </div>
+      <p style="font-size: 1.55rem; color: #94a3b8; line-height: 1.7; margin: 0;">
+        Cyber-minimalism: raw honest materials, visible engineering, and zero superfluous decoration. What you see is functional thermal dissipation, high-flux magnetic arrays, and electromagnetic shielding.
+      </p>
+    </div>
+
+    <!-- Pillar 4: Quality Promise -->
+    <div class="lumaloop-glass-card" style="padding: 3.5rem;">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.8rem;">
+        <span style="font-family: var(--lumaloop-font-mono); font-size: 1.4rem; color: var(--lumaloop-accent); font-weight: 700;">
+          04 //
+        </span>
+        <h3 style="font-size: 2.2rem; font-weight: 700; color: #ffffff; margin: 0;">
+          Quality Promise
+        </h3>
+      </div>
+      <p style="font-size: 1.55rem; color: #94a3b8; line-height: 1.7; margin: 0;">
+        Every production run undergoes 10,000-cycle bend stress tests, thermal chamber profiling under 100W load, and 100% individual calibration before leaving our facility. We build for decades, not quarters.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Bottom CTA -->
+  <div style="text-align: center;">
+    <a href="{{ routes.all_products_collection_url }}" class="button button--primary" style="padding: 1.5rem 3.4rem; font-size: 1.55rem; font-weight: 700;">
+      <span>Explore LumaLoop Hardware</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "LumaLoop About Page",
+  "tag": "section",
+  "class": "section-lumaloop-about",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "OUR ORIGIN // HARDWARE MANIFESTO"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Hero Title",
+      "default": "Engineering The Next Horizon of Personal Electronics"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subtext",
+      "label": "Hero Subtext",
+      "default": "LumaLoop was founded on a singular conviction: the everyday tools connecting you to the digital universe should be breathtaking in execution, radically efficient, and uncompromising in durability."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "LumaLoop About Page"
+    }
+  ]
+}
+{% endschema %}
