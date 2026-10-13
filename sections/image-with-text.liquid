@@ -22,8 +22,18 @@
   if section.settings.color_scheme == section.settings.section_color_scheme and section.settings.content_layout == 'no-overlap'
     assign remove_color_classes = true
   endif
+
+  assign is_dummy_placeholder = false
+  if section.settings.image == blank
+    for block in section.blocks
+      if block.type == 'heading' and block.settings.heading == 'Image with text'
+        assign is_dummy_placeholder = true
+      endif
+    endfor
+  endif
 -%}
 
+{%- unless is_dummy_placeholder and request.design_mode == false -%}
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
   <div class="page-width">
     <div class="image-with-text image-with-text--{{ section.settings.content_layout }} isolate{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 %} collapse-borders{% endif %}{% unless section.settings.color_scheme == section.settings.section_color_scheme and settings.media_border_thickness > 0 and settings.text_boxes_shadow_opacity == 0 and settings.text_boxes_border_thickness == 0 or settings.text_boxes_border_opacity == 0 %} collapse-corners{% endunless %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -106,6 +116,7 @@
     </div>
   </div>
 </div>
+{%- endunless -%}
 
 {% schema %}
 {

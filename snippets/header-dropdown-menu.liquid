@@ -7,7 +7,28 @@
 
 <nav class="header__inline-menu">
   <ul class="list-menu list-menu--inline" role="list">
+    {%- assign ordered_handles = '' -%}
     {%- for link in section.settings.menu.links -%}
+      {%- if link.handle != 'about' and link.handle != 'contact' -%}
+        {%- assign ordered_handles = ordered_handles | append: link.handle | append: ',' -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- for link in section.settings.menu.links -%}
+      {%- if link.handle == 'about' -%}
+        {%- assign ordered_handles = ordered_handles | append: 'about,' -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- for link in section.settings.menu.links -%}
+      {%- if link.handle == 'contact' -%}
+        {%- assign ordered_handles = ordered_handles | append: 'contact,' -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- assign handle_array = ordered_handles | split: ',' -%}
+
+    {%- for h in handle_array -%}
+      {%- if h == blank %}{% continue %}{% endif -%}
+      {%- for link in section.settings.menu.links -%}
+        {%- if link.handle == h -%}
       <li>
         {%- if link.links != blank -%}
           <header-menu>
@@ -98,6 +119,9 @@
           </a>
         {%- endif -%}
       </li>
+          {%- break -%}
+          {%- endif -%}
+        {%- endfor -%}
     {%- endfor -%}
   </ul>
 </nav>

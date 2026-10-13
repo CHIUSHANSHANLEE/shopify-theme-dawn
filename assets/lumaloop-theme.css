@@ -60,6 +60,37 @@ body.color-scheme-5 {
   position: relative;
 }
 
+/* Universal Dark Canvas for all Dawn color scheme wrappers */
+.color-scheme-1,
+.color-scheme-2,
+.color-scheme-3,
+.color-scheme-4,
+.color-scheme-5,
+.gradient {
+  --color-background: 9, 10, 15 !important;
+  --gradient-background: #090a0f !important;
+  --color-foreground: 248, 250, 252 !important;
+  --color-shadow: 0, 0, 0 !important;
+  --color-button: 255, 255, 255 !important;
+  --color-button-text: 0, 0, 0 !important;
+  --color-secondary-button: 18, 19, 26 !important;
+  --color-secondary-button-text: 248, 250, 252 !important;
+  --color-link: 248, 250, 252 !important;
+  background-color: var(--lumaloop-bg) !important;
+  color: var(--lumaloop-text) !important;
+}
+
+/* Elevated glass containers inside sections */
+.content-container,
+.multicolumn-card,
+.image-with-text__content,
+.product-popup-modal__content {
+  background: #12131a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: var(--lumaloop-radius-md) !important;
+  color: #f8fafc !important;
+}
+
 /* Multi-Spectral Cyber Ambient Glow */
 body::before {
   content: '';
