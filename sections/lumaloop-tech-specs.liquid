@@ -1,22 +1,64 @@
 {% comment %}
   LumaLoop Product Technology Details & Specifications Section
-  Apple Pro hardware deep-dive with technical specs matrix, box contents, and FAQ
+  Intelligently and accurately adapts to Mounts, Cases, Power, or Homepage ecosystem.
 {% endcomment %}
 
 {{ 'lumaloop-theme.css' | asset_url | stylesheet_tag }}
 
+{%- assign is_product_page = false -%}
+{%- if template.name == 'product' and product != blank -%}
+  {%- assign is_product_page = true -%}
+{%- endif -%}
+
+{%- assign prod_type = 'mount' -%}
+{%- if is_product_page -%}
+  {%- assign title_dc = product.title | downcase -%}
+  {%- assign type_dc = product.type | downcase -%}
+  {%- if title_dc contains 'case' or type_dc contains 'case' or title_dc contains 'shield' or title_dc contains 'guard' or title_dc contains 'armorview' -%}
+    {%- assign prod_type = 'case' -%}
+  {%- elsif title_dc contains 'cable' or title_dc contains 'charging' or title_dc contains 'charger' or type_dc contains 'cable' or type_dc contains 'charger' or type_dc contains 'wireless chargers' or type_dc contains 'usb cables' -%}
+    {%- assign prod_type = 'power' -%}
+  {%- else -%}
+    {%- assign prod_type = 'mount' -%}
+  {%- endif -%}
+{%- endif -%}
+
 <div class="lumaloop-tech-specs page-width lumaloop-reveal" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
   
-  <div style="text-align: center; max-width: 720px; margin: 0 auto 5.5rem auto;">
+  <!-- Header Title & Subtitle -->
+  <div style="text-align: center; max-width: 760px; margin: 0 auto 5.5rem auto;">
     <span class="lumaloop-tech-pill" style="margin-bottom: 1.4rem;">
       <span class="lumaloop-pulsing-dot"></span>
-      {{ section.settings.subtitle | default: "SPECIFICATIONS & ARCHITECTURE" }}
+      {%- if is_product_page -%}
+        {%- if prod_type == 'case' -%}DEVICE ARMOR & IMPACT SPECIFICATIONS
+        {%- elsif prod_type == 'power' -%}ELECTRICAL ARCHITECTURE & POWER DELIVERY
+        {%- else -%}PNEUMATIC ARCHITECTURE & SPECIFICATIONS
+        {%- endif -%}
+      {%- else -%}
+        {{ section.settings.subtitle | default: "SPECIFICATIONS & ARCHITECTURE" }}
+      {%- endif -%}
     </span>
-    <h2 style="font-size: clamp(2.8rem, 4vw, 4.4rem); font-weight: 700; margin: 0 0 1.2rem 0; letter-spacing: -0.03em; color: #f5f5f7;">
-      {{ section.settings.title | default: "Meticulously Engineered Down to the Micron" }}
+
+    <h2 style="font-size: clamp(2.8rem, 4vw, 4.4rem); font-weight: 700; margin: 0 0 1.2rem 0; letter-spacing: -0.03em; color: #f0ede8;">
+      {%- if is_product_page -%}
+        {%- if prod_type == 'case' -%}Engineered Impact Protection
+        {%- elsif prod_type == 'power' -%}Fast Inductive Power & Thermal Management
+        {%- else -%}Zero-Slip Vacuum & Magnetic Security
+        {%- endif -%}
+      {%- else -%}
+        {{ section.settings.title | default: "Meticulously Engineered Down to the Micron" }}
+      {%- endif -%}
     </h2>
-    <p style="font-size: 1.65rem; color: #86868b; line-height: 1.6; margin: 0;">
-      {{ section.settings.description | default: "Explore the internal architecture, material properties, and thermal dissipation systems that power LumaLoop hardware." }}
+
+    <p style="font-size: 1.65rem; color: #a09890; line-height: 1.6; margin: 0;">
+      {%- if is_product_page -%}
+        {%- if prod_type == 'case' -%}Precision-molded tolerances, shock-absorbing perimeter geometry, and optical-grade polymers designed specifically for {{ product.title }}.
+        {%- elsif prod_type == 'power' -%}Multi-coil wireless induction circuitry, smart thermal protection, and reinforced braided wiring for clean, clutter-free charging.
+        {%- else -%}Hermetic pneumatic suction, high-flux neodymium magnetic arrays, and 360-degree all-angle articulation engineered for zero vibration.
+        {%- endif -%}
+      {%- else -%}
+        {{ section.settings.description | default: "Explore the internal architecture, material properties, and thermal dissipation systems that power LumaLoop hardware." }}
+      {%- endif -%}
     </p>
   </div>
 
@@ -34,30 +76,85 @@
       </div>
 
       <div style="display: flex; flex-direction: column; gap: 1.6rem;">
-        <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
-          <span style="color: #a09890;">Chassis Material</span>
-          <span style="color: #f0ede8; font-weight: 500;">Anodized CNC Alloy & Optical Polymer</span>
-        </div>
-        <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
-          <span style="color: #a09890;">Suction Mechanism</span>
-          <span style="color: #f0ede8; font-weight: 500;">360° Pneumatic Vacuum Lock (5kg Load)</span>
-        </div>
-        <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
-          <span style="color: #a09890;">Magnetic Force</span>
-          <span style="color: #f0ede8; font-weight: 500;">14.5N N52 Neodymium Array</span>
-        </div>
-        <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
-          <span style="color: #a09890;">Power Protocol</span>
-          <span style="color: #f0ede8; font-weight: 500;">3-in-1 MagSafe & Qi2 Compatible</span>
-        </div>
-        <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
-          <span style="color: #a09890;">Device Compatibility</span>
-          <span style="color: #f0ede8; font-weight: 500;">iPhone 16/17, Galaxy Z TriFold/Fold 7, S26</span>
-        </div>
-        <div style="display: flex; justify-content: space-between; font-size: 1.45rem;">
-          <span style="color: #a09890;">Warranty Coverage</span>
-          <span style="color: #f0ede8; font-weight: 500;">2-Year Comprehensive Warranty</span>
-        </div>
+        {%- if is_product_page and prod_type == 'case' -%}
+          <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+            <span style="color: #a09890;">Drop Protection</span>
+            <span style="color: #f0ede8; font-weight: 500;">12-Foot (3.6m) Lab Certified (MIL-STD 810G)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+            <span style="color: #a09890;">Material Chemistry</span>
+            <span style="color: #f0ede8; font-weight: 500;">German Bayer Optical Polymer & Shock TPU</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+            <span style="color: #a09890;">Magnetic Integration</span>
+            <span style="color: #f0ede8; font-weight: 500;">Embedded 38-Magnet N52 MagSafe Ring</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+            <span style="color: #a09890;">Screen & Camera Guard</span>
+            <span style="color: #f0ede8; font-weight: 500;">Raised 1.5mm Screen Lip & 2.0mm Bezel</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+            <span style="color: #a09890;">Yellowing Resistance</span>
+            <span style="color: #f0ede8; font-weight: 500;">Anti-UV Molecular Coating (Zero Oxidation)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 1.45rem;">
+            <span style="color: #a09890;">Warranty Coverage</span>
+            <span style="color: #f0ede8; font-weight: 500;">2-Year Comprehensive Case Warranty</span>
+          </div>
+
+        {%- elsif is_product_page and prod_type == 'power' -%}
+          <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+            <span style="color: #a09890;">Wireless Output</span>
+            <span style="color: #f0ede8; font-weight: 500;">15W Phone (Fast Qi2) / 5W Watch / 5W AirPods</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+            <span style="color: #a09890;">Input Protocol</span>
+            <span style="color: #f0ede8; font-weight: 500;">USB-C Power Delivery (9V/2A, 12V/2A)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+            <span style="color: #a09890;">Cable Architecture</span>
+            <span style="color: #f0ede8; font-weight: 500;">Ballistic Braided Nylon (10,000+ Bend Tested)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+            <span style="color: #a09890;">Thermal Management</span>
+            <span style="color: #f0ede8; font-weight: 500;">Smart IC Chip with Passive Aluminum Heatsink</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+            <span style="color: #a09890;">Charging Distance</span>
+            <span style="color: #f0ede8; font-weight: 500;">Up to 3.5mm (Charges Through All Cases)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 1.45rem;">
+            <span style="color: #a09890;">Safety Certifications</span>
+            <span style="color: #f0ede8; font-weight: 500;">CE, FCC, RoHS & Qi Certified</span>
+          </div>
+
+        {%- else -%}
+          <!-- Mount Specs (Default / Mounts) -->
+          <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+            <span style="color: #a09890;">Suction Mechanism</span>
+            <span style="color: #f0ede8; font-weight: 500;">360° Pneumatic Vacuum Lock (5kg Load)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+            <span style="color: #a09890;">Magnetic Force</span>
+            <span style="color: #f0ede8; font-weight: 500;">14.5N N52 Neodymium Array</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+            <span style="color: #a09890;">Chassis Material</span>
+            <span style="color: #f0ede8; font-weight: 500;">Anodized CNC Alloy & Optical Polymer</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+            <span style="color: #a09890;">Surface Compatibility</span>
+            <span style="color: #f0ede8; font-weight: 500;">Windshields, Dashboards, Tiles, Glass, Mirrors</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1.45rem;">
+            <span style="color: #a09890;">Device Compatibility</span>
+            <span style="color: #f0ede8; font-weight: 500;">iPhone 12–17 MagSafe & All Phones (Ring Included)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 1.45rem;">
+            <span style="color: #a09890;">Warranty Coverage</span>
+            <span style="color: #f0ede8; font-weight: 500;">2-Year Comprehensive Lab Warranty</span>
+          </div>
+        {%- endif -%}
       </div>
     </div>
 
@@ -78,22 +175,60 @@
         </div>
 
         <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.2rem; font-size: 1.5rem; color: #a09890;">
-          <li style="display: flex; align-items: center; gap: 1rem;">
-            <span style="color: #d4935a;">✓</span>
-            <span>1x LumaLoop Precision Hardware Unit</span>
-          </li>
-          <li style="display: flex; align-items: center; gap: 1rem;">
-            <span style="color: #d4935a;">✓</span>
-            <span>1x 1.5m Reinforced Braided USB-C Cable</span>
-          </li>
-          <li style="display: flex; align-items: center; gap: 1rem;">
-            <span style="color: #d4935a;">✓</span>
-            <span>1x Magnetic Alignment Ring Adapter</span>
-          </li>
-          <li style="display: flex; align-items: center; gap: 1rem;">
-            <span style="color: #d4935a;">✓</span>
-            <span>1x Quick Start Guide & Authenticity Certificate</span>
-          </li>
+          {%- if is_product_page and prod_type == 'case' -%}
+            <li style="display: flex; align-items: center; gap: 1rem;">
+              <span style="color: #d4935a;">✓</span>
+              <span>1x {{ product.title }}</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 1rem;">
+              <span style="color: #d4935a;">✓</span>
+              <span>1x Lens & Screen Microfiber Prep Kit</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 1rem;">
+              <span style="color: #d4935a;">✓</span>
+              <span>1x 1-Year Anti-Yellowing & Impact Guarantee Card</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 1rem;">
+              <span style="color: #d4935a;">✓</span>
+              <span>1x Precision Snap Installation & Removal Guide</span>
+            </li>
+
+          {%- elsif is_product_page and prod_type == 'power' -%}
+            <li style="display: flex; align-items: center; gap: 1rem;">
+              <span style="color: #d4935a;">✓</span>
+              <span>1x {{ product.title }}</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 1rem;">
+              <span style="color: #d4935a;">✓</span>
+              <span>1x 1.5m Reinforced Braided Fast-Charging Cable</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 1rem;">
+              <span style="color: #d4935a;">✓</span>
+              <span>1x Premium Silicone Cable Management Strap</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 1rem;">
+              <span style="color: #d4935a;">✓</span>
+              <span>1x Quick Start Guide & Safety Manual</span>
+            </li>
+
+          {%- else -%}
+            <li style="display: flex; align-items: center; gap: 1rem;">
+              <span style="color: #d4935a;">✓</span>
+              <span>1x {%- if is_product_page -%}{{ product.title }}{%- else -%}LumaLoop Precision Hardware Unit{%- endif -%}</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 1rem;">
+              <span style="color: #d4935a;">✓</span>
+              <span>1x 3M VHB Surface Stabilizer Base Disc (for textured surfaces)</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 1rem;">
+              <span style="color: #d4935a;">✓</span>
+              <span>1x Ultra-Slim Magnetic Alignment Ring (Universal Fit)</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 1rem;">
+              <span style="color: #d4935a;">✓</span>
+              <span>1x Surface Prep Cleaning Wipe & Quick Setup Guide</span>
+            </li>
+          {%- endif -%}
         </ul>
       </div>
 
@@ -120,42 +255,139 @@
 
   </div>
 
-  <!-- Hardware FAQ Accordion -->
+  <!-- Hardware FAQ Accordion (Accurate to Product Type) -->
   <div class="lumaloop-glass-card" style="padding: 3.5rem; max-width: 900px; margin: 0 auto; background: #1a1815;">
     <h3 style="font-size: 2.2rem; font-weight: 700; color: #f0ede8; margin: 0 0 2.2rem 0; text-align: center; letter-spacing: -0.02em;">
       Frequently Asked Questions
     </h3>
 
     <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-      <details class="accordion" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
-        <summary style="font-size: 1.6rem; font-weight: 500; cursor: pointer; color: #f0ede8; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center;">
-          <span>Does this support high-speed charging with phone cases?</span>
-          <span style="color: #d4935a; font-size: 1.8rem;">+</span>
-        </summary>
-        <div style="font-size: 1.5rem; color: #a09890; line-height: 1.6; padding-bottom: 1.8rem;">
-          Yes. The magnetic array is engineered with high-permeability N52 neodymium magnets capable of charging through cases up to 3.5mm thick, including all MagSafe and Qi2 compatible cases.
-        </div>
-      </details>
+      {%- if is_product_page and prod_type == 'case' -%}
+        <!-- Case FAQs -->
+        <details class="accordion" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <summary style="font-size: 1.6rem; font-weight: 500; cursor: pointer; color: #f0ede8; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center;">
+            <span>Does wireless charging and MagSafe work through this case?</span>
+            <span style="color: #d4935a; font-size: 1.8rem;">+</span>
+          </summary>
+          <div style="font-size: 1.5rem; color: #a09890; line-height: 1.6; padding-bottom: 1.8rem;">
+            Yes, 100%. The embedded 38-magnet N52 neodymium ring aligns with all official MagSafe chargers, car mounts, and Qi wireless pads without signal loss.
+          </div>
+        </details>
 
-      <details class="accordion" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
-        <summary style="font-size: 1.6rem; font-weight: 500; cursor: pointer; color: #f0ede8; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center;">
-          <span>What international voltage standards are supported?</span>
-          <span style="color: #d4935a; font-size: 1.8rem;">+</span>
-        </summary>
-        <div style="font-size: 1.5rem; color: #a09890; line-height: 1.6; padding-bottom: 1.8rem;">
-          All LumaLoop power accessories support 100V–240V auto-sensing input at 50/60Hz, making them safe and ready for travel anywhere in the world.
-        </div>
-      </details>
+        <details class="accordion" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <summary style="font-size: 1.6rem; font-weight: 500; cursor: pointer; color: #f0ede8; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center;">
+            <span>Does the case protect the delicate folding hinge mechanism?</span>
+            <span style="color: #d4935a; font-size: 1.8rem;">+</span>
+          </summary>
+          <div style="font-size: 1.5rem; color: #a09890; line-height: 1.6; padding-bottom: 1.8rem;">
+            Yes. For Galaxy Z Fold and TriFold models, our custom spring-loaded hinge guard automatically articulates when opening and closing to protect against dust, sand, and edge impacts.
+          </div>
+        </details>
 
-      <details class="accordion">
-        <summary style="font-size: 1.6rem; font-weight: 500; cursor: pointer; color: #f0ede8; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center;">
-          <span>How does the 2-Year Warranty work?</span>
-          <span style="color: #d4935a; font-size: 1.8rem;">+</span>
-        </summary>
-        <div style="font-size: 1.5rem; color: #a09890; line-height: 1.6; padding-bottom: 1.8rem;">
-          Every unit comes with an encrypted serial number registered to your purchase. If you encounter any manufacturing defect or performance degradation within 24 months, our hardware team ships an immediate replacement.
-        </div>
-      </details>
+        <details class="accordion" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <summary style="font-size: 1.6rem; font-weight: 500; cursor: pointer; color: #f0ede8; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center;">
+            <span>Will clear cases turn yellow over time?</span>
+            <span style="color: #d4935a; font-size: 1.8rem;">+</span>
+          </summary>
+          <div style="font-size: 1.5rem; color: #a09890; line-height: 1.6; padding-bottom: 1.8rem;">
+            No. ClearGuard Pro uses German Bayer optical polymer treated with anti-UV molecular inhibitors that resist oxidation from sun exposure, sweat, and oils.
+          </div>
+        </details>
+
+        <details class="accordion">
+          <summary style="font-size: 1.6rem; font-weight: 500; cursor: pointer; color: #f0ede8; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center;">
+            <span>How does the 30-Day Trial and 2-Year Warranty work?</span>
+            <span style="color: #d4935a; font-size: 1.8rem;">+</span>
+          </summary>
+          <div style="font-size: 1.5rem; color: #a09890; line-height: 1.6; padding-bottom: 1.8rem;">
+            Test the case on your device for 30 days. If you don't love the tactile feel and fit, return it for a full refund. Every case includes a 24-month replacement guarantee against defects.
+          </div>
+        </details>
+
+      {%- elsif is_product_page and prod_type == 'power' -%}
+        <!-- Power FAQs -->
+        <details class="accordion" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <summary style="font-size: 1.6rem; font-weight: 500; cursor: pointer; color: #f0ede8; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center;">
+            <span>Can I charge my phone, Apple Watch, and AirPods at the same time?</span>
+            <span style="color: #d4935a; font-size: 1.8rem;">+</span>
+          </summary>
+          <div style="font-size: 1.5rem; color: #a09890; line-height: 1.6; padding-bottom: 1.8rem;">
+            Yes. Independent dedicated induction coils ensure all three devices receive continuous optimal wattage simultaneously without splitting or throttling output power.
+          </div>
+        </details>
+
+        <details class="accordion" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <summary style="font-size: 1.6rem; font-weight: 500; cursor: pointer; color: #f0ede8; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center;">
+            <span>What type of wall charger should I use?</span>
+            <span style="color: #d4935a; font-size: 1.8rem;">+</span>
+          </summary>
+          <div style="font-size: 1.5rem; color: #a09890; line-height: 1.6; padding-bottom: 1.8rem;">
+            We recommend any standard 20W or higher USB-C Power Delivery (PD) wall adapter for full 15W fast wireless speeds across all charging pads.
+          </div>
+        </details>
+
+        <details class="accordion" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <summary style="font-size: 1.6rem; font-weight: 500; cursor: pointer; color: #f0ede8; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center;">
+            <span>Does it generate coil whine or heat during overnight bedside charging?</span>
+            <span style="color: #d4935a; font-size: 1.8rem;">+</span>
+          </summary>
+          <div style="font-size: 1.5rem; color: #a09890; line-height: 1.6; padding-bottom: 1.8rem;">
+            No. Built with silent copper induction coils and passive aluminum heatsink venting, ensuring completely silent, cool operation beside your bed.
+          </div>
+        </details>
+
+        <details class="accordion">
+          <summary style="font-size: 1.6rem; font-weight: 500; cursor: pointer; color: #f0ede8; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center;">
+            <span>What is the warranty coverage?</span>
+            <span style="color: #d4935a; font-size: 1.8rem;">+</span>
+          </summary>
+          <div style="font-size: 1.5rem; color: #a09890; line-height: 1.6; padding-bottom: 1.8rem;">
+            Every power accessory is backed by our 24-month hardware replacement warranty and a 30-day money-back guarantee.
+          </div>
+        </details>
+
+      {%- else -%}
+        <!-- Mount FAQs (Mounts & Homepage) -->
+        <details class="accordion" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <summary style="font-size: 1.6rem; font-weight: 500; cursor: pointer; color: #f0ede8; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center;">
+            <span>Will this hold securely on textured dashboards, glass, or shower tiles?</span>
+            <span style="color: #d4935a; font-size: 1.8rem;">+</span>
+          </summary>
+          <div style="font-size: 1.5rem; color: #a09890; line-height: 1.6; padding-bottom: 1.8rem;">
+            Yes. On smooth glass, mirrors, and tiles, the pneumatic suction locks directly. For textured car dashboards, simply install the included 3M stabilizer base disc first for an immovable foundation.
+          </div>
+        </details>
+
+        <details class="accordion" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <summary style="font-size: 1.6rem; font-weight: 500; cursor: pointer; color: #f0ede8; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center;">
+            <span>Does my phone need to be an iPhone or have MagSafe?</span>
+            <span style="color: #d4935a; font-size: 1.8rem;">+</span>
+          </summary>
+          <div style="font-size: 1.5rem; color: #a09890; line-height: 1.6; padding-bottom: 1.8rem;">
+            No! iPhone 12–17 models snap on magnetically with zero extras. Android devices (Samsung, Google) or non-MagSafe cases attach instantly using the included ultra-thin magnetic ring.
+          </div>
+        </details>
+
+        <details class="accordion" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <summary style="font-size: 1.6rem; font-weight: 500; cursor: pointer; color: #f0ede8; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center;">
+            <span>Will water, steam, or highway bumps cause the mount to fall?</span>
+            <span style="color: #d4935a; font-size: 1.8rem;">+</span>
+          </summary>
+          <div style="font-size: 1.5rem; color: #a09890; line-height: 1.6; padding-bottom: 1.8rem;">
+            No. The silicone vacuum gasket forms an airtight hermetic seal capable of supporting up to 5kg, while the 14.5N N52 neodymium array holds your device rock-solid over steep potholes and steamy showers.
+          </div>
+        </details>
+
+        <details class="accordion">
+          <summary style="font-size: 1.6rem; font-weight: 500; cursor: pointer; color: #f0ede8; padding: 1.6rem 0; display: flex; justify-content: space-between; align-items: center;">
+            <span>How does the 30-Day Risk-Free Trial and 2-Year Warranty work?</span>
+            <span style="color: #d4935a; font-size: 1.8rem;">+</span>
+          </summary>
+          <div style="font-size: 1.5rem; color: #a09890; line-height: 1.6; padding-bottom: 1.8rem;">
+            Test the mount in your car or home for 30 days. If it doesn't completely exceed your expectations, return it for a 100% full refund with prepaid return shipping. All hardware includes a 24-month replacement warranty.
+          </div>
+        </details>
+      {%- endif -%}
     </div>
   </div>
 

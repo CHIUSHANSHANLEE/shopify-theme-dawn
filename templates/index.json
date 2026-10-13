@@ -21,53 +21,44 @@
           "type": "collection",
           "settings": {
             "collection": "mounts",
-            "custom_title": "Magnetic Mount Ecosystem",
-            "description": "360° vacuum suction car mounts, shower mounts & magnetic wall docks."
+            "custom_title": "Magnetic Mounts",
+            "description": "Foldable 360° vacuum car mounts, waterproof shower holders & magnetic wall docks."
+          }
+        },
+        "col_cases": {
+          "type": "collection",
+          "settings": {
+            "collection": "cases",
+            "custom_title": "Device Armor & Cases",
+            "description": "Military drop-tested cases for Galaxy Z TriFold, Fold 7, iPhone 16/17 Pro Max & S26 Ultra."
           }
         },
         "col_power": {
           "type": "collection",
           "settings": {
             "collection": "power",
-            "custom_title": "Wireless Power & Charging",
-            "description": "3-in-1 MagSafe stations & universal high-speed 3-in-2 cables."
+            "custom_title": "Wireless Power & Cables",
+            "description": "Foldable 3-in-1 MagSafe charging stations and universal 3-in-2 multi-device braided cables."
           }
         },
-        "col_foldable": {
+        "col_all": {
           "type": "collection",
           "settings": {
-            "collection": "cases",
-            "custom_title": "Foldable Shield Cases",
-            "description": "Engineered shock-absorbing armor for Galaxy Z TriFold & Z Fold 7."
-          }
-        },
-        "col_flagship": {
-          "type": "collection",
-          "settings": {
-            "collection": "cases",
-            "custom_title": "Flagship Device Armor",
-            "description": "ClearGuard Pro & MagShield cases for iPhone 16/17 & S26 Ultra."
-          }
-        },
-        "col_multisurface": {
-          "type": "collection",
-          "settings": {
-            "collection": "mounts",
-            "custom_title": "Multi-Surface Mount Packs",
-            "description": "Complete 2-pack and 3-pack vacuum setups for home, car, and office."
+            "collection": "all-hardware",
+            "custom_title": "All Hardware",
+            "description": "Explore the complete 14-piece lineup of precision daily essentials backed by our 30-day guarantee."
           }
         }
       },
       "block_order": [
         "col_mounts",
+        "col_cases",
         "col_power",
-        "col_foldable",
-        "col_flagship",
-        "col_multisurface"
+        "col_all"
       ],
       "settings": {
         "subtitle": "CURATED COLLECTIONS",
-        "title": "Thoughtfully Built for Every Room",
+        "title": "Shop By Category",
         "padding_top": 72,
         "padding_bottom": 72
       }

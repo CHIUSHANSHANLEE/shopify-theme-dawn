@@ -200,6 +200,8 @@
                   -%}
                 </div>
                 {%- comment -%} Trust Matrix docked directly below buy buttons {%- endcomment -%}
+                {%- assign pm_title_dc = product.title | downcase -%}
+                {%- assign pm_type_dc = product.type | downcase -%}
                 <div class="ll-trust-matrix">
                   <div class="ll-trust-matrix-item">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
@@ -215,7 +217,13 @@
                   </div>
                   <div class="ll-trust-matrix-item">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                    <span>Aerospace CNC 6000 & Neodymium</span>
+                    {%- if pm_title_dc contains 'case' or pm_type_dc contains 'case' or pm_title_dc contains 'shield' or pm_title_dc contains 'guard' or pm_title_dc contains 'armorview' -%}
+                      <span>Drop-Tested Armor & MagSafe</span>
+                    {%- elsif pm_title_dc contains 'cable' or pm_title_dc contains 'charging' or pm_title_dc contains 'charger' or pm_type_dc contains 'cable' or pm_type_dc contains 'charger' -%}
+                      <span>Qi2 Certified & Braided Armor</span>
+                    {%- else -%}
+                      <span>Aerospace CNC 6000 & Neodymium</span>
+                    {%- endif -%}
                   </div>
                 </div>
 
@@ -228,7 +236,7 @@
 
               {%- when 'collapsible_tab' -%}
                 <div class="product__accordion accordion ll-accordion" {{ block.shopify_attributes }}>
-                  <details id="Details-{{ block.id }}-{{ section.id }}" open>
+                  <details id="Details-{{ block.id }}-{{ section.id }}">
                     <summary>
                       <div class="summary__title" style="display: flex; align-items: center; gap: 1rem;">
                         {% render 'icon-accordion', icon: block.settings.icon %}

@@ -32,11 +32,10 @@
       {%- assign collection_title = block.settings.custom_title | default: collection.title -%}
       {%- if collection_title == blank -%}
         {%- case forloop.index -%}
-          {%- when 1 -%}{%- assign collection_title = "Magnetic Mount Ecosystem" -%}
-          {%- when 2 -%}{%- assign collection_title = "Wireless Power & Charging" -%}
-          {%- when 3 -%}{%- assign collection_title = "Foldable Shield Cases" -%}
-          {%- when 4 -%}{%- assign collection_title = "Flagship Device Armor" -%}
-          {%- when 5 -%}{%- assign collection_title = "Multi-Surface Mount Packs" -%}
+          {%- when 1 -%}{%- assign collection_title = "Mounts" -%}
+          {%- when 2 -%}{%- assign collection_title = "Cases" -%}
+          {%- when 3 -%}{%- assign collection_title = "Power & Cables" -%}
+          {%- when 4 -%}{%- assign collection_title = "All Hardware" -%}
           {%- else -%}{%- assign collection_title = "Hardware" -%}
         {%- endcase -%}
       {%- endif -%}
@@ -50,15 +49,26 @@
       {%- elsif collection.products.first.featured_image != blank -%}
         {%- assign showcase_image = collection.products.first.featured_image -%}
       {%- else -%}
-        {%- case forloop.index -%}
-          {%- when 1 -%}{%- assign fallback_p = all_products['magnetic-car-mount-foldable-360'] -%}
-          {%- when 2 -%}{%- assign fallback_p = all_products['3-in-1-magsafe-charging-station'] -%}
-          {%- when 3 -%}{%- assign fallback_p = all_products['trifold-shield-case-galaxy-z-trifold'] -%}
-          {%- when 4 -%}{%- assign fallback_p = all_products['clearguard-pro-case-iphone-17-pro-max'] -%}
-          {%- when 5 -%}{%- assign fallback_p = all_products['magnetic-phone-mount-3-pack'] -%}
-        {%- endcase -%}
+        {%- if collection.handle == 'mounts' or forloop.index == 1 -%}
+          {%- assign fallback_p = all_products['magnetic-car-mount-foldable-360'] -%}
+        {%- elsif collection.handle == 'cases' or forloop.index == 2 -%}
+          {%- assign fallback_p = all_products['clearguard-pro-case-iphone-17-pro-max'] | default: all_products['trifold-shield-case-galaxy-z-trifold'] -%}
+        {%- elsif collection.handle == 'power' or forloop.index == 3 -%}
+          {%- assign fallback_p = all_products['3-in-1-magsafe-charging-station'] -%}
+        {%- else -%}
+          {%- assign fallback_p = collections['all-hardware'].products.first | default: all_products['magnetic-car-mount-foldable-360'] -%}
+        {%- endif -%}
         {%- if fallback_p != blank and fallback_p.featured_image != blank -%}
           {%- assign showcase_image = fallback_p.featured_image -%}
+        {%- endif -%}
+      {%- endif -%}
+
+      {%- assign p_count = collection.all_products_count -%}
+      {%- if p_count == blank or p_count == 0 -%}
+        {%- if collection.handle == 'mounts' or forloop.index == 1 -%}{%- assign p_count = 7 -%}
+        {%- elsif collection.handle == 'cases' or forloop.index == 2 -%}{%- assign p_count = 5 -%}
+        {%- elsif collection.handle == 'power' or forloop.index == 3 -%}{%- assign p_count = 2 -%}
+        {%- elsif collection.handle == 'all-hardware' or forloop.index == 4 -%}{%- assign p_count = 14 -%}
         {%- endif -%}
       {%- endif -%}
 
@@ -73,7 +83,14 @@
             <span style="font-size: 1.25rem; color: #a09890; font-weight: 600; letter-spacing: 0.04em;">
               0{{ forloop.index }}
             </span>
-            <div style="width: 6px; height: 6px; border-radius: 50%; background: #d4935a; margin-top: 0.8rem;"></div>
+            <div style="display: flex; align-items: center; gap: 0.6rem; margin-top: 0.8rem;">
+              <div style="width: 6px; height: 6px; border-radius: 50%; background: #d4935a;"></div>
+              {%- if p_count > 0 -%}
+                <span style="font-size: 1.15rem; color: #d4935a; font-weight: 600; background: rgba(212, 147, 90, 0.12); padding: 0.2rem 0.8rem; border-radius: 980px;">
+                  {{ p_count }} Products
+                </span>
+              {%- endif -%}
+            </div>
           </div>
 
           <!-- Studio Pedestal Hardware Thumbnail -->
@@ -92,7 +109,7 @@
         </div>
 
         <!-- Card Bottom Content -->
-        <div style="position: relative; z-index: 1; margin-top: 4rem;">
+        <div style="position: relative; z-index: 1; margin-top: 3.5rem;">
           <h3 style="font-size: 2.2rem; font-weight: 700; color: #f0ede8; margin: 0 0 0.8rem 0; letter-spacing: -0.02em;">
             {{ collection_title }}
           </h3>
