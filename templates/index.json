@@ -5,12 +5,12 @@
       "settings": {
         "hero_height": "90vh",
         "image_opacity": 40,
-        "pill_badge": "GEN 4.0 HARDWARE // NOW LIVE",
-        "heading": "Magnetic Precision. Flagship Armor.",
-        "subheading": "Precision-engineered MagSafe vacuum mounts, 3-in-1 wireless charging stations, and ultra-durable cyber armor for iPhone and Galaxy foldables.",
-        "button_label_1": "Explore Magnetic Mounts",
+        "pill_badge": "DESIGNED FOR REAL LIFE // NEW RELEASE",
+        "heading": "Everyday Essentials. Elevated Engineering.",
+        "subheading": "Vacuum-lock magnetic mounts that never slip, clean 3-in-1 wireless charging stations, and precision protection for the devices you rely on all day.",
+        "button_label_1": "Shop Best Sellers",
         "button_link_1": "shopify://collections/all",
-        "button_label_2": "Shop Device Armor",
+        "button_label_2": "Explore Ecosystem",
         "button_link_2": "shopify://collections/all"
       }
     },
@@ -66,8 +66,8 @@
         "col_multisurface"
       ],
       "settings": {
-        "subtitle": "SYSTEM ARCHITECTURE // HARDWARE",
-        "title": "Engineered For Every Vector",
+        "subtitle": "CURATED COLLECTIONS",
+        "title": "Thoughtfully Built for Every Room",
         "padding_top": 72,
         "padding_bottom": 72
       }
@@ -75,8 +75,8 @@
     "lumaloop_products": {
       "type": "lumaloop-products",
       "settings": {
-        "subtitle": "BEST SELLERS // HIGH DEMAND",
-        "title": "Engineered Excellence",
+        "subtitle": "COMMUNITY FAVORITES",
+        "title": "Best Sellers for Daily Living",
         "collection": "all-hardware",
         "products_to_show": 8,
         "columns_desktop": 4,
@@ -87,9 +87,9 @@
     "lumaloop_trust": {
       "type": "lumaloop-trust",
       "settings": {
-        "subtitle": "CORE SPECIFICATIONS // TRUST MATRIX",
-        "title": "Engineered Without Compromise",
-        "description": "Every component is calibrated for zero tolerance, high-adhesion vacuum security, and next-generation electrical efficiency.",
+        "subtitle": "PEACE OF MIND // BUILT TO LAST",
+        "title": "Why Thousands Choose LumaLoop",
+        "description": "Every product is designed to solve real daily frustrations — from wobbly car mounts to cluttered nightstands.",
         "card_1_title": "N52 Magnetic & Vacuum Lock",
         "card_1_text": "Dual-action pneumatic vacuum suction and ultra-dense N52 neodymium arrays engineered for zero slip on car dashboards, shower walls, and mirrors.",
         "card_2_title": "Foldable & Flagship Armor",
@@ -105,10 +105,10 @@
     "lumaloop_story": {
       "type": "lumaloop-brand-story",
       "settings": {
-        "subtitle": "OUR MANIFESTO // GEN 04",
-        "title": "LumaLoop exists to bridge the gap between everyday technology and the future.",
-        "story_text": "<p>We started with a singular obsession: standard consumer phone mounts fail under vibration, cables clutter workspaces, and fragile flagship devices are left vulnerable to drops. Flagship hardware deserves companion engineering that matches its ambition.</p><p>By combining pneumatic vacuum physics, high-flux neodymium magnetic arrays, and impact-resistant hinge metallurgy, LumaLoop redefines the physical objects you interact with every single day.</p>",
-        "button_label": "Discover Our Philosophy",
+        "subtitle": "OUR STORY",
+        "title": "Built for the life you actually live.",
+        "story_text": "<p>LumaLoop started because our founders were tired of phone mounts that fell off mid-drive, messy cords all over our desks, and bulky cases that hid the phone's design. We set out to design accessories that feel natural, look beautiful, and simply work.</p><p>Every product is tested in real cars, real showers, and real homes — backed by our 30-day risk-free money-back guarantee.</p>",
+        "button_label": "Read Our Story",
         "button_link": "shopify://pages/about",
         "padding_top": 72,
         "padding_bottom": 72
@@ -151,9 +151,9 @@
         "rev_3"
       ],
       "settings": {
-        "subtitle": "VERIFIED TELEMETRY // TESTIMONIALS",
-        "title": "Validated By The Future-Minded",
-        "description": "Hear from designers, engineers, and tech minimalists worldwide who elevated their daily carry.",
+        "subtitle": "CUSTOMER VOICES",
+        "title": "Loved by Real People Everywhere",
+        "description": "Hear from people who transformed their daily drives, workspaces, and nightstands with LumaLoop gear.",
         "padding_top": 72,
         "padding_bottom": 72
       }
@@ -161,9 +161,9 @@
     "lumaloop_newsletter": {
       "type": "lumaloop-newsletter",
       "settings": {
-        "subtitle": "ACCESS TERMINAL // DROP ALERT",
-        "heading": "Join The Future",
-        "subtext": "Get early access to new technology drops, exclusive offers, and product launches before public release.",
+        "subtitle": "INSIDER ACCESS",
+        "heading": "Join The LumaLoop Community",
+        "subtext": "Get early access to new releases, subscriber-only gifts, and thoughtful updates straight to your inbox.",
         "padding_top": 72,
         "padding_bottom": 84
       }
@@ -177,16 +177,33 @@
         "padding_top": 72,
         "padding_bottom": 72
       }
+    },
+    "lumaloop_lifestyle": {
+      "type": "lumaloop-lifestyle",
+      "settings": {
+        "subtitle": "DESIGNED FOR REAL LIFE",
+        "title": "Made for the moments that matter",
+        "description": "From the morning commute to the bedside table — LumaLoop gear fits seamlessly into your daily life.",
+        "stat_1_number": "15s",
+        "stat_1_label": "Mount. Drive. Go.",
+        "stat_1_sub": "One-hand magnetic snap",
+        "cta_eyebrow": "30-DAY GUARANTEE",
+        "cta_text": "Try it. Love it. Keep it.",
+        "cta_link": "shopify://collections/all",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
     }
   },
   "order": [
     "lumaloop_hero",
+    "lumaloop_lifestyle",
     "lumaloop_collections",
     "lumaloop_products",
     "lumaloop_trust",
-    "lumaloop_tech_specs",
     "lumaloop_story",
     "lumaloop_reviews",
+    "lumaloop_tech_specs",
     "lumaloop_newsletter"
   ]
 }

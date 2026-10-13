@@ -32,7 +32,7 @@
     {%- endif -%}
     {%- if collection != blank and collection.products_count > 0 -%}
       {%- for product in collection.products limit: section.settings.products_to_show -%}
-        <div class="lumaloop-product-card card-wrapper" style="position: relative; display: flex; flex-direction: column; background: #121215;">
+        <div class="lumaloop-product-card card-wrapper" style="position: relative; display: flex; flex-direction: column; background: #1a1815;">
           
           <!-- Badge logic -->
           <div style="position: absolute; top: 1.4rem; left: 1.4rem; z-index: 3; display: flex; gap: 0.6rem;">
@@ -47,8 +47,8 @@
             {%- endif -%}
           </div>
 
-          <!-- Product Media Image (Studio Pedestal) -->
-          <a href="{{ product.url }}" class="card__media" style="position: relative; display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 1/1; overflow: hidden; text-decoration: none; background: #ffffff; padding: 2rem; border-radius: 16px 16px 0 0;">
+          <!-- Product Media Image (Warm Studio Pedestal) -->
+          <a href="{{ product.url }}" class="card__media" style="position: relative; display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 1/1; overflow: hidden; text-decoration: none; background: #f5f2ee; padding: 2rem; border-radius: 16px 16px 0 0;">
             {%- if product.featured_media -%}
               {{ product.featured_media | image_url: width: 800 | image_tag:
                 class: 'motion-reduce',
@@ -63,21 +63,21 @@
           <!-- Information -->
           <div class="card__information" style="padding: 2.4rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
             <div>
-              <div style="font-size: 1.2rem; color: #86868b; margin-bottom: 0.6rem; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500;">
+              <div style="font-size: 1.2rem; color: #a09890; margin-bottom: 0.6rem; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500;">
                 {{ product.vendor | default: "LUMALOOP" }}
               </div>
               <h3 class="card__heading" style="margin: 0 0 1rem 0; font-size: 1.7rem;">
-                <a href="{{ product.url }}" style="color: #f5f5f7; text-decoration: none;">
+                <a href="{{ product.url }}" style="color: #f0ede8; text-decoration: none;">
                   {{ product.title }}
                 </a>
               </h3>
             </div>
 
             <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1.6rem; padding-top: 1.6rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
-              <div class="price" style="font-size: 1.65rem; font-weight: 600; color: #f5f5f7;">
+              <div class="price" style="font-size: 1.65rem; font-weight: 600; color: #f0ede8;">
                 {{ product.price | money }}
                 {%- if product.compare_at_price > product.price -%}
-                  <span style="font-size: 1.35rem; color: #86868b; text-decoration: line-through; margin-left: 0.6rem; font-weight: 400;">
+                  <span style="font-size: 1.35rem; color: #a09890; text-decoration: line-through; margin-left: 0.6rem; font-weight: 400;">
                     {{ product.compare_at_price | money }}
                   </span>
                 {%- endif -%}
