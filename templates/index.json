@@ -20,6 +20,7 @@
         "col_mounts": {
           "type": "collection",
           "settings": {
+            "collection": "mounts",
             "custom_title": "Magnetic Mount Ecosystem",
             "description": "360° vacuum suction car mounts, shower mounts & magnetic wall docks."
           }
@@ -27,6 +28,7 @@
         "col_power": {
           "type": "collection",
           "settings": {
+            "collection": "power",
             "custom_title": "Wireless Power & Charging",
             "description": "3-in-1 MagSafe stations & universal high-speed 3-in-2 cables."
           }
@@ -34,6 +36,7 @@
         "col_foldable": {
           "type": "collection",
           "settings": {
+            "collection": "cases",
             "custom_title": "Foldable Shield Cases",
             "description": "Engineered shock-absorbing armor for Galaxy Z TriFold & Z Fold 7."
           }
@@ -41,6 +44,7 @@
         "col_flagship": {
           "type": "collection",
           "settings": {
+            "collection": "cases",
             "custom_title": "Flagship Device Armor",
             "description": "ClearGuard Pro & MagShield cases for iPhone 16/17 & S26 Ultra."
           }
@@ -48,6 +52,7 @@
         "col_multisurface": {
           "type": "collection",
           "settings": {
+            "collection": "mounts",
             "custom_title": "Multi-Surface Mount Packs",
             "description": "Complete 2-pack and 3-pack vacuum setups for home, car, and office."
           }
@@ -72,8 +77,8 @@
       "settings": {
         "subtitle": "BEST SELLERS // HIGH DEMAND",
         "title": "Engineered Excellence",
-        "collection": "all",
-        "products_to_show": 4,
+        "collection": "all-hardware",
+        "products_to_show": 8,
         "columns_desktop": 4,
         "padding_top": 72,
         "padding_bottom": 72
@@ -162,6 +167,16 @@
         "padding_top": 72,
         "padding_bottom": 84
       }
+    },
+    "lumaloop_tech_specs": {
+      "type": "lumaloop-tech-specs",
+      "settings": {
+        "subtitle": "SPECIFICATIONS & ARCHITECTURE",
+        "title": "Meticulously Engineered Down to the Micron",
+        "description": "Explore the internal architecture, material properties, and thermal dissipation systems that power LumaLoop hardware.",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
     }
   },
   "order": [
@@ -169,6 +184,7 @@
     "lumaloop_collections",
     "lumaloop_products",
     "lumaloop_trust",
+    "lumaloop_tech_specs",
     "lumaloop_story",
     "lumaloop_reviews",
     "lumaloop_newsletter"

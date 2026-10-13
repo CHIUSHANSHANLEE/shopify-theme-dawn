@@ -27,6 +27,9 @@
 
   <div class="lumaloop-product-grid" style="display: grid; grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr); gap: 2.2rem;">
     {%- assign collection = section.settings.collection -%}
+    {%- if collection == blank or collection.products_count == 0 -%}
+      {%- assign collection = collections['all-hardware'] | default: collections.all -%}
+    {%- endif -%}
     {%- if collection != blank and collection.products_count > 0 -%}
       {%- for product in collection.products limit: section.settings.products_to_show -%}
         <div class="lumaloop-product-card card-wrapper" style="position: relative; display: flex; flex-direction: column; background: #121215;">

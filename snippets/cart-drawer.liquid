@@ -87,6 +87,34 @@
         >
           <div id="CartDrawer-CartItems" class="drawer__contents js-contents">
             {%- if cart != empty -%}
+              {%- assign free_shipping_threshold = 7500 -%}
+              {%- assign current_subtotal = cart.total_price -%}
+              {%- assign amount_remaining = free_shipping_threshold | minus: current_subtotal -%}
+              {%- assign percent_progress = current_subtotal | times: 100 | divided_by: free_shipping_threshold -%}
+              {%- if percent_progress > 100 -%}{%- assign percent_progress = 100 -%}{%- endif -%}
+
+              <div class="lumaloop-shipping-bar" style="margin: 0 0 2rem 0; padding: 1.4rem 1.8rem; background: #161722; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; font-size: 1.35rem;">
+                  {%- if current_subtotal >= free_shipping_threshold -%}
+                    <span style="color: #30d158; font-weight: 600; display: flex; align-items: center; gap: 0.6rem;">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      FREE Express Shipping Unlocked!
+                    </span>
+                    <span style="color: #30d158; font-size: 1.2rem; font-weight: 600;">100%</span>
+                  {%- else -%}
+                    <span style="color: #f5f5f7; font-weight: 500;">
+                      Add <strong style="color: #2997ff;">{{ amount_remaining | money }}</strong> for Free Express Shipping
+                    </span>
+                    <span style="color: #86868b; font-size: 1.2rem;">{{ percent_progress }}%</span>
+                  {%- endif -%}
+                </div>
+                <div style="width: 100%; height: 6px; background: rgba(255, 255, 255, 0.08); border-radius: 999px; overflow: hidden;">
+                  <div style="width: {{ percent_progress }}%; height: 100%; background: linear-gradient(90deg, #2997ff, #30d158); border-radius: 999px; transition: width 0.4s ease;"></div>
+                </div>
+              </div>
+
               <div class="drawer__cart-items-wrapper">
                 <table class="cart-items" role="table">
                   <thead role="rowgroup">

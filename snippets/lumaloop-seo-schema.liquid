@@ -10,7 +10,11 @@
   "name": "LumaLoop",
   "url": {{ request.origin | append: routes.root_url | json }},
   "description": "Premium electronic accessories and next-generation lifestyle technology engineered with cyber-minimal aesthetics.",
+  {%- if settings.logo != blank -%}
   "logo": {{ settings.logo | image_url: width: 600 | prepend: "https:" | json }},
+  {%- else -%}
+  "logo": {{ 'favicon.svg' | asset_url | prepend: "https:" | json }},
+  {%- endif -%}
   "sameAs": [
     {{ settings.social_twitter_link | json }},
     {{ settings.social_facebook_link | json }},
